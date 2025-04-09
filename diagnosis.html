@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تشخيص نمط القيادة - الراسخون</title>
+  <title>الاستشارات الفورية - الراسخون</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
+      background-color: #fefefe;
       color: #004d40;
       padding: 2em;
       direction: rtl;
@@ -19,12 +19,12 @@
     }
 
     h1 {
-      color: #00695c;
+      color: #00796b;
       font-size: 2.5em;
     }
 
     p {
-      max-width: 700px;
+      max-width: 800px;
       margin: 1em auto;
       font-size: 1.2em;
       line-height: 1.8;
@@ -32,31 +32,30 @@
 
     form {
       max-width: 700px;
-      margin: auto;
-      background: #ffffff;
+      margin: 2em auto;
+      background-color: #e0f2f1;
       padding: 2em;
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     label {
-      font-weight: bold;
       display: block;
-      margin-top: 1.5em;
       margin-bottom: 0.5em;
+      font-weight: bold;
     }
 
-    .result {
-      background-color: #e8f5e9;
-      color: #2e7d32;
+    textarea {
+      width: 100%;
+      height: 150px;
       padding: 1em;
-      margin-top: 2em;
-      border-radius: 8px;
-      display: none;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
     }
 
     button {
-      margin-top: 2em;
+      margin-top: 1em;
       background-color: #00796b;
       color: white;
       padding: 0.8em 1.5em;
@@ -70,71 +69,60 @@
     button:hover {
       background-color: #004d40;
     }
+
+    .confirmation, .bot-response {
+      display: none;
+      margin-top: 1.5em;
+      background-color: #d0f0d9;
+      padding: 1em;
+      border-radius: 6px;
+      color: #2e7d32;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>تشخيص نمط القيادة</h1>
+    <h1>الاستشارات الفورية</h1>
     <p>
-      اكتشف نمط قيادتك من خلال هذا التقييم البسيط، الذي يساعدك على تحديد نقاط القوة والفرص لتطوير أسلوبك في التأثير واتخاذ القرار.
+      هل تواجه موقفًا قياديًا صعبًا؟ اكتب لنا تفاصيل ما تمر به، وسيتفاعل البوت فورًا مع استشارتك، ثم يصلك رد من أحد مستشارينا خلال 24 ساعة.
     </p>
   </header>
 
-  <form id="quizForm">
-    <label>1. كيف تتخذ قراراتك عادةً؟</label>
-    <input type="radio" name="q1" value="t"> أبحث عن التوافق الجماعي أولاً<br>
-    <input type="radio" name="q1" value="a"> أقرر بنفسي وأتوقع الالتزام<br>
-    <input type="radio" name="q1" value="tr"> أستخدم الحوافز والتقييم<br>
-    <input type="radio" name="q1" value="tf"> أشرح رؤيتي وألهم الفريق
-
-    <label>2. عند حدوث مشكلة في الفريق، كيف تتعامل معها؟</label>
-    <input type="radio" name="q2" value="tf"> أوجه الفريق نحو الهدف بإيجابية<br>
-    <input type="radio" name="q2" value="tr"> أبحث عن الحل الأنسب وفق القواعد<br>
-    <input type="radio" name="q2" value="a"> أفرض الحل فورًا<br>
-    <input type="radio" name="q2" value="t"> أستمع للجميع قبل الحل
-
-    <label>3. ما أسلوبك في تحفيز الفريق؟</label>
-    <input type="radio" name="q3" value="tf"> الإلهام والتقدير المعنوي<br>
-    <input type="radio" name="q3" value="tr"> المكافآت والعقوبات<br>
-    <input type="radio" name="q3" value="t"> إشراك الفريق في وضع الأهداف<br>
-    <input type="radio" name="q3" value="a"> أطلب النتائج مباشرة
-
-    <button type="submit">إرسال</button>
-    <div class="result" id="resultBox"></div>
+  <form id="adviceForm">
+    <label for="situation">صف الموقف الذي تواجهه:</label>
+    <textarea id="situation" name="situation" required></textarea>
+    <button type="submit">إرسال الاستشارة</button>
+    <div class="confirmation" id="confirmationBox">✅ تم استلام استشارتك بنجاح. سنعود إليك قريبًا.</div>
+    <div class="bot-response" id="botResponse"></div>
   </form>
 
   <script>
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const answers = ['q1', 'q2', 'q3'];
-      const scores = { tf: 0, tr: 0, a: 0, t: 0 };
+    const botResponse = (text) => {
+      const keywords = {
+        "صراع": "في حالات الصراع داخل الفريق، حاول أولاً الاستماع للطرفين دون تحيز، ثم ضع قواعد للحوار البنّاء.",
+        "تأخير": "عند التأخر المتكرر من أحد أعضاء الفريق، تحدث معه بشكل مباشر ولطيف، ووضح أثر ذلك على العمل الجماعي.",
+        "اتخاذ قرار": "استخدم أسلوب تحليل الخيارات والمخاطر، وشارك الفريق إن أمكن لتشعرهم بالمسؤولية.",
+        "رفض": "إذا واجهت رفضًا للتعليمات، استوضح أسباب الرفض، فقد يكون ناتجًا عن نقص فهم أو مقاومة للتغيير.",
+        "فريق": "قيادة الفريق تتطلب توازنًا بين الحزم والتحفيز. احرص على تعزيز الثقة والتواصل المفتوح."
+      };
 
-      answers.forEach(q => {
-        const val = document.querySelector(`input[name="${q}"]:checked`);
-        if (val) scores[val.value]++;
-      });
-
-      let maxKey = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-      let resultText = '';
-
-      switch (maxKey) {
-        case 'tf':
-          resultText = 'أنت قائد تحويلي – تلهم وتوجه فريقك نحو الرؤية الكبرى.';
-          break;
-        case 'tr':
-          resultText = 'أنت قائد تبادلي – تعتمد على الأداء والمكافآت والتحفيز الرسمي.';
-          break;
-        case 'a':
-          resultText = 'أنت قائد سلطوي – حازم وسريع في اتخاذ القرار.';
-          break;
-        case 't':
-          resultText = 'أنت قائد تشاركي – تفضل العمل بروح الفريق ومشاورتهم.';
-          break;
+      for (let word in keywords) {
+        if (text.includes(word)) {
+          return keywords[word];
+        }
       }
+      return "شكرًا لمشاركتك. سيتم دراسة الموقف بعناية والرد عليك من قبل أحد مستشارينا خلال 24 ساعة.";
+    };
 
-      const box = document.getElementById('resultBox');
-      box.innerText = resultText;
-      box.style.display = 'block';
+    document.getElementById("adviceForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const inputText = document.getElementById("situation").value;
+      document.getElementById("confirmationBox").style.display = "block";
+      const response = botResponse(inputText);
+      const botBox = document.getElementById("botResponse");
+      botBox.innerText = response;
+      botBox.style.display = "block";
     });
   </script>
 </body>

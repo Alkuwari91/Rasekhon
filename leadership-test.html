@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختبار النمط القيادي - الراسخون</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to left, #e0f7fa, #f1fdfc);
+      padding: 2em;
+      color: #004d40;
+    }
 
+    h1, h2 {
+      text-align: center;
+      color: #00695c;
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    label {
+      display: block;
+      margin: 1.5em 0 0.5em;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.6em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 2em;
+      background-color: #00796b;
+      color: white;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      display: block;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .result {
+      margin-top: 2em;
+      background: #e0f2f1;
+      padding: 1.5em;
+      border-radius: 10px;
+      font-size: 1.1em;
+      display: none;
+    }
+
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 2em;
+      text-decoration: none;
+      font-weight: bold;
+      color: #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧪 اختبار تحديد نمطك القيادي</h1>
+  <h2>اختر الإجابة الأقرب لطريقتك في القيادة</h2>
+
+  <form id="leadershipTest">
+    <label>1. كيف تتعامل مع اتخاذ القرار؟</label>
+    <select name="q1">
+      <option value="تحويلي">أحلل الرؤية المستقبلية وأتخذ القرار بثقة</option>
+      <option value="تشاركي">أناقش الفريق ونقرر معًا</option>
+      <option value="تبادلي">أوازن بين الفائدة والخسارة وأقرر بناءً على ذلك</option>
+      <option value="سلطوي">أقرر بنفسي بسرعة وحسم</option>
+    </select>
+
+    <label>2. كيف تحفّز فريقك؟</label>
+    <select name="q2">
+      <option value="تحويلي">ألهمهم برؤية ورسالة مشتركة</option>
+      <option value="تشاركي">أشركهم في صناعة الإنجاز</option>
+      <option value="تبادلي">أقدم مكافآت مقابل الأداء</option>
+      <option value="خدمي">أدعمهم على المستوى الإنساني أولًا</option>
+    </select>
+
+    <label>3. ما هو أسلوبك في التعامل مع المشكلات؟</label>
+    <select name="q3">
+      <option value="تحويلي">أبحث عن فرصة في كل تحدٍ</option>
+      <option value="تشاركي">أعقد اجتماعًا جماعيًا لمناقشة الحلول</option>
+      <option value="تبادلي">أحلها حسب قواعد العمل واللوائح</option>
+      <option value="سلطوي">أتصرف فورًا لحسم الموقف</option>
+    </select>
+
+    <label>4. كيف تدير الاجتماعات؟</label>
+    <select name="q4">
+      <option value="تشاركي">أشجع الجميع على المشاركة بالرأي</option>
+      <option value="سلطوي">أحدد الأجندة والقرارات مسبقًا</option>
+      <option value="تحويلي">أربطها بالرؤية والطموح</option>
+      <option value="تبادلي">أناقش فقط الأداء والنتائج</option>
+    </select>
+
+    <label>5. ما الذي يهمك أكثر كقائد؟</label>
+    <select name="q5">
+      <option value="تحويلي">ترك أثر إيجابي على الناس</option>
+      <option value="تبادلي">تحقيق أهداف ملموسة</option>
+      <option value="تشاركي">بناء فريق يشعر بالانتماء</option>
+      <option value="خدمي">خدمة الناس وتسهيل حياتهم</option>
+    </select>
+
+    <label>6. كيف تتعامل مع التفويض؟</label>
+    <select name="q6">
+      <option value="تحويلي">أفوض المهام مع توجيه بالرؤية</option>
+      <option value="تبادلي">أفوض بناء على الكفاءة والنتائج السابقة</option>
+      <option value="تشاركي">أفوض بعد استشارة الفريق</option>
+      <option value="سلطوي">نادراً ما أفوض المهام المهمة</option>
+    </select>
+
+    <label>7. ما مصدر قوتك كقائد؟</label>
+    <select name="q7">
+      <option value="تحويلي">الرؤية والإلهام</option>
+      <option value="سلطوي">الهيبة والسرعة في القرار</option>
+      <option value="تشاركي">ثقة الفريق بي</option>
+      <option value="تبادلي">النتائج المحققة</option>
+    </select>
+
+    <label>8. في حال أزمة مفاجئة، كيف تتصرف؟</label>
+    <select name="q8">
+      <option value="سلطوي">أتخذ القرار بسرعة دون تردد</option>
+      <option value="تبادلي">أفكر في تبعات القرار بدقة</option>
+      <option value="تشاركي">أشاور أعضاء الفريق</option>
+      <option value="تحويلي">أبحث عن فرص للتطوير وسط الأزمة</option>
+    </select>
+
+    <label>9. كيف تتابع أداء الفريق؟</label>
+    <select name="q9">
+      <option value="تبادلي">حسب مؤشرات الأداء</option>
+      <option value="خدمي">حسب الاحتياج والتوازن النفسي</option>
+      <option value="تشاركي">من خلال الحوار الدائم</option>
+      <option value="تحويلي">بمتابعة النمو والتقدم الفردي</option>
+    </select>
+
+    <label>10. ما أكثر ما يشغلك أثناء القيادة؟</label>
+    <select name="q10">
+      <option value="تحويلي">تحقيق أثر مستدام</option>
+      <option value="تشاركي">رضا الفريق وتعاونهم</option>
+      <option value="تبادلي">النتائج وتحقيق الأهداف</option>
+      <option value="خدمي">راحة واحتياجات الآخرين</option>
+    </select>
+
+    <button type="button" onclick="calculateResult()">عرض نتيجتي</button>
+    <div class="result" id="resultBox"></div>
+    <a href="index.html" class="home-link"> العودة إلى الصفحة الرئيسية</a>
+  </form>
+
+  <script>
+    function calculateResult() {
+      const form = document.getElementById("leadershipTest");
+      const answers = Array.from(form.elements).filter(el => el.tagName === "SELECT").map(select => select.value);
+      const count = {};
+      answers.forEach(ans => count[ans] = (count[ans] || 0) + 1);
+
+      let maxType = '';
+      let maxValue = 0;
+      for (let key in count) {
+        if (count[key] > maxValue) {
+          maxValue = count[key];
+          maxType = key;
+        }
+      }
+
+      const descriptions = {
+        "تحويلي": "🎯 نمطك القيادي هو: <strong>التحويلي</strong><br>أنت قائد ملهم تنقل رؤيتك للآخرين وتدفعهم نحو التغيير.",
+        "تشاركي": "🤝 نمطك القيادي هو: <strong>التشاركي</strong><br>أنت تؤمن بقوة الفريق وتقدّر الاستشارة والعمل الجماعي.",
+        "تبادلي": "⚖️ نمطك القيادي هو: <strong>التبادلي</strong><br>أنت قائد يركز على النتائج، وتنظم الفريق بكفاءة ومكافآت عادلة.",
+        "سلطوي": "📢 نمطك القيادي هو: <strong>السلطوي</strong><br>أنت حازم، سريع في اتخاذ القرار، وتقود بالمبادرة والحزم.",
+        "خدمي": "🧭 نمطك القيادي هو: <strong>الخدمي</strong><br>أنت قائد إنساني، تسعى لخدمة الآخرين وتمكينهم."
+      };
+
+      document.getElementById("resultBox").innerHTML = descriptions[maxType] || "يرجى إكمال جميع الأسئلة.";
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

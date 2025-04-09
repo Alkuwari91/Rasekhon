@@ -140,5 +140,110 @@
       box.style.display = 'block';
     });
   </script>
+  <!-- مساعد الذكاء الاصطناعي "رُشد" في صفحة التشخيص -->
+<style>
+  .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #00796b;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .chatbox {
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+  }
+
+  .chatbox textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 1em;
+    font-size: 0.95em;
+  }
+
+  .chatbox button {
+    margin-top: 0.5em;
+    background-color: #00796b;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .chat-response {
+    margin-top: 1em;
+    font-size: 0.95em;
+    color: #004d40;
+  }
+</style>
+
+<div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
+
+<div class="chatbox" id="chatbox">
+  <strong>👤 مساعد الذكاء "رُشد":</strong>
+  <p>اكتب نمطك القيادي أو استفسارك وسأساعدك بخطة تطوير مناسبة.</p>
+  <textarea id="chatInput" placeholder="مثال: أنا قائد تشاركي، كيف أطور نفسي؟"></textarea>
+  <button onclick="handleChat()">إرسال</button>
+  <div class="chat-response" id="chatResponse"></div>
+</div>
+
+<script>
+  function toggleChatbox() {
+    const box = document.getElementById("chatbox");
+    box.style.display = (box.style.display === "flex") ? "none" : "flex";
+  }
+
+  function handleChat() {
+    const input = document.getElementById("chatInput").value;
+    const responseBox = document.getElementById("chatResponse");
+
+    const suggestions = {
+      "تحويلي": "كقائد تحويلي، ركّز على الإلهام، التواصل بالرؤية، ومتابعة الأثر الواقعي على الفريق.",
+      "تشاركي": "كقائد تشاركي، حاول تعزيز الحزم عند الحاجة، وتجنب التأجيل المفرط في القرارات.",
+      "تبادلي": "كقائد تبادلي، طوّر جانب التحفيز المعنوي، ولا تكتفِ بالمكافآت أو العقوبات فقط.",
+      "سلطوي": "كقائد سلطوي، حاول فتح مساحة للتفاعل، واسأل رأي الفريق قبل القرارات الكبرى.",
+      "قيادة": "القيادة ليست نمطًا ثابتًا، بل رحلة تطور. استمر بالتعلم والتأمل في الأثر الذي تتركه."
+    };
+
+    let matched = false;
+    for (let key in suggestions) {
+      if (input.includes(key)) {
+        responseBox.textContent = suggestions[key];
+        matched = true;
+        break;
+      }
+    }
+
+    if (!matched) {
+      responseBox.textContent = "أخبرني بنمطك القيادي أو التحدي الذي تواجهه وسأقدم لك توجيهًا.";
+    }
+  }
+</script>
+
 </body>
 </html>

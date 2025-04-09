@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الراسخون - منصة القيادة الحكيمة</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #e0f7fa, #e1f5fe);
       color: #004d40;
       line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
     }
 
     header {
@@ -23,21 +20,26 @@
       color: white;
       padding: 2em;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     header h1 {
       font-size: 3em;
-      margin-bottom: 0.3em;
+      margin-bottom: 0.5em;
+    }
+
+    blockquote {
+      font-style: italic;
+      font-size: 1.1em;
+      color: #c8e6c9;
     }
 
     nav ul {
-      list-style-type: none;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      list-style-type: none;
       background-color: #00695c;
       padding: 1em;
+      margin: 0;
     }
 
     nav ul li {
@@ -45,16 +47,9 @@
     }
 
     nav ul li a {
-      color: #ffffff;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      background-color: #004d40;
     }
 
     main {
@@ -68,12 +63,14 @@
       padding: 2em;
       border-radius: 12px;
       margin-bottom: 2em;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, background 0.3s;
+      cursor: pointer;
     }
 
     section:hover {
       transform: scale(1.02);
+      background-color: #f1fefc;
     }
 
     h2 {
@@ -82,63 +79,67 @@
     }
 
     footer {
-      text-align: center;
       background-color: #004d40;
       color: white;
+      text-align: center;
       padding: 1em;
-      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>الراسخون</h1>
-    <blockquote style="margin-top: 1em; font-size: 1.1em; color: #c8e6c9; font-style: italic;">
+    <blockquote>
       ﴿وَالرَّاسِخُونَ فِي الْعِلْمِ يَقُولُونَ آمَنَّا بِهِ كُلٌّ مِّنْ عِندِ رَبِّنَا ۗ وَمَا يَذَّكَّرُ إِلَّا أُولُو الْأَلْبَابِ﴾ – آل عمران: 7
     </blockquote>
-    <p>منصة رقمية للاستشارات القيادية المستندة إلى الحكمة والبصيرة</p>
-    <nav>
-      <ul>
-        <li><a href="#home">الرئيسية</a></li>
-        <li><a href="diagnosis.html">تشخيص القيادة</a></li>
-        <li><a href="#communication">الاتصال الفعّال</a></li>
-        <li><a href="#advice">الاستشارات الفورية</a></li>
-        <li><a href="#resources">مكتبة القائد</a></li>
-        <li><a href="#community">مجتمع القادة</a></li>
-      </ul>
-    </nav>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+      <li><a href="communication.html">الاتصال الفعّال</a></li>
+      <li><a href="advice.html">الاستشارات الفورية</a></li>
+      <li><a href="resources.html">مكتبة القائد</a></li>
+      <li><a href="community.html">مجتمع القادة</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section id="home">
-      <h2>مرحبًا بك في منصة الراسخون</h2>
-      <p>هنا تبدأ رحلتك نحو قيادة أكثر ثباتًا وتأثيرًا، بدعم من استشارات علمية وعملية مستمدة من القيم والمعرفة العميقة.</p>
-    </section>
+    <a href="diagnosis.html" style="text-decoration: none; color: inherit;">
+      <section>
+        <h2>تشخيص نمط القيادة</h2>
+        <p>أداة تفاعلية لفهم أسلوبك القيادي وتحديد نقاط القوة وفرص التحسين.</p>
+      </section>
+    </a>
 
-    <section id="diagnosis">
-      <h2>تشخيص نمط القيادة</h2>
-      <p>أداة تفاعلية تساعدك على فهم أسلوبك القيادي وتحديد نقاط القوة وفرص التحسين.</p>
-    </section>
+    <a href="communication.html" style="text-decoration: none; color: inherit;">
+      <section>
+        <h2>مهارات الاتصال الفعّال</h2>
+        <p>مصادر وتمارين عملية تساعدك على تطوير مهارات التأثير وبناء العلاقات.</p>
+      </section>
+    </a>
 
-    <section id="communication">
-      <h2>مهارات الاتصال الفعّال</h2>
-      <p>مصادر تدريبية وأمثلة عملية تساعدك على تطوير مهاراتك في التأثير والتواصل.</p>
-    </section>
+    <a href="advice.html" style="text-decoration: none; color: inherit;">
+      <section>
+        <h2>الاستشارات الفورية</h2>
+        <p>ارسل موقفًا قياديًا واحصل على استشارة أولية من البوت، ورد متخصص خلال 24 ساعة.</p>
+      </section>
+    </a>
 
-    <section id="advice">
-      <h2>الاستشارات الفورية</h2>
-      <p>ارسل موقفًا قياديًا تواجهه، واحصل على استشارة متخصصة خلال 24 ساعة.</p>
-    </section>
+    <a href="resources.html" style="text-decoration: none; color: inherit;">
+      <section>
+        <h2>مكتبة القائد</h2>
+        <p>نماذج وكتب وأدوات رقمية تساعدك في مهامك اليومية كقائد.</p>
+      </section>
+    </a>
 
-    <section id="resources">
-      <h2>مكتبة القائد</h2>
-      <p>قوالب وأدوات وكتب إلكترونية تساعدك في مهامك القيادية اليومية.</p>
-    </section>
-
-    <section id="community">
-      <h2>مجتمع القادة</h2>
-      <p>منتدى مفتوح للنقاش وتبادل الخبرات بين قادة من مختلف القطاعات.</p>
-    </section>
+    <a href="community.html" style="text-decoration: none; color: inherit;">
+      <section>
+        <h2>مجتمع القادة</h2>
+        <p>منتدى للنقاش وتبادل الخبرات والتجارب القيادية.</p>
+      </section>
+    </a>
   </main>
 
   <footer>

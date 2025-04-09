@@ -77,5 +77,110 @@
     <li><strong>💞 التعاطف:</strong> افهم مشاعر الآخرين وأظهر الاحترام والتقدير.</li>
     <li><strong>🔄 التغذية الراجعة البنّاءة:</strong> حفّز دون تجريح، ووجّه بلطف وصدق.</li>
   </ul>
+  <!-- مساعد الذكاء الاصطناعي "رُشد" -->
+<style>
+  .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #00796b;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .chatbox {
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+  }
+
+  .chatbox textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 1em;
+    font-size: 0.95em;
+  }
+
+  .chatbox button {
+    margin-top: 0.5em;
+    background-color: #00796b;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .chat-response {
+    margin-top: 1em;
+    font-size: 0.95em;
+    color: #004d40;
+  }
+</style>
+
+<div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
+
+<div class="chatbox" id="chatbox">
+  <strong>👤 مساعد الذكاء "رُشد":</strong>
+  <p>اسألني عن موقف تواصلي وسأقدم لك نصيحة ذكية ✨</p>
+  <textarea id="chatInput" placeholder="مثال: كيف أوجه ملاحظة سلبية؟"></textarea>
+  <button onclick="handleChat()">إرسال</button>
+  <div class="chat-response" id="chatResponse"></div>
+</div>
+
+<script>
+  function toggleChatbox() {
+    const box = document.getElementById("chatbox");
+    box.style.display = (box.style.display === "flex") ? "none" : "flex";
+  }
+
+  function handleChat() {
+    const input = document.getElementById("chatInput").value;
+    const responseBox = document.getElementById("chatResponse");
+
+    const keywords = {
+      "ملاحظة": "ابدأ بالثناء، ثم أعرض الملاحظة بلطف وركز على السلوك وليس الشخص.",
+      "نقد": "استخدم النقد البنّاء بإطار إيجابي، واجعله فرصة للنمو.",
+      "صوت": "تحكّم في نبرة صوتك، فهي توصل الرسالة أكثر من الكلمات.",
+      "إقناع": "اربط الفكرة بالقيم المشتركة، وقدّم أمثلة ملموسة.",
+      "خجل": "ابدأ بحوارات بسيطة، ودرّب نفسك على المشاركة التدريجية.",
+    };
+
+    let matched = false;
+    for (let key in keywords) {
+      if (input.includes(key)) {
+        responseBox.textContent = keywords[key];
+        matched = true;
+        break;
+      }
+    }
+
+    if (!matched) {
+      responseBox.textContent = "شكرًا لسؤالك. أنصحك بالاستماع الفعّال أولًا، ثم اختيار الوقت المناسب للتواصل.";
+    }
+  }
+</script>
+
 </body>
 </html>

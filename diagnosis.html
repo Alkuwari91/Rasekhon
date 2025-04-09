@@ -1,146 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تشخيص نمط القيادة - الراسخون</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
-      color: #004d40;
-      padding: 2em;
-      direction: rtl;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2em;
-    }
-    h1 {
-      color: #00695c;
-      font-size: 2.5em;
-    }
-    p {
-      max-width: 700px;
-      margin: 1em auto;
-      font-size: 1.2em;
-      line-height: 1.8;
-    }
-    .home-link {
-      display: inline-block;
-      margin-top: 1em;
-      background-color: #00796b;
-      color: white;
-      padding: 0.6em 1.2em;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .home-link:hover {
-      background-color: #004d40;
-    }
-    form {
-      max-width: 700px;
-      margin: auto;
-      background: #ffffff;
-      padding: 2em;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-    .result {
-      background-color: #e8f5e9;
-      color: #2e7d32;
-      padding: 1em;
-      margin-top: 2em;
-      border-radius: 8px;
-      display: none;
-    }
-    button {
-      margin-top: 2em;
-      background-color: #00796b;
-      color: white;
-      padding: 0.8em 1.5em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background-color: #004d40;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>تشخيص نمط القيادة</h1>
-    <p>
-      اكتشف نمط قيادتك من خلال هذا التقييم البسيط، الذي يساعدك على تحديد نقاط القوة والفرص لتطوير أسلوبك.
-    </p>
-    <a href="index.html" class="home-link">🔙 العودة إلى الرئيسية</a>
-  </header>
-
-  <form id="quizForm">
-    <label>1. كيف تتخذ قراراتك عادةً؟</label>
-    <input type="radio" name="q1" value="t"> بالتشاور مع الفريق<br>
-    <input type="radio" name="q1" value="a"> أقرر وحدي بسرعة<br>
-    <input type="radio" name="q1" value="tr"> حسب النظام والمكافآت<br>
-    <input type="radio" name="q1" value="tf"> ألهم الفريق برؤية مستقبلية
-
-    <label>2. عند حدوث مشكلة في الفريق، كيف تتعامل؟</label>
-    <input type="radio" name="q2" value="tf"> أوجه الفريق بإيجابية<br>
-    <input type="radio" name="q2" value="tr"> أطبق الإجراءات المعتمدة<br>
-    <input type="radio" name="q2" value="a"> أفرض الحل مباشرة<br>
-    <input type="radio" name="q2" value="t"> أستمع لآراء الجميع أولاً
-
-    <label>3. كيف تحفز فريقك؟</label>
-    <input type="radio" name="q3" value="tf"> التقدير والإلهام<br>
-    <input type="radio" name="q3" value="tr"> المكافآت والنتائج<br>
-    <input type="radio" name="q3" value="t"> إشراكهم في اتخاذ القرار<br>
-    <input type="radio" name="q3" value="a"> أطلب منهم الأداء المطلوب فورًا
-
-    <button type="submit">عرض النتيجة</button>
-    <div class="result" id="resultBox"></div>
-  </form>
-
-  <script>
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const answers = ['q1', 'q2', 'q3'];
-      const scores = { tf: 0, tr: 0, a: 0, t: 0 };
-      answers.forEach(q => {
-        const val = document.querySelector(`input[name="${q}"]:checked`);
-        if (val) scores[val.value]++;
-      });
-      let maxKey = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-      let resultText = '';
-      switch (maxKey) {
-        case 'tf':
-          resultText = '🌟 نمطك: القيادة التحويلية - تلهم الآخرين وتوجههم نحو رؤية مشتركة.';
-          break;
-        case 'tr':
-          resultText = '📊 نمطك: القيادة التبادلية - تعتمد على النتائج والمكافآت والمساءلة.';
-          break;
-        case 'a':
-          resultText = '⚡ نمطك: القيادة السلطوية - تتخذ قرارات حاسمة وتوجه الفريق بوضوح.';
-          break;
-        case 't':
-          resultText = '🤝 نمطك: القيادة التشاركية - تفضل العمل بروح الفريق والاستماع قبل اتخاذ القرار.';
-          break;
-      }
-      const box = document.getElementById('resultBox');
-      box.innerText = resultText;
-      box.style.display = 'block';
-    });
-  </script>
-  <!-- مساعد الذكاء الاصطناعي "رُشد" في صفحة التشخيص -->
+<!-- مساعد الذكاء الاصطناعي "رُشد" في صفحة التشخيص -->
 <style>
   .chatbot-icon {
     position: fixed;
@@ -205,9 +63,9 @@
 <div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
 
 <div class="chatbox" id="chatbox">
-  <strong>👤 مساعد الذكاء "رُشد":</strong>
-  <p>اكتب نمطك القيادي أو استفسارك وسأساعدك بخطة تطوير مناسبة.</p>
-  <textarea id="chatInput" placeholder="مثال: أنا قائد تشاركي، كيف أطور نفسي؟"></textarea>
+  <strong>🧠 "رُشد" – مساعد الذكاء القيادي:</strong>
+  <p>ما هو نمطك القيادي؟ وسأقترح عليك طريقة لتطويره 👇</p>
+  <textarea id="chatInput" placeholder="مثال: أنا قائد تحويلي..."></textarea>
   <button onclick="handleChat()">إرسال</button>
   <div class="chat-response" id="chatResponse"></div>
 </div>
@@ -219,15 +77,15 @@
   }
 
   function handleChat() {
-    const input = document.getElementById("chatInput").value;
+    const input = document.getElementById("chatInput").value.toLowerCase();
     const responseBox = document.getElementById("chatResponse");
 
     const suggestions = {
-      "تحويلي": "كقائد تحويلي، ركّز على الإلهام، التواصل بالرؤية، ومتابعة الأثر الواقعي على الفريق.",
-      "تشاركي": "كقائد تشاركي، حاول تعزيز الحزم عند الحاجة، وتجنب التأجيل المفرط في القرارات.",
-      "تبادلي": "كقائد تبادلي، طوّر جانب التحفيز المعنوي، ولا تكتفِ بالمكافآت أو العقوبات فقط.",
-      "سلطوي": "كقائد سلطوي، حاول فتح مساحة للتفاعل، واسأل رأي الفريق قبل القرارات الكبرى.",
-      "قيادة": "القيادة ليست نمطًا ثابتًا، بل رحلة تطور. استمر بالتعلم والتأمل في الأثر الذي تتركه."
+      "تحويلي": "طوّر من مهارات الإلهام والتحدث عن الرؤية. شارك فريقك الأحلام، وامنحهم سببًا للتحرك.",
+      "تشاركي": "نمّ قدرتك على الحزم عند الحاجة. القيادة التشاركية لا تعني التردد.",
+      "تبادلي": "جرّب أساليب تحفيز غير مادية. فكر في الاعتراف، التطوير، والتمكين.",
+      "سلطوي": "افتح قنوات التواصل. امنح الفريق فرصة للتعبير دون أن تتخلى عن الحزم.",
+      "خدمي": "تأكد من أنك لا تنسى نفسك كقائد أثناء خدمتك للآخرين. التوازن مهم."
     };
 
     let matched = false;
@@ -240,10 +98,7 @@
     }
 
     if (!matched) {
-      responseBox.textContent = "أخبرني بنمطك القيادي أو التحدي الذي تواجهه وسأقدم لك توجيهًا.";
+      responseBox.textContent = "أخبرني بنمطك القيادي وسأساعدك بتوصية مخصصة ✨";
     }
   }
 </script>
-
-</body>
-</html>

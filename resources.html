@@ -1,1 +1,109 @@
-...
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مكتبة القائد - الراسخون</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f8f5;
+      color: #004d40;
+      padding: 2em;
+      direction: rtl;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    h1 {
+      color: #00695c;
+      font-size: 2.5em;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 1em auto;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+
+    .home-link {
+      display: inline-block;
+      background-color: #00796b;
+      color: white;
+      padding: 0.6em 1.2em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 2em;
+    }
+
+    .home-link:hover {
+      background-color: #004d40;
+    }
+
+    .library {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+
+    .resource {
+      background-color: #ffffff;
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .resource:hover {
+      transform: translateY(-5px);
+    }
+
+    .resource h3 {
+      margin-bottom: 0.5em;
+      color: #00796b;
+    }
+
+    .resource a {
+      color: #004d40;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>مكتبة القائد</h1>
+    <p>في هذا القسم ستجد مجموعة من الأدوات والموارد الرقمية التي تساعدك في تطوير مهاراتك القيادية.</p>
+    <a href="index.html" class="home-link">🔙 العودة إلى الرئيسية</a>
+  </header>
+
+  <section class="library">
+    <div class="resource">
+      <h3>📘 كتاب: فن القيادة</h3>
+      <a href="#">تحميل الكتاب</a>
+    </div>
+
+    <div class="resource">
+      <h3>📝 نموذج تقييم أداء الموظفين</h3>
+      <a href="#">تحميل النموذج</a>
+    </div>
+
+    <div class="resource">
+      <h3>📊 خطة اجتماع أسبوعي</h3>
+      <a href="#">تنزيل القالب</a>
+    </div>
+
+    <div class="resource">
+      <h3>🎧 بودكاست: القيادة في العصر الرقمي</h3>
+      <a href="#">استمع الآن</a>
+    </div>
+  </section>
+</body>
+</html>

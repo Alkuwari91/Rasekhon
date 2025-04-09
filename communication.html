@@ -6,11 +6,11 @@
   <title>مهارات الاتصال الفعّال - الراسخون</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8fefc;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to left, #f0fefc, #e0f7fa);
       color: #004d40;
       padding: 2em;
-      direction: rtl;
+      line-height: 1.9;
     }
 
     header {
@@ -18,66 +18,123 @@
       margin-bottom: 2em;
     }
 
-    h1 {
+    header h1 {
       color: #00796b;
-      font-size: 2.5em;
+      font-size: 2.2em;
     }
 
-    p {
-      max-width: 800px;
-      margin: 1em auto;
-      font-size: 1.2em;
-      line-height: 1.8;
-    }
-
-    ul {
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 1em;
-      background-color: #e0f2f1;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    ul li {
-      margin-bottom: 1em;
+    .info-box {
+      text-align: center;
+      margin: 1em 0 2em;
       font-size: 1.1em;
+      background-color: #e0f2f1;
+      padding: 1em;
+      border-radius: 10px;
     }
 
-    .home-link {
-      display: inline-block;
-      margin-top: 1em;
+    .section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1.5em;
+      margin-bottom: 2em;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section h2 {
+      color: #00796b;
+      border-bottom: 2px solid #e0f2f1;
+      padding-bottom: 0.4em;
+      margin-bottom: 0.6em;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5em;
+    }
+
+    .card {
+      background-color: #f9fdfc;
+      padding: 1em;
+      border-radius: 10px;
+      border: 1px solid #c8e6c9;
+    }
+
+    .card h3 {
+      color: #00695c;
+      margin-bottom: 0.3em;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
       background-color: #00796b;
       color: white;
-      padding: 0.6em 1.2em;
+      font-weight: bold;
+      padding: 0.8em 1.5em;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      margin: 2em auto;
+      max-width: 300px;
     }
 
-    .home-link:hover {
+    .button:hover {
       background-color: #004d40;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>مهارات الاتصال الفعّال</h1>
-    <p>
-      تعتبر مهارات الاتصال الفعّال جوهر القيادة الناجحة. في هذا القسم ستتعرف على المهارات التي تعزز من قدرتك على التأثير، بناء الثقة، وتحفيز فريقك نحو الأهداف المشتركة.
-    </p>
-    <a href="index.html" class="home-link"> العودة إلى الرئيسية</a>
   </header>
 
-  <ul>
-    <li><strong>🗣️ الاستماع النشط:</strong> ركز على فهم ما يقوله الطرف الآخر دون مقاطعة.</li>
-    <li><strong>💬 لغة الجسد:</strong> تعابير الوجه، نبرة الصوت، وحركات اليدين تكمّل كلماتك.</li>
-    <li><strong>🎯 الوضوح والاختصار:</strong> استخدم عبارات بسيطة مباشرة توصل الرسالة بدقة.</li>
-    <li><strong>💞 التعاطف:</strong> افهم مشاعر الآخرين وأظهر الاحترام والتقدير.</li>
-    <li><strong>🔄 التغذية الراجعة البنّاءة:</strong> حفّز دون تجريح، ووجّه بلطف وصدق.</li>
-  </ul>
-  <!-- مساعد الذكاء الاصطناعي "رُشد" -->
+  <div class="info-box">
+    <p><strong>📘 المادة:</strong> الاتصال القيادي الفعّال</p>
+    <p><strong>👩‍🏫 إشراف:</strong> د. ميرفت أبو العوف & د. حاتم الجوهري</p>
+    <p><strong>👥 الفريق:</strong> مروة الكواري - لمياء النعيمي - دلال المالكي - الريم المري - شيخة الكلا</p>
+  </div>
+
+  <section class="section">
+    <h2>مقدمة</h2>
+    <p>
+      الاتصال هو جوهر القيادة الفعّالة. من خلاله يتمكن القائد من تحفيز فريقه، توصيل رؤيته، وتجنب الأزمات. في هذا القسم نستعرض أهم المهارات الاتصالية المستخلصة من المنهج الدراسي، مدعومة بأمثلة واقعية.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>المهارات الأساسية في الاتصال القيادي</h2>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>🎧 الاستماع النشط</h3>
+        <p>التركيز الكامل على المتحدث وتجنب المقاطعة. مثال: قائد يصغي لمخاوف فريقه قبل التغيير.</p>
+      </div>
+      <div class="card">
+        <h3>🗣️ لغة الجسد</h3>
+        <p>تعابير الوجه، نبرة الصوت، وحركات اليد تؤثر في الرسالة. مثال: استخدام التواصل البصري لبناء الثقة.</p>
+      </div>
+      <div class="card">
+        <h3>📢 الوضوح والاختصار</h3>
+        <p>إيصال الرسالة بأقل كلمات وأكثر دقة. مثال: إعطاء تعليمات واضحة في أوقات الأزمات.</p>
+      </div>
+      <div class="card">
+        <h3>❤️ التعاطف</h3>
+        <p>فهم مشاعر الآخرين ومراعاتها. مثال: قائد يتحدث بلغة الفريق أثناء تحدٍ نفسي.</p>
+      </div>
+      <div class="card">
+        <h3>🧭 التغذية الراجعة البنّاءة</h3>
+        <p>تقديم الملاحظات بلغة تطويرية. مثال: "أُقدّر مجهودك، ونقترح تحسين النقطة التالية..."</p>
+      </div>
+    </div>
+  </section>
+
+  <a href="presentation.html" class="button">📋 الانتقال إلى عرض خطة الاتصال المتكاملة</a>
+  <a href="index.html" class="button">🔙 العودة إلى الصفحة الرئيسية</a>
+
+  <!-- مساعد الذكاء الاصطناعي "رُشد" لصفحة مهارات الاتصال -->
 <style>
   .chatbot-icon {
     position: fixed;
@@ -142,45 +199,9 @@
 <div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
 
 <div class="chatbox" id="chatbox">
-  <strong>👤 مساعد الذكاء "رُشد":</strong>
-  <p>اسألني عن موقف تواصلي وسأقدم لك نصيحة ذكية ✨</p>
-  <textarea id="chatInput" placeholder="مثال: كيف أوجه ملاحظة سلبية؟"></textarea>
-  <button onclick="handleChat()">إرسال</button>
-  <div class="chat-response" id="chatResponse"></div>
-</div>
-
-<script>
-  function toggleChatbox() {
-    const box = document.getElementById("chatbox");
-    box.style.display = (box.style.display === "flex") ? "none" : "flex";
-  }
-
-  function handleChat() {
-    const input = document.getElementById("chatInput").value;
-    const responseBox = document.getElementById("chatResponse");
-
-    const keywords = {
-      "ملاحظة": "ابدأ بالثناء، ثم أعرض الملاحظة بلطف وركز على السلوك وليس الشخص.",
-      "نقد": "استخدم النقد البنّاء بإطار إيجابي، واجعله فرصة للنمو.",
-      "صوت": "تحكّم في نبرة صوتك، فهي توصل الرسالة أكثر من الكلمات.",
-      "إقناع": "اربط الفكرة بالقيم المشتركة، وقدّم أمثلة ملموسة.",
-      "خجل": "ابدأ بحوارات بسيطة، ودرّب نفسك على المشاركة التدريجية.",
-    };
-
-    let matched = false;
-    for (let key in keywords) {
-      if (input.includes(key)) {
-        responseBox.textContent = keywords[key];
-        matched = true;
-        break;
-      }
-    }
-
-    if (!matched) {
-      responseBox.textContent = "شكرًا لسؤالك. أنصحك بالاستماع الفعّال أولًا، ثم اختيار الوقت المناسب للتواصل.";
-    }
-  }
-</script>
+  <strong>🤖 "رُشد" - مساعدك في التواصل:</strong>
+  <p>اكتب الموقف الاتصالي الذي تواجهه وسأقترح عليك مهارة مناسبة 👇</p>
+  <textarea id
 
 </body>
 </html>

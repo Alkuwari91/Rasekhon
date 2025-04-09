@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>مجتمع القادة - الراسخون</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f9f8;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to left, #e0f7fa, #f1fdfc);
       color: #004d40;
       padding: 2em;
-      direction: rtl;
+      line-height: 1.9;
     }
 
     header {
@@ -18,177 +18,237 @@
       margin-bottom: 2em;
     }
 
-    h1 {
+    header h1 {
+      font-size: 2.3em;
       color: #00695c;
-      font-size: 2.5em;
     }
 
-    p {
+    .intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2em;
+      font-size: 1.1em;
+    }
+
+    .names-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1em;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 3em;
+    }
+
+    .name-card {
+      background-color: #e0f2f1;
+      padding: 0.8em;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      color: #00695c;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .discussion-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       max-width: 800px;
-      margin: 1em auto;
-      font-size: 1.2em;
-      line-height: 1.8;
+      margin: auto;
     }
 
-    .home-link {
-      display: inline-block;
+    .discussion-section h2 {
+      color: #00796b;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    .topics {
+      list-style: none;
+      padding: 0;
+    }
+
+    .topics li {
+      background: #e0f2f1;
+      padding: 0.8em;
+      margin-bottom: 1em;
+      border-radius: 6px;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+      margin: 2em auto;
       background-color: #00796b;
       color: white;
-      padding: 0.6em 1.2em;
-      border-radius: 6px;
+      padding: 0.8em 1.5em;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-bottom: 2em;
+      max-width: 280px;
     }
 
-    .home-link:hover {
+    .button:hover {
       background-color: #004d40;
     }
 
-    .forum-preview {
-      max-width: 850px;
-      margin: auto;
-      background-color: #e0f2f1;
-      padding: 1.5em;
+    /* رشد */
+    .chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #00796b;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    .chatbox {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      width: 300px;
+      background: white;
+      border: 1px solid #ccc;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 1em;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: none;
+      flex-direction: column;
+      z-index: 999;
     }
 
-    .forum-preview h3 {
-      color: #00796b;
-      margin-bottom: 1em;
+    .chatbox textarea {
+      width: 100%;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 1em;
     }
 
-    .forum-preview ul {
-      padding-right: 1.5em;
+    .chatbox button {
+      margin-top: 0.5em;
+      background-color: #00796b;
+      color: white;
+      padding: 0.5em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
-    .forum-preview li {
-      margin-bottom: 0.7em;
-      font-size: 1.1em;
+    .chat-response {
+      margin-top: 1em;
+      color: #004d40;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>مجتمع القادة</h1>
-    <p>انضم إلى مجتمع تفاعلي يضم قادة من مختلف القطاعات لتبادل الخبرات، طرح الأسئلة، ومشاركة القصص الملهمة.</p>
-    <a href="index.html" class="home-link"> العودة إلى الرئيسية</a>
   </header>
 
-  <section class="forum-preview">
-    <h3>مواضيع رائجة في المنتدى:</h3>
-    <ul>
-      <li>كيف تتعامل مع الموظف المقاوم للتغيير؟</li>
-      <li>متى يكون الوقت المناسب لاتخاذ قرار مصيري؟</li>
-      <li>التوازن بين الحزم والمرونة في قيادة الفرق الصغيرة</li>
-      <li>أفضل الكتب التي ساعدتك كقائد في مسيرتك</li>
+  <p class="intro">
+    مجتمع يضم نخبة من القادة الملهمين الذين يجمعهم الشغف بالمعرفة، والرغبة في التأثير، والحرص على التعلّم المستمر.  
+    معًا نبني بيئة قيادية تدعم الحوار، التبادل، والنمو الجماعي.
+  </p>
+
+  <div class="names-grid">
+    <div class="name-card">إبراهيم العلي</div>
+    <div class="name-card">إبراهيم القعود</div>
+    <div class="name-card">البندري الفهيدة</div>
+    <div class="name-card">الريم المري</div>
+    <div class="name-card">الريم ناصر</div>
+    <div class="name-card">العنود آل ثاني</div>
+    <div class="name-card">إيلاف عادل</div>
+    <div class="name-card">عائشة الهاجري</div>
+    <div class="name-card">عائشة المري</div>
+    <div class="name-card">عبدالله الموسى</div>
+    <div class="name-card">عدنان المري</div>
+    <div class="name-card">علي سعيد المري</div>
+    <div class="name-card">غانم الكواري</div>
+    <div class="name-card">فاطمة الكواري</div>
+    <div class="name-card">فاطمة المريخي</div>
+    <div class="name-card">فاطمة النعيمي</div>
+    <div class="name-card">فيصل المنصوري</div>
+    <div class="name-card">لمياء النعيمي</div>
+    <div class="name-card">محمد سلطان النعيمي</div>
+    <div class="name-card">موزة النعيمي</div>
+    <div class="name-card">وضحى القحطاني</div>
+    <div class="name-card">حسن المفتاح</div>
+    <div class="name-card">حسين المقيث</div>
+    <div class="name-card">حمد الحبابي</div>
+    <div class="name-card">حمد بن علي الكواري</div>
+    <div class="name-card">دلال المالكي</div>
+    <div class="name-card">سعيد تامر الاحمري</div>
+    <div class="name-card">سلطان العسيري</div>
+    <div class="name-card">شيخة عادل</div>
+  </div>
+
+  <section class="discussion-section">
+    <h2>مواضيع نقاشية مقترحة</h2>
+    <ul class="topics">
+      <li>هل يمكن أن يكون القائد صديقًا للفريق؟</li>
+      <li>التفويض الفعّال: متى؟ ولمن؟</li>
+      <li>كيف تدير الأزمات دون أن تفقد ثقة الفريق؟</li>
+      <li>التحفيز غير المادي... بين النظرية والتطبيق</li>
     </ul>
+    <a href="#" class="button">📝 ابدأ موضوعًا جديدًا للنقاش</a>
+    <a href="index.html" class="button">🔙 العودة إلى الصفحة الرئيسية</a>
   </section>
-  <!-- مساعد الذكاء الاصطناعي "رُشد" في مجتمع القادة -->
-<style>
-  .chatbot-icon {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #00796b;
-    color: white;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 999;
-  }
 
-  .chatbox {
-    position: fixed;
-    bottom: 90px;
-    left: 20px;
-    width: 300px;
-    max-height: 400px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 1em;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    display: none;
-    flex-direction: column;
-    z-index: 999;
-  }
+  <!-- مساعد رشد -->
+  <div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
+  <div class="chatbox" id="chatbox">
+    <strong>🤖 "رُشد": مساعد النقاش الذكي</strong>
+    <p>اكتب كلمة أو موضوع يهمك وسأقترح عليك سؤالًا للنقاش👇</p>
+    <textarea id="chatInput" placeholder="مثال: التفويض، التحفيز، الأزمات..."></textarea>
+    <button onclick="handleChat()">اقتراح سؤال</button>
+    <div class="chat-response" id="chatResponse"></div>
+  </div>
 
-  .chatbox textarea {
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-top: 1em;
-    font-size: 0.95em;
-  }
+  <script>
+    function toggleChatbox() {
+      const box = document.getElementById("chatbox");
+      box.style.display = (box.style.display === "flex") ? "none" : "flex";
+    }
 
-  .chatbox button {
-    margin-top: 0.5em;
-    background-color: #00796b;
-    color: white;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
+    function handleChat() {
+      const input = document.getElementById("chatInput").value.toLowerCase();
+      const responseBox = document.getElementById("chatResponse");
 
-  .chat-response {
-    margin-top: 1em;
-    font-size: 0.95em;
-    color: #004d40;
-  }
-</style>
+      const questions = {
+        "تفويض": "هل تجد صعوبة في تفويض المهام؟ متى تعتقد أنه يجب أن يتم؟",
+        "تحفيز": "ما أفضل طريقة لتحفيز الفريق بدون مكافآت مالية؟",
+        "أزمة": "كيف تتعامل مع أزمة تؤثر على معنويات الفريق؟",
+        "تقدير": "هل الثناء العلني أهم من المكافأة؟ ولماذا؟"
+      };
 
-<div class="chatbot-icon" onclick="toggleChatbox()">🤝</div>
+      let matched = false;
+      for (let key in questions) {
+        if (input.includes(key)) {
+          responseBox.textContent = questions[key];
+          matched = true;
+          break;
+        }
+      }
 
-<div class="chatbox" id="chatbox">
-  <strong>🤖 المساعد "رُشد":</strong>
-  <p>اكتب فكرة تريد مناقشتها، وسأقترح عليك سؤالًا يفتح حوارًا قياديًا مثمرًا 👇</p>
-  <textarea id="chatInput" placeholder="مثال: أواجه تحديًا مع الموظفين الجدد..."></textarea>
-  <button onclick="handleChat()">اقترح علي موضوعًا</button>
-  <div class="chat-response" id="chatResponse"></div>
-</div>
-
-<script>
-  function toggleChatbox() {
-    const box = document.getElementById("chatbox");
-    box.style.display = (box.style.display === "flex") ? "none" : "flex";
-  }
-
-  function handleChat() {
-    const input = document.getElementById("chatInput").value.toLowerCase();
-    const responseBox = document.getElementById("chatResponse");
-
-    const topics = {
-      "توظيف": "هل ترى أن القائد يجب أن يشارك في قرارات التوظيف المباشر؟ لماذا؟",
-      "موظف جديد": "ما أفضل طريقة لدمج الموظفين الجدد في ثقافة الفريق؟",
-      "اجتماع": "كيف يمكن تحسين فعالية الاجتماعات الأسبوعية؟",
-      "تفويض": "هل التفويض يُضعف القائد؟ أم يقوّي ثقته بالفريق؟ ناقش رأيك.",
-      "حفز": "شاركنا تجربتك مع طريقة غير تقليدية في تحفيز الموظفين."
-    };
-
-    let matched = false;
-    for (let key in topics) {
-      if (input.includes(key)) {
-        responseBox.textContent = topics[key];
-        matched = true;
-        break;
+      if (!matched) {
+        responseBox.textContent = "جرب كلمات مثل: تفويض، تحفيز، أزمة... وسأقترح عليك سؤالًا للنقاش.";
       }
     }
-
-    if (!matched) {
-      responseBox.textContent = "اقترح علي كلمة مفتاحية مثل: توظيف، تفويض، تحفيز... وسأساعدك في صياغة سؤال للنقاش.";
-    }
-  }
-</script>
+  </script>
 
 </body>
 </html>

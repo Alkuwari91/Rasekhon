@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تشخيص نمط القيادة - الراسخون</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #004d40;
+      padding: 2em;
+      direction: rtl;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    h1 {
+      color: #00695c;
+      font-size: 2.5em;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 1em auto;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffff;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .result {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      padding: 1em;
+      margin-top: 2em;
+      border-radius: 8px;
+      display: none;
+    }
+
+    button {
+      margin-top: 2em;
+      background-color: #00796b;
+      color: white;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>تشخيص نمط القيادة</h1>
+    <p>
+      اكتشف نمط قيادتك من خلال هذا التقييم البسيط، الذي يساعدك على تحديد نقاط القوة والفرص لتطوير أسلوبك في التأثير واتخاذ القرار.
+    </p>
+  </header>
+
+  <form id="quizForm">
+    <label>1. كيف تتخذ قراراتك عادةً؟</label>
+    <input type="radio" name="q1" value="t"> أبحث عن التوافق الجماعي أولاً<br>
+    <input type="radio" name="q1" value="a"> أقرر بنفسي وأتوقع الالتزام<br>
+    <input type="radio" name="q1" value="tr"> أستخدم الحوافز والتقييم<br>
+    <input type="radio" name="q1" value="tf"> أشرح رؤيتي وألهم الفريق
+
+    <label>2. عند حدوث مشكلة في الفريق، كيف تتعامل معها؟</label>
+    <input type="radio" name="q2" value="tf"> أوجه الفريق نحو الهدف بإيجابية<br>
+    <input type="radio" name="q2" value="tr"> أبحث عن الحل الأنسب وفق القواعد<br>
+    <input type="radio" name="q2" value="a"> أفرض الحل فورًا<br>
+    <input type="radio" name="q2" value="t"> أستمع للجميع قبل الحل
+
+    <label>3. ما أسلوبك في تحفيز الفريق؟</label>
+    <input type="radio" name="q3" value="tf"> الإلهام والتقدير المعنوي<br>
+    <input type="radio" name="q3" value="tr"> المكافآت والعقوبات<br>
+    <input type="radio" name="q3" value="t"> إشراك الفريق في وضع الأهداف<br>
+    <input type="radio" name="q3" value="a"> أطلب النتائج مباشرة
+
+    <button type="submit">إرسال</button>
+    <div class="result" id="resultBox"></div>
+  </form>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const answers = ['q1', 'q2', 'q3'];
+      const scores = { tf: 0, tr: 0, a: 0, t: 0 };
+
+      answers.forEach(q => {
+        const val = document.querySelector(`input[name="${q}"]:checked`);
+        if (val) scores[val.value]++;
+      });
+
+      let maxKey = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+      let resultText = '';
+
+      switch (maxKey) {
+        case 'tf':
+          resultText = 'أنت قائد تحويلي – تلهم وتوجه فريقك نحو الرؤية الكبرى.';
+          break;
+        case 'tr':
+          resultText = 'أنت قائد تبادلي – تعتمد على الأداء والمكافآت والتحفيز الرسمي.';
+          break;
+        case 'a':
+          resultText = 'أنت قائد سلطوي – حازم وسريع في اتخاذ القرار.';
+          break;
+        case 't':
+          resultText = 'أنت قائد تشاركي – تفضل العمل بروح الفريق ومشاورتهم.';
+          break;
+      }
+
+      const box = document.getElementById('resultBox');
+      box.innerText = resultText;
+      box.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

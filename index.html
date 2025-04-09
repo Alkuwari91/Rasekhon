@@ -1,121 +1,145 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>مفاتيح الاتصال القيادي الفعّال</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #3c4cad;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #2e386b;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: block;
-        }
-        nav a:hover {
-            background-color: #575fcf;
-        }
-        section {
-            padding: 20px;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-    </style>
-    <script>
-        function showTab(tabId) {
-            var contents = document.getElementsByClassName('tab-content');
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.remove('active');
-            }
-            document.getElementById(tabId).classList.add('active');
-        }
-        window.onload = function() {
-            showTab('home');
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الراسخون - منصة القيادة الحكيمة</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+      color: #004d40;
+      line-height: 1.8;
+    }
+
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 2em;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #00695c;
+      padding: 1em;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #004d40;
+    }
+
+    main {
+      padding: 3em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      background-color: #ffffff;
+      padding: 2em;
+      border-radius: 12px;
+      margin-bottom: 2em;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      color: #00796b;
+      margin-bottom: 1em;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #004d40;
+      color: white;
+      padding: 1em;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>مفاتيح الاتصال القيادي الفعّال</h1>
-    </header>
+  <header>
+    <h1>الراسخون</h1>
+    <p>منصة رقمية للاستشارات القيادية المستندة إلى الحكمة والبصيرة</p>
     <nav>
-        <a href="#" onclick="showTab('home')">الرئيسية</a>
-        <a href="#" onclick="showTab('objectives')">الأهداف التعليمية</a>
-        <a href="#" onclick="showTab('content')">مكونات العرض</a>
-        <a href="#" onclick="showTab('skills')">مفاتيح الاتصال</a>
-        <a href="#" onclick="showTab('cases')">أمثلة واقعية</a>
-        <a href="#" onclick="showTab('quiz')">اختبر نفسك</a>
-        <a href="#" onclick="showTab('download')">تحميل الدليل</a>
-        <a href="#" onclick="showTab('feedback')">شاركنا رأيك</a>
-        <a href="#" onclick="showTab('about')">عن المشروع</a>
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#diagnosis">تشخيص القيادة</a></li>
+        <li><a href="#communication">الاتصال الفعّال</a></li>
+        <li><a href="#advice">الاستشارات الفورية</a></li>
+        <li><a href="#resources">مكتبة القائد</a></li>
+        <li><a href="#community">مجتمع القادة</a></li>
+      </ul>
     </nav>
-    <section id="home" class="tab-content">
-        <h2>مرحبًا بك</h2>
-        <p>مشروع توعوي رقمي يستعرض أهم مفاتيح الاتصال القيادي الفعّال باستخدام أدوات تفاعلية وتقنية عبر منصة GitHub.</p>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>مرحبًا بك في منصة الراسخون</h2>
+      <p>هنا تبدأ رحلتك نحو قيادة أكثر ثباتًا وتأثيرًا، بدعم من استشارات علمية وعملية مستمدة من القيم والمعرفة العميقة.</p>
     </section>
-    <section id="objectives" class="tab-content">
-        <h2>الأهداف التعليمية</h2>
-        <ul>
-            <li>فهم مفهوم الاتصال القيادي وأهميته.</li>
-            <li>تمييز أنماط الاتصال المختلفة.</li>
-            <li>تطبيق استراتيجيات فعّالة للتواصل القيادي.</li>
-            <li>تحليل مواقف واقعية من زاوية القيادة.</li>
-            <li>تطوير الوعي الذاتي بمهارات الاتصال.</li>
-        </ul>
+
+    <section id="diagnosis">
+      <h2>تشخيص نمط القيادة</h2>
+      <p>أداة تفاعلية تساعدك على فهم أسلوبك القيادي وتحديد نقاط القوة وفرص التحسين.</p>
     </section>
-    <section id="content" class="tab-content">
-        <h2>مكونات العرض</h2>
-        <p>يتضمن هذا المشروع مقدمة، أهداف، مفاتيح الاتصال، أمثلة واقعية، تقييم تفاعلي، وملف قابل للتحميل.</p>
+
+    <section id="communication">
+      <h2>مهارات الاتصال الفعّال</h2>
+      <p>مصادر تدريبية وأمثلة عملية تساعدك على تطوير مهاراتك في التأثير والتواصل.</p>
     </section>
-    <section id="skills" class="tab-content">
-        <h2>مفاتيح الاتصال القيادي</h2>
-        <ol>
-            <li>الاستماع الفعّال</li>
-            <li>الوضوح والشفافية</li>
-            <li>الذكاء العاطفي</li>
-            <li>التأثير والإقناع</li>
-            <li>التغذية الراجعة البنّاءة</li>
-        </ol>
+
+    <section id="advice">
+      <h2>الاستشارات الفورية</h2>
+      <p>ارسل موقفًا قياديًا تواجهه، واحصل على استشارة متخصصة خلال 24 ساعة.</p>
     </section>
-    <section id="cases" class="tab-content">
-        <h2>أمثلة واقعية</h2>
-        <p>يعرض هذا القسم مواقف حقيقية استخدم فيها قادة معروفون مهارات الاتصال لتحقيق أهدافهم.</p>
+
+    <section id="resources">
+      <h2>مكتبة القائد</h2>
+      <p>قوالب وأدوات وكتب إلكترونية تساعدك في مهامك القيادية اليومية.</p>
     </section>
-    <section id="quiz" class="tab-content">
-        <h2>اختبر نفسك</h2>
-        <p>قريبًا: نموذج تفاعلي بسيط لاختبار مهارات الاتصال القيادي لديك.</p>
+
+    <section id="community">
+      <h2>مجتمع القادة</h2>
+      <p>منتدى مفتوح للنقاش وتبادل الخبرات بين قادة من مختلف القطاعات.</p>
     </section>
-    <section id="download" class="tab-content">
-        <h2>تحميل الدليل</h2>
-        <p><a href="#">اضغط هنا لتحميل ملف PDF يحتوي على ملخص المشروع</a></p>
-    </section>
-    <section id="feedback" class="tab-content">
-        <h2>شاركنا رأيك</h2>
-        <p>نموذج Google Forms سيضاف هنا لتلقي ملاحظات الزوار واقتراحاتهم.</p>
-    </section>
-    <section id="about" class="tab-content">
-        <h2>عن المشروع</h2>
-        <p>إعداد: مروة الكواري – ماجستير تنفيذي في القيادة</p>
-        <p>المشروع يدمج بين القيادة الفعالة والتقنية لتقديم تجربة تفاعلية تعليمية.</p>
-    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 الراسخون - جميع الحقوق محفوظة</p>
+  </footer>
 </body>
 </html>

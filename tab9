@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مناقشة مفتوحة - الراسخون</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f8fa;
+      color: #004d40;
+      padding: 2em;
+      direction: rtl;
+      line-height: 1.8;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    h2 {
+      color: #00796b;
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    .discussion {
+      font-size: 1.3em;
+      margin-bottom: 2em;
+      color: #333;
+    }
+    .thankyou {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #00796b;
+      margin-top: 1em;
+    }
+    a.button {
+      display: inline-block;
+      background-color: #00796b;
+      color: white;
+      padding: 0.6em 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 1em 0.5em;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>مناقشة مفتوحة</h2>
+    <p class="discussion">
+      نفتح المجال الآن للنقاش والإجابة عن أسئلتكم واستفساراتكم، بهدف إثراء الحوار وتبادل الخبرات والآراء حول ما تم تقديمه في العرض.
+    </p>
+
+    <p class="thankyou">شكرًا لحضوركم ومشاركتكم الفعّالة 🌟</p>
+
+    <div class="navigation">
+      <a href="tab8.html" class="button">السابق</a>
+      <a href="index.html" class="button">العودة للرئيسية</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,255 +1,163 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>مجتمع القادة - الراسخون</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to left, #e0f7fa, #f1fdfc);
-      color: #004d40;
-      padding: 2em;
-      line-height: 1.9;
-    }
+    <meta charset="UTF-8">
+    <title>الجمهور المستهدف</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #F9FBFC;
+            color: #333;
+            direction: rtl;
+            padding: 20px;
+            line-height: 1.8;
+        }
 
-    header {
-      text-align: center;
-      margin-bottom: 2em;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-    header h1 {
-      font-size: 2.3em;
-      color: #00695c;
-    }
+        th, td {
+            padding: 15px;
+            text-align: right;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+        }
 
-    .intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 2em;
-      font-size: 1.1em;
-    }
+        th {
+            background-color: #2E7D32;
+            color: #fff;
+            font-size: 1.2em;
+        }
 
-    .names-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1em;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 1.5em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 3em;
-    }
+        td {
+            background-color: #FAFAFA;
+            color: #333;
+        }
 
-    .name-card {
-      background-color: #e0f2f1;
-      padding: 0.8em;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      color: #00695c;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
+        .section-header {
+            background-color: #A5D6A7;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: center;
+        }
 
-    .discussion-section {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      max-width: 800px;
-      margin: auto;
-    }
+        ul {
+            text-align: right;
+            padding-right: 20px;
+            list-style: disc;
+        }
 
-    .discussion-section h2 {
-      color: #00796b;
-      margin-bottom: 1em;
-      text-align: center;
-    }
+        .navigation {
+            margin-top: 30px;
+            text-align: center;
+        }
 
-    .topics {
-      list-style: none;
-      padding: 0;
-    }
+        .nav-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2E7D32;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+        }
 
-    .topics li {
-      background: #e0f2f1;
-      padding: 0.8em;
-      margin-bottom: 1em;
-      border-radius: 6px;
-    }
+        .nav-btn:hover {
+            background-color: #1B5E20;
+        }
 
-    .button {
-      display: block;
-      text-align: center;
-      margin: 2em auto;
-      background-color: #00796b;
-      color: white;
-      padding: 0.8em 1.5em;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      max-width: 280px;
-    }
-
-    .button:hover {
-      background-color: #004d40;
-    }
-
-    /* رشد */
-    .chatbot-icon {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #00796b;
-      color: white;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
-
-    .chatbox {
-      position: fixed;
-      bottom: 90px;
-      left: 20px;
-      width: 300px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 1em;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      display: none;
-      flex-direction: column;
-      z-index: 999;
-    }
-
-    .chatbox textarea {
-      width: 100%;
-      padding: 0.5em;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-top: 1em;
-    }
-
-    .chatbox button {
-      margin-top: 0.5em;
-      background-color: #00796b;
-      color: white;
-      padding: 0.5em;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .chat-response {
-      margin-top: 1em;
-      color: #004d40;
-    }
-  </style>
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2E7D32;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>مجتمع القادة</h1>
-  </header>
+<h2>الجمهور المستهدف</h2>
 
-  <p class="intro">
-    مجتمع يضم نخبة من القادة الملهمين الذين يجمعهم الشغف بالمعرفة، والرغبة في التأثير، والحرص على التعلّم المستمر.  
-    معًا نبني بيئة قيادية تدعم الحوار، التبادل، والنمو الجماعي.
-  </p>
+<table>
+    <thead>
+        <tr>
+            <th>أصحاب المصلحة الخارجيين</th>
+            <th>أصحاب المصلحة الداخليين</th>
+            <th>الجمهور المستهدف</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>الشباب القطري الطامح للتطور الوظيفي</li>
+                    <li>الجهات الحكومية الداعمة للتوظيف والتدريب</li>
+                    <li>الجامعات والمؤسسات التعليمية</li>
+                    <li>الشركات والمؤسسات الباحثة عن كوادر مؤهلة</li>
+                    <li>المجتمع المحلي ومؤسسات المجتمع المدني</li>
+                    <li>وسائل الإعلام والمؤثرون الرقميون</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>فريق العمل الداخلي في الشركة</li>
+                    <li>الشركاء المؤسسون</li>
+                    <li>الموظفون والمستشارون</li>
+                </ul>
+            </td>
+            <td style="text-align:center;">الجمهور المستهدف</td>
+        </tr>
+        <tr class="section-header">
+            <td colspan="3">أهمية التواصل مع هذه الفئة</td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><strong>الشباب القطري الطامح للتطور الوظيفي:</strong> هم الجمهور الرئيسي، وتوجيه الخطاب لهم بفعالية يسهم في بناء الثقة وتوسيع قاعدة المستفيدين.</li>
+                    <li><strong>الجهات الحكومية:</strong> دعمهم يعزز مصداقية الشركة ويفتح آفاقًا للتعاون في برامج التدريب.</li>
+                    <li><strong>الجامعات والمؤسسات التعليمية:</strong> قنوات لتغذية السوق بالكفاءات وتعزيز الثقافة المهنية.</li>
+                    <li><strong>الشركات والمؤسسات الباحثة عن كوادر مؤهلة:</strong> تمثل فرصًا لتسويق خدمات الشركة وتوسيع أثرها.</li>
+                    <li><strong>المجتمع المحلي ومؤسسات المجتمع المدني:</strong> يساهمون في تعزيز الصورة الذهنية للشركة ضمن المسؤولية المجتمعية.</li>
+                    <li><strong>وسائل الإعلام والمؤثرون الرقميون:</strong> أدوات فعالة لنشر الرسائل والوصول إلى شرائح أوسع.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><strong>فريق العمل الداخلي:</strong> يمثلون واجهة التنفيذ، وتحسين الاتصال معهم يسهم في رفع مستوى الكفاءة وتحقيق الانسجام التنظيمي.</li>
+                    <li><strong>الشركاء المؤسسون:</strong> يشكلون نواة اتخاذ القرار، ويوفر وضوح الرؤية الاتصالية لديهم في توجهات الشركة.</li>
+                    <li><strong>الموظفون والمستشارون:</strong> يشكلون قوة تشغيلية وفكرية، وتحفيزهم من خلال تواصل فعال يدعم الاستقرار والولاء الوظيفي.</li>
+                    <li><strong>التأثير المتوقع:</strong> رفع مستوى الرضا الوظيفي، تعزيز روح الفريق، وتحسين بيئة العمل الداخلي.</li>
+                </ul>
+            </td>
+            <td></td>
+        </tr>
+        <tr class="section-header">
+            <td colspan="3">قنوات الاتصال المشتركة</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <ul style="text-align:center;">
+                    <li>البريد الإلكتروني الداخلي والنشرات الأسبوعية</li>
+                    <li>الاجتماعات الدورية وورش العمل الداخلية</li>
+                    <li>لوحات الإعلانات الرقمية داخل الشركة</li>
+                    <li>أدوات التواصل الجماعي مثل Microsoft Teams, Zoom، سناب شات، إنستغرام، منصة X</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-  <div class="names-grid">
-  <div class="name-card">إبراهيم العلي</div>
-  <div class="name-card">إبراهيم القعود</div>
-  <div class="name-card">البندري الفهيدة</div>
-  <div class="name-card">الريم المري</div>
-  <div class="name-card">العنود آل ثاني</div>
-  <div class="name-card">حسن المفتاح</div>
-  <div class="name-card">حسين المقيف</div>
-  <div class="name-card">حمد الحبابي</div>
-  <div class="name-card">حمد الكواري</div>
-  <div class="name-card">خليفة المنصوري</div>
-  <div class="name-card">دلال المالكي</div>
-  <div class="name-card">سلطان العسيري</div>
-  <div class="name-card">سعيد الاحمري</div>
-  <div class="name-card">شيخة الكلا</div>
-  <div class="name-card">عائشة الهاجري</div>
-  <div class="name-card">عائشة المري</div>
-  <div class="name-card">عبدالله الموسى</div>
-  <div class="name-card">عجلان المري</div>
-  <div class="name-card">علي المري</div>
-  <div class="name-card">غانم الكواري</div>
-  <div class="name-card">فاطمة الكواري</div>
-  <div class="name-card">فاطمة المريخي</div>
-  <div class="name-card">فاطمة النعيمي</div>
-  <div class="name-card">فيصل المنصوري</div>
-  <div class="name-card">لمياء النعيمي</div>
-  <div class="name-card">محمد النعيمي</div>
-  <div class="name-card">مروة الكواري</div>
-  <div class="name-card">موزة النعيمي</div>
-  <div class="name-card">وضحى القحطاني</div>
+<div class="navigation">
+    <a class="nav-btn" href="tab2.html">السابق (الأهداف الاتصالية الاستراتيجية)</a>
+    <a class="nav-btn" href="tab4.html">التالي (الرسائل الرئيسة)</a>
+    <a class="nav-btn" href="presentation.html">الرئيسية</a>
 </div>
-
-
-  <section class="discussion-section">
-    <h2>مواضيع نقاشية مقترحة</h2>
-    <ul class="topics">
-      <li>هل يمكن أن يكون القائد صديقًا للفريق؟</li>
-      <li>التفويض الفعّال: متى؟ ولمن؟</li>
-      <li>كيف تدير الأزمات دون أن تفقد ثقة الفريق؟</li>
-      <li>التحفيز غير المادي... بين النظرية والتطبيق</li>
-    </ul>
-    <a href="#" class="button">📝 ابدأ موضوعًا جديدًا للنقاش</a>
-    <a href="index.html" class="button"> العودة إلى الصفحة الرئيسية</a>
-  </section>
-
-  <!-- مساعد رشد -->
-  <div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
-  <div class="chatbox" id="chatbox">
-    <strong>🤖 "رُشد": مساعد النقاش الذكي</strong>
-    <p>اكتب كلمة أو موضوع يهمك وسأقترح عليك سؤالًا للنقاش👇</p>
-    <textarea id="chatInput" placeholder="مثال: التفويض، التحفيز، الأزمات..."></textarea>
-    <button onclick="handleChat()">اقتراح سؤال</button>
-    <div class="chat-response" id="chatResponse"></div>
-  </div>
-
-  <script>
-    function toggleChatbox() {
-      const box = document.getElementById("chatbox");
-      box.style.display = (box.style.display === "flex") ? "none" : "flex";
-    }
-
-    function handleChat() {
-      const input = document.getElementById("chatInput").value.toLowerCase();
-      const responseBox = document.getElementById("chatResponse");
-
-      const questions = {
-        "تفويض": "هل تجد صعوبة في تفويض المهام؟ متى تعتقد أنه يجب أن يتم؟",
-        "تحفيز": "ما أفضل طريقة لتحفيز الفريق بدون مكافآت مالية؟",
-        "أزمة": "كيف تتعامل مع أزمة تؤثر على معنويات الفريق؟",
-        "تقدير": "هل الثناء العلني أهم من المكافأة؟ ولماذا؟"
-      };
-
-      let matched = false;
-      for (let key in questions) {
-        if (input.includes(key)) {
-          responseBox.textContent = questions[key];
-          matched = true;
-          break;
-        }
-      }
-
-      if (!matched) {
-        responseBox.textContent = "جرب كلمات مثل: تفويض، تحفيز، أزمة... وسأقترح عليك سؤالًا للنقاش.";
-      }
-    }
-  </script>
 
 </body>
 </html>

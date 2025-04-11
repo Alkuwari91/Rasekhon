@@ -10,8 +10,8 @@
       font-family: 'Cairo', sans-serif;
       background-color: #F9FBFC;
       color: #333;
-      padding: 0;
       margin: 0;
+      padding: 0;
       direction: rtl;
     }
 
@@ -19,17 +19,28 @@
       background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
       padding: 2em 1em;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+      text-align: right;
     }
 
-    header h1 {
+    header img {
+      width: 140px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .header-text h1 {
       font-size: 3em;
-      margin-bottom: 0.3em;
+      margin: 0 0 0.3em;
     }
 
-    header p {
+    .header-text p {
       font-size: 1.1em;
-      margin-top: 0;
+      margin: 0;
     }
 
     nav ul {
@@ -130,23 +141,6 @@
       padding: 0;
     }
 
-    .rating, .counter {
-      margin-top: 3em;
-      text-align: center;
-    }
-
-    .star {
-      font-size: 2em;
-      color: lightgray;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .star.hover,
-    .star.selected {
-      color: gold;
-    }
-
     footer {
       background-color: #004d40;
       color: white;
@@ -159,10 +153,12 @@
 <body>
 
   <header>
-  <img src="logo.jpg" alt="شعار الراسخون" style="width: 160px; margin-bottom: 20px;">
-  <h1>الراسخون</h1>
-  <p>منصة القيادة الحكيمة وتمكين الشباب القطري</p>
-</header>
+    <img src="logo1.jpg" alt="شعار الراسخون">
+    <div class="header-text">
+      <h1>الراسخون</h1>
+      <p>منصة القيادة الحكيمة وتمكين الشباب القطري</p>
+    </div>
+  </header>
 
   <nav>
     <ul>
@@ -177,6 +173,7 @@
   </nav>
 
   <main>
+    <!-- الرؤية والرسالة -->
     <section class="vision-mission">
       <div class="vision">
         <h2>رؤيتنا</h2>
@@ -188,6 +185,7 @@
       </div>
     </section>
 
+    <!-- الكروت -->
     <section class="tabs-grid">
       <a class="tab-card" href="diagnosis.html">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
@@ -215,22 +213,7 @@
       </a>
     </section>
 
-    <section class="rating">
-      <h3>قيّم هذه الصفحة:</h3>
-      <div id="rating-stars">
-        <span class="star" data-value="1">★</span>
-        <span class="star" data-value="2">★</span>
-        <span class="star" data-value="3">★</span>
-        <span class="star" data-value="4">★</span>
-        <span class="star" data-value="5">★</span>
-      </div>
-      <p id="rating-result" style="margin-top: 10px;"></p>
-    </section>
-
-    <section class="counter">
-      <p>عدد الزوار: <span id="visits">...</span></p>
-    </section>
-
+    <!-- الفريق -->
     <section class="team">
       <h3>فريق العمل</h3>
       <ul>
@@ -247,42 +230,5 @@
     جميع الحقوق محفوظة &copy; الراسخون 2025
   </footer>
 
-  <script>
-    // عداد الزوار
-    fetch('https://api.countapi.xyz/hit/rasekhon.site/visits')
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById('visits').innerText = res.value;
-      });
-
-    // تقييم النجوم
-    const stars = document.querySelectorAll('.star');
-    const result = document.getElementById('rating-result');
-
-    stars.forEach(star => {
-      star.addEventListener('mouseover', () => {
-        highlightStars(star.dataset.value);
-      });
-
-      star.addEventListener('mouseout', () => {
-        highlightStars(0);
-      });
-
-      star.addEventListener('click', () => {
-        const value = star.dataset.value;
-        highlightStars(value);
-        result.innerText = `شكرًا! تقييمك: ${value} من 5`;
-      });
-    });
-
-    function highlightStars(value) {
-      stars.forEach(star => {
-        star.classList.remove('hover', 'selected');
-        if (star.dataset.value <= value) {
-          star.classList.add('hover');
-        }
-      });
-    }
-  </script>
 </body>
 </html>

@@ -1,164 +1,88 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الراسخون - العرض التنفيذي</title>
+  <meta charset="UTF-8" />
+  <title>العرض التقديمي - الراسخون</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #f1fdfc;
-      display: flex;
-      direction: rtl;
+      background-color: #f7fcfc;
+      color: #004d40;
+      padding: 2em;
+      margin: 0;
     }
 
-    .sidebar {
-      width: 250px;
-      background-color: #004d40;
-      color: white;
-      height: 100vh;
-      padding: 1.5em;
-      position: fixed;
-      overflow-y: auto;
+    h1 {
+      text-align: center;
+      color: #00695c;
+      margin-bottom: 1.5em;
     }
 
-    .sidebar h1 {
-      font-size: 1.5em;
-      margin-bottom: 1em;
-      color: #e0f7fa;
-    }
-
-    .sidebar ul {
-      list-style: none;
+    ul {
+      max-width: 700px;
+      margin: auto;
       padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
     }
 
-    .sidebar ul li {
-      margin-bottom: 1em;
-    }
-
-    .sidebar ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+    ul li a {
       display: block;
-      padding: 0.5em;
-      border-radius: 6px;
-    }
-
-    .sidebar ul li a.active,
-    .sidebar ul li a:hover {
-      background-color: #00695c;
-    }
-
-    .main {
-      margin-right: 270px;
-      padding: 2em;
-      flex-grow: 1;
-    }
-
-    .tab-content {
-      display: none;
-      background: white;
-      padding: 2em;
+      padding: 1em;
+      background-color: #e0f2f1;
+      text-decoration: none;
+      color: #00695c;
+      font-weight: bold;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s;
+    }
+
+    ul li a:hover {
+      background-color: #b2dfdb;
+    }
+
+    .home-button {
+      text-align: left;
       margin-bottom: 2em;
     }
 
-    .tab-content.active {
-      display: block;
+    .home-button a {
+      background-color: #00796b;
+      color: white;
+      padding: 0.7em 1.4em;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
     }
 
-    h2 {
-      color: #00796b;
-    }
-
-    p {
-      line-height: 1.8;
-      font-size: 1.05em;
-      color: #333;
+    .home-button a:hover {
+      background-color: #004d40;
     }
   </style>
 </head>
 <body>
 
-<div class="sidebar">
-  <h1>الراسخون</h1>
- <ul>
-  <li><a href="tab1.html">من نحن</a></li>
-  <li><a href="tab2.html">الأهداف الاتصالية</a></li>
-  <li><a href="tab3.html">الجمهور المستهدف</a></li>
-  <li><a href="tab4.html">الرسائل الرئيسة</a></li>
-  <li><a href="tab5.html">قنوات الاتصال</a></li>
-  <li><a href="tab6.html">خطة التنفيذ والجدول الزمني</a></li>
-  <li><a href="tab7.html">آليات التقييم والمتابعة</a></li>
-  <li><a href="tab8.html">الخاتمة والتوصيات</a></li>
-</ul>
-
-</div>
-
-<div class="main">
-  <div id="tab1" class="tab-content active">
-    <h2>من نحن</h2>
-  
+  <div class="home-button">
+    <a href="index.html">⬅ العودة إلى الصفحة الرئيسية</a>
   </div>
 
-  <div id="tab2" class="tab-content">
-    <h2>الأهداف الاتصالية الاستراتيجية</h2>
-    
-  </div>
+  <h1>العرض التقديمي - منصة الراسخون</h1>
 
-  <div id="tab3" class="tab-content">
-    <h2>الجمهور المستهدف</h2>
-    
-  </div>
-
-  <div id="tab4" class="tab-content">
-    <h2>الرسائل الرئيسة</h2>
-    
-  </div>
-
-  <div id="tab5" class="tab-content">
-    <h2>قنوات الاتصال</h2>
-    
-  </div>
-
-  <div id="tab6" class="tab-content">
-    <h2>خطة التنفيذ والجدول الزمني</h2>
-    
-  </div>
-
-  <div id="tab7" class="tab-content">
-    <h2>آليات التقييم والمتابعة</h2>
-    
-  </div>
-
-  <div id="tab8" class="tab-content">
-    <h2>الخاتمة والتوصيات</h2>
-   
-  </div>
-</div>
-
-<script>
-  const links = document.querySelectorAll('.sidebar ul li a');
-  const tabs = document.querySelectorAll('.tab-content');
-
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      links.forEach(l => l.classList.remove('active'));
-      tabs.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+  <ul>
+    <li><a href="tab1.html">من نحن</a></li>
+    <li><a href="tab2.html">الأهداف الاتصالية الاستراتيجية</a></li>
+    <li><a href="tab3.html">الجمهور المستهدف</a></li>
+    <li><a href="tab4.html">الرسائل الرئيسة</a></li>
+    <li><a href="tab5.html">قنوات الاتصال</a></li>
+    <li><a href="tab6.html">خطة التنفيذ والجدول الزمني</a></li>
+    <li><a href="tab7.html">آليات التقييم والمتابعة</a></li>
+    <li><a href="tab8.html">الخاتمة والتوصيات</a></li>
+  </ul>
 
 </body>
 </html>

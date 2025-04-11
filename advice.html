@@ -1,132 +1,199 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>العرض التنفيذي - الراسخون (النص الحرفي)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاستشارات الفورية - الراسخون</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fefefe;
       color: #004d40;
-      margin: 0;
       padding: 2em;
       direction: rtl;
-      line-height: 1.8;
     }
-
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-radius: 12px;
+    }
     h1 {
-      text-align: center;
       color: #00796b;
-      margin-bottom: 1.5em;
-    }
-
-    section {
-      margin-bottom: 3em;
-      background: #ffffff;
-      padding: 1.5em;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-    }
-
-    h2 {
-      color: #00695c;
-      border-bottom: 2px solid #e0f2f1;
-      padding-bottom: 0.3em;
-      margin-bottom: 1em;
-    }
-
-    p {
-      margin: 0.6em 0;
-      font-size: 1.05em;
-    }
-
-    .home-link {
       text-align: center;
-      margin-top: 3em;
+      margin-bottom: 0.8em;
     }
-
-    .home-link a {
-      text-decoration: none;
+    label {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    textarea, select {
+      width: 100%;
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
       background-color: #00796b;
       color: white;
-      padding: 0.7em 1.4em;
+      padding: 0.8em 1.5em;
+      border: none;
       border-radius: 8px;
-      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+    .response-box {
+      margin-top: 1em;
+      padding: 1em;
+      background-color: #e0f2f1;
+      border-radius: 8px;
+      display: none;
+    }
+    .home-link {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .home-link a {
+      background-color: #00796b;
+      color: white;
+      padding: 0.6em 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .home-link a:hover {
+      background-color: #004d40;
+    }
+    .chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #00796b;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .chatbox {
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      width: 300px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1em;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .chatbox textarea {
+      width: 100%;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 1em;
+      font-size: 0.95em;
+    }
+    .chatbox button {
+      margin-top: 0.5em;
+      background-color: #00796b;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .chat-response {
+      margin-top: 1em;
+      font-size: 0.95em;
+      color: #004d40;
     }
   </style>
 </head>
 <body>
 
-  <h1>العرض التنفيذي - مشروع الراسخون</h1>
+  <div class="container">
+    <h1>الاستشارات الفورية</h1>
 
-  <section>
-    <h2>شركة استشارية مختصة في تقديم الحلول الإدارية</h2>
-    <p>تسعى شركة الراسخون إلى تمكين القادة الشباب القطريين من خلال تقديم محتوى معرفي، أدوات تفاعلية واستشارات ذكية ترتكز على القيم والخبرة والذكاء الاصطناعي.</p>
-  </section>
+    <label>نوع الاستشارة:</label>
+    <select id="consultation-type">
+      <option>تطوير مهني</option>
+      <option>قيادة وإدارة</option>
+      <option>صعوبات العمل</option>
+      <option>غير ذلك</option>
+    </select>
 
-  <section>
-    <h2>الرؤية</h2>
-    <p>الريادة في تقديم حلول قيادية متكاملة ومستدامة للقادة المستقبليين.</p>
-  </section>
+    <label>صف الموقف أو الاستشارة التي ترغب بها:</label>
+    <textarea id="situation" rows="6"></textarea>
+    <button onclick="submitAdvice()">إرسال الاستشارة</button>
 
-  <section>
-    <h2>الرسالة</h2>
-    <p>تمكين القادة من اتخاذ قرارات فعالة من خلال أدوات استشارية معرفية متقدمة، وبرامج تدريبية تتسم بالتكامل والابتكار.</p>
-  </section>
+    <div class="response-box" id="response-box"></div>
 
-  <section>
-    <h2>القيم</h2>
-    <p>التمكين – التميز – الابتكار – الأصالة – التشاركية – المسؤولية</p>
-  </section>
-
-  <section>
-    <h2>الأهداف الاتصالية</h2>
-    <p>تعزيز الهوية المؤسسية للمنصة</p>
-    <p>بناء الصورة الذهنية لقيادة مؤثرة</p>
-    <p>التفاعل الإيجابي مع الجمهور الداخلي والخارجي</p>
-    <p>إبراز الدور المجتمعي للقادة الشباب</p>
-  </section>
-
-  <section>
-    <h2>الجمهور المستهدف</h2>
-    <p>الجمهور الداخلي: فريق العمل والمستشارون والمصممون</p>
-    <p>الجمهور الخارجي: الفئة الشبابية، طلاب الدراسات العليا، المؤسسات التعليمية، الجهات الحكومية ذات العلاقة</p>
-  </section>
-
-  <section>
-    <h2>الرسائل الإعلامية</h2>
-    <p>نحو قيادة تستند إلى العلم والقيم</p>
-    <p>نمكن القادة من اتخاذ قرارات واثقة وذكية</p>
-    <p>أنت قائد المستقبل، ونحن نساندك لتكون الأفضل</p>
-  </section>
-
-  <section>
-    <h2>الوسائط المستخدمة</h2>
-    <p>الموقع الإلكتروني – حسابات التواصل الاجتماعي – الفيديوهات التوعوية – الإنفوجرافيك – الأحداث المباشرة</p>
-  </section>
-
-  <section>
-    <h2>الجدول الزمني</h2>
-    <p>يناير: تصميم الهوية البصرية</p>
-    <p>فبراير: برمجة المنصة وتجهيز المحتوى</p>
-    <p>مارس: الإطلاق التجريبي</p>
-    <p>أبريل: الإطلاق الرسمي</p>
-  </section>
-
-  <section>
-    <h2>آليات التقييم والمتابعة</h2>
-    <p>استبانات إلكترونية – مؤشرات أداء رقمية – تحليل التفاعل – تقارير شهرية</p>
-  </section>
-
-  <section>
-    <h2>الخاتمة</h2>
-    <p>منصة "الراسخون" ليست مجرد موقع رقمي، بل هي مشروع قيادي يعكس هوية الجيل الجديد ويهيّئه لصناعة القرار.</p>
-  </section>
-
-  <div class="home-link">
-    <a href="index.html">🔙 العودة إلى الصفحة الرئيسية</a>
+    <div class="home-link">
+      <a href="index.html">العودة للرئيسية</a>
+    </div>
   </div>
+
+  <div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
+
+  <div class="chatbox" id="chatbox">
+    <strong>🧠 "رُشد" – مساعد الذكاء القيادي:</strong>
+    <textarea id="chatInput" placeholder="كيف يمكنني مساعدتك؟"></textarea>
+    <button onclick="handleChat()">إرسال</button>
+    <div class="chat-response" id="chatResponse"></div>
+  </div>
+
+  <script>
+    function submitAdvice() {
+      const type = document.getElementById('consultation-type').value;
+      const situation = document.getElementById('situation').value;
+      const responseBox = document.getElementById('response-box');
+
+      if (situation.trim() === '') {
+        responseBox.innerHTML = "فضلاً، أدخل تفاصيل الاستشارة أولاً.";
+      } else {
+        responseBox.innerHTML = `✅ تم استلام استشارتك في مجال "${type}". سيتم التواصل معك من أحد مستشارينا قريباً.`;
+      }
+      responseBox.style.display = 'block';
+    }
+
+    function toggleChatbox() {
+      const chatbox = document.getElementById("chatbox");
+      chatbox.style.display = chatbox.style.display === "flex" ? "none" : "flex";
+    }
+
+    function handleChat() {
+      const input = document.getElementById("chatInput").value.toLowerCase();
+      const responseBox = document.getElementById("chatResponse");
+      let response = "";
+
+      if (input.includes("تطوير")) {
+        response = "للتطوير المهني أنصحك بتحديد مهاراتك ونقاط القوة، والعمل على خطة تطوير واضحة بأهداف محددة.";
+      } else if (input.includes("قيادة")) {
+        response = "في القيادة والإدارة، استمع لفريقك وكن قدوة لهم، واحرص على تعزيز التواصل الفعّال.";
+      } else if (input.includes("صعوبة")) {
+        response = "تعاملك مع صعوبات العمل يتطلب تحليل المشكلة بهدوء وتحديد الأسباب والحلول الممكنة.";
+      } else {
+        response = "شكرًا لمشاركتك، يمكنك طرح تفاصيل أكثر لأقدم لك نصيحة مخصصة.";
+      }
+
+      responseBox.textContent = response;
+    }
+  </script>
 
 </body>
 </html>

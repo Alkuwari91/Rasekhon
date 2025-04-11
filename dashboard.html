@@ -11,6 +11,7 @@
       color: #004d40;
       padding: 2em;
       direction: rtl;
+      margin: 0;
     }
 
     header {
@@ -19,13 +20,14 @@
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 2.5em;
       color: #00796b;
+      margin-bottom: 0.2em;
     }
 
     .welcome {
-      font-size: 1.2em;
-      margin: 1em 0;
+      font-size: 1.3em;
+      margin-top: 1em;
     }
 
     .quick-links {
@@ -33,7 +35,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5em;
-      margin-top: 2em;
+      margin-top: 2.5em;
     }
 
     .quick-links a {
@@ -41,11 +43,12 @@
       background-color: #ffffff;
       color: #004d40;
       padding: 1em 2em;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: 0.3s;
       font-weight: bold;
+      font-size: 1.05em;
     }
 
     .quick-links a:hover {
@@ -56,15 +59,18 @@
       margin-top: 3em;
       text-align: center;
       font-style: italic;
-      font-size: 1.1em;
+      font-size: 1.2em;
       background-color: #e8f5e9;
       padding: 1.5em;
       border-radius: 12px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .logout {
       text-align: center;
-      margin-top: 2em;
+      margin-top: 3em;
     }
 
     .logout button {
@@ -72,7 +78,7 @@
       color: white;
       border: none;
       padding: 0.6em 1.5em;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 1em;
     }
@@ -89,10 +95,12 @@
     <a href="diagnosis.html">🧭 تشخيص القيادة</a>
     <a href="resources.html">📚 مكتبة القائد</a>
     <a href="advice.html">💬 استشارات فورية</a>
+    <a href="communication.html">📢 الاتصال الفعّال</a>
+    <a href="community.html">🤝 مجتمع القادة</a>
   </section>
 
   <div class="quote">
-    "القادة العظماء لا يصنعون الأتباع، بل يصنعون قادة." ✨
+    "القادة العظماء لا يصنعون الأتباع، بل يصنعون قادة."
   </div>
 
   <div class="logout">
@@ -104,9 +112,9 @@
     const welcome = document.getElementById("welcomeMessage");
 
     if (user && user.name) {
-      welcome.textContent = `مرحبًا بك، ${user.name}!`;
+      welcome.textContent = `مرحبًا بك، ${user.name} 👋`;
     } else {
-      // إذا لم يتم تسجيل الدخول
+      // تحويل إلى تسجيل الدخول إذا لم يكن هناك مستخدم
       window.location.href = "login.html";
     }
 

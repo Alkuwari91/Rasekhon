@@ -6,10 +6,9 @@
   <title>الراسخون - منصة القيادة الحكيمة</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e3f2fd, #e0f7fa);
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
       color: #004d40;
-      line-height: 1.8;
       margin: 0;
       padding: 0;
       direction: rtl;
@@ -58,6 +57,73 @@
       padding: 1em 2em;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.2);
+      color: #ffffff;
+      margin-top: 1em;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3em 2em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+    }
+
+    .tab-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 2em;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .tab-card:hover {
+      transform: translateY(-5px);
+      background-color: #f0fdfc;
+    }
+
+    .tab-card img {
+      width: 60px;
+      margin-bottom: 1em;
+    }
+
+    .tab-card h2 {
+      color: #00796b;
+      margin-bottom: 0.5em;
+    }
+
+    .tab-card p {
+      font-size: 0.95em;
+      color: #333;
+    }
+
+    .tab-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .team {
+      background-color: #e0f2f1;
+      padding: 2em;
+      margin: 3em auto 0;
+      border-radius: 12px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .team h3 {
+      color: #00695c;
+      margin-bottom: 1em;
+    }
+
+    .team ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1em;
+      line-height: 2;
     }
 
     footer {
@@ -84,6 +150,64 @@
     <blockquote>﴿وَالرَّاسِخُونَ فِي الْعِلْمِ يَقُولُونَ آمَنَّا بِهِ كُلٌّ مِّنْ عِندِ رَبِّنَا ۗ وَمَا يَذَّكَّرُ إِلَّا أُولُو الْأَلْبَابِ﴾ – آل عمران: 7</blockquote>
     <p class="teaser">منصة رقمية تمكّن القادة من خلال محتوى معرفي، أدوات تفاعلية، واستشارات ذكية تستند إلى القيم والخبرة.</p>
   </header>
+
+  <main>
+    <div class="tab-card">
+      <a href="diagnosis.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="قيادة">
+        <h2>تشخيص القيادة</h2>
+        <p>تعرف على نمط قيادتك من خلال أدوات تقييم مهنية.</p>
+      </a>
+    </div>
+
+    <div class="tab-card">
+      <a href="communication.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png" alt="تواصل">
+        <h2>الاتصال الفعّال</h2>
+        <p>مهارات التواصل الأساسية لكل قائد ناجح.</p>
+      </a>
+    </div>
+
+    <div class="tab-card">
+      <a href="advice.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png" alt="استشارة">
+        <h2>الاستشارات الفورية</h2>
+        <p>احصل على استشارة مباشرة من البوت أو مستشارينا.</p>
+      </a>
+    </div>
+
+    <div class="tab-card">
+      <a href="resources.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="مكتبة">
+        <h2>مكتبة القائد</h2>
+        <p>قوالب، كتب وأدوات قيادية رقمية بين يديك.</p>
+      </a>
+    </div>
+
+    <div class="tab-card">
+      <a href="community.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png" alt="مجتمع">
+        <h2>مجتمع القادة</h2>
+        <p>شارك تجاربك وتعلم من قادة يشبهونك.</p>
+      </a>
+    </div>
+  </main>
+
+  <div class="team">
+    <h3>فريق العمل</h3>
+    <ul>
+      <li>مروة الكواري</li>
+      <li>لمياء النعيمي</li>
+      <li>دلال المالكي</li>
+      <li>الريم المري</li>
+      <li>شيخة الكلا</li>
+    </ul>
+    <h3>إشراف:</h3>
+    <ul>
+      <li>د. حاتم الجوهري</li>
+      <li>د. ميرفت أبو العوف</li>
+    </ul>
+  </div>
 
   <footer>
     <p>&copy; 2025 الراسخون - جميع الحقوق محفوظة</p>

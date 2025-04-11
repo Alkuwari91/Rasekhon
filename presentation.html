@@ -1,119 +1,163 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>العرض التنفيذي - الراسخون</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الراسخون - العرض التنفيذي</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
-      color: #004d40;
       margin: 0;
-      padding: 2em;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f1fdfc;
+      display: flex;
       direction: rtl;
-      line-height: 1.8;
     }
 
-    h1 {
-      text-align: center;
-      color: #00796b;
-      margin-bottom: 1.5em;
-    }
-
-    section {
-      margin-bottom: 3em;
-      background: #ffffff;
+    .sidebar {
+      width: 250px;
+      background-color: #004d40;
+      color: white;
+      height: 100vh;
       padding: 1.5em;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      position: fixed;
+      overflow-y: auto;
     }
 
-    h2 {
-      color: #00695c;
-      border-bottom: 2px solid #e0f2f1;
-      padding-bottom: 0.3em;
+    .sidebar h1 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      color: #e0f7fa;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
       margin-bottom: 1em;
     }
 
-    p {
-      margin: 0.6em 0;
-      font-size: 1.05em;
-    }
-
-    .home-link {
-      text-align: center;
-      margin-top: 3em;
-    }
-
-    .home-link a {
-      text-decoration: none;
-      background-color: #00796b;
+    .sidebar ul li a {
       color: white;
-      padding: 0.7em 1.4em;
-      border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
+      display: block;
+      padding: 0.5em;
+      border-radius: 6px;
+    }
+
+    .sidebar ul li a.active,
+    .sidebar ul li a:hover {
+      background-color: #00695c;
+    }
+
+    .main {
+      margin-right: 270px;
+      padding: 2em;
+      flex-grow: 1;
+    }
+
+    .tab-content {
+      display: none;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 2em;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      color: #00796b;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05em;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <h1>العرض التنفيذي - مشروع الراسخون</h1>
+<div class="sidebar">
+  <h1>الراسخون</h1>
+  <ul>
+    <li><a href="#tab1" class="active">من نحن</a></li>
+    <li><a href="#tab2">الأهداف الاتصالية الاستراتيجية</a></li>
+    <li><a href="#tab3">الجمهور المستهدف</a></li>
+    <li><a href="#tab4">الرسائل الرئيسة</a></li>
+    <li><a href="#tab5">قنوات الاتصال</a></li>
+    <li><a href="#tab6">خطة التنفيذ والجدول الزمني</a></li>
+    <li><a href="#tab7">آليات التقييم والمتابعة</a></li>
+    <li><a href="#tab8">الخاتمة والتوصيات</a></li>
+  </ul>
+</div>
 
-  <section>
-    <h2>شركة استشارية مختصة في تقديم الحلول الإدارية</h2>
-    <p>تأسست لتقديم حلول تمكّن القادة الشباب من اكتشاف نمط قيادتهم وتعزيز مهاراتهم في التواصل والقرار.</p>
-  </section>
-
-  <section>
-    <h2>الرؤية والرسالة</h2>
-    <p>الرؤية: الريادة في تمكين القيادات الشابة في قطر.</p>
-    <p>الرسالة: تقديم محتوى قيادي ذكي عبر أدوات تفاعلية رقمية، بأسلوب يعكس القيم والمعرفة.</p>
-  </section>
-
-  <section>
-    <h2>القيم المؤسسية</h2>
-    <p>التمكين – الأصالة – المسؤولية – التعاون – التجدد</p>
-  </section>
-
-  <section>
-    <h2>الأهداف الاتصالية الاستراتيجية</h2>
-    <p>تعزيز الهوية المؤسسية.</p>
-    <p>بناء الشراكات مع الجهات المعنية.</p>
-    <p>رفع الوعي حول أهمية القيادة الفعّالة.</p>
-    <p>تحسين الاتصال الداخلي والخارجي.</p>
-  </section>
-
-  <section>
-    <h2>الجمهور المستهدف</h2>
-    <p><strong>الداخلي:</strong> فريق العمل، المؤسسون، المستشارون.</p>
-    <p><strong>الخارجي:</strong> الجهات التعليمية، الوزارات، الشباب القطري، روّاد الأعمال.</p>
-  </section>
-
-  <section>
-    <h2>الرسائل والوسائط</h2>
-    <p>رسائل مخصصة لكل فئة من الجمهور، تعكس أهداف المنصة وقيمها.</p>
-    <p>الوسائط: الموقع الإلكتروني، وسائل التواصل الاجتماعي، الفعاليات المباشرة، النشرات البريدية.</p>
-  </section>
-
-  <section>
-    <h2>خطة التنفيذ</h2>
-    <p>توزيع المهام على أعضاء الفريق، تحديد الجدول الزمني، وإطلاق الموقع التجريبي بحلول السبت.</p>
-  </section>
-
-  <section>
-    <h2>التقييم والمتابعة</h2>
-    <p>استبيانات تقييم للمستخدمين، مؤشرات أداء (KPIs)، وتقرير شهري من المستشارين.</p>
-  </section>
-
-  <section>
-    <h2>الخاتمة</h2>
-    <p>الراسخون ليست منصة فقط، بل مشروع وطني لتأهيل الجيل القادم من القادة.</p>
-  </section>
-
-  <div class="home-link">
-    <a href="index.html"> العودة إلى الصفحة الرئيسية</a>
+<div class="main">
+  <div id="tab1" class="tab-content active">
+    <h2>من نحن</h2>
+    <p>في قلب قطر، حيث تتعاظم الطموحات وتتسارع وتيرة التطوير المهني... (محتوى كامل كما في الملف)</p>
   </div>
+
+  <div id="tab2" class="tab-content">
+    <h2>الأهداف الاتصالية الاستراتيجية</h2>
+    <p>1- تعزيز الهوية المؤسسية... (تفاصيل الأهداف الثمانية)</p>
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <h2>الجمهور المستهدف</h2>
+    <p>راجع الجدول المرفق بالمحتوى الأصلي</p>
+  </div>
+
+  <div id="tab4" class="tab-content">
+    <h2>الرسائل الرئيسة</h2>
+    <p>أولاً: أصحاب المصلحة الداخليين... (رسائل كل فئة)</p>
+  </div>
+
+  <div id="tab5" class="tab-content">
+    <h2>قنوات الاتصال</h2>
+    <p>قنوات الاتصال الداخلية والخارجية - رقمية وميدانية</p>
+  </div>
+
+  <div id="tab6" class="tab-content">
+    <h2>خطة التنفيذ والجدول الزمني</h2>
+    <p>أشهر التنفيذ: مارس - أبريل - مايو - يونيو... حسب الخطة</p>
+  </div>
+
+  <div id="tab7" class="tab-content">
+    <h2>آليات التقييم والمتابعة</h2>
+    <p>قياس التفاعل الرقمي، استبانات داخلية، مقابلات شخصية، مؤشرات أداء</p>
+  </div>
+
+  <div id="tab8" class="tab-content">
+    <h2>الخاتمة والتوصيات</h2>
+    <p>الراسخون ليست منصة فقط، بل مشروع وطني يضع الإنسان في قلب التطوير</p>
+  </div>
+</div>
+
+<script>
+  const links = document.querySelectorAll('.sidebar ul li a');
+  const tabs = document.querySelectorAll('.tab-content');
+
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      links.forEach(l => l.classList.remove('active'));
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

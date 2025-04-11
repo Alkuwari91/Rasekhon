@@ -1,163 +1,131 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>الجمهور المستهدف</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #F9FBFC;
-            color: #333;
-            direction: rtl;
-            padding: 20px;
-            line-height: 1.8;
-        }
+  <meta charset="UTF-8">
+  <title>مجتمع القادة - الراسخون</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f9fbfc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .header-image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      display: block;
+    }
 
-        th, td {
-            padding: 15px;
-            text-align: right;
-            vertical-align: middle;
-            border: 1px solid #ddd;
-        }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #00695C;
+      color: white;
+    }
 
-        th {
-            background-color: #2E7D32;
-            color: #fff;
-            font-size: 1.2em;
-        }
+    header h1 {
+      margin-top: 15px;
+      font-size: 2.5em;
+    }
 
-        td {
-            background-color: #FAFAFA;
-            color: #333;
-        }
+    .content {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
 
-        .section-header {
-            background-color: #A5D6A7;
-            font-weight: bold;
-            font-size: 1.1em;
-            text-align: center;
-        }
+    .team-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        ul {
-            text-align: right;
-            padding-right: 20px;
-            list-style: disc;
-        }
+    .team-list li {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1.1em;
+      transition: transform 0.3s ease;
+    }
 
-        .navigation {
-            margin-top: 30px;
-            text-align: center;
-        }
+    .team-list li:hover {
+      transform: translateY(-5px);
+      background-color: #e0f2f1;
+    }
 
-        .nav-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #2E7D32;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-            margin: 0 5px;
-        }
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #00796b;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .nav-btn:hover {
-            background-color: #1B5E20;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2E7D32;
-        }
-    </style>
+    .home-link:hover {
+      background-color: #004d40;
+    }
+  </style>
 </head>
 <body>
 
-<h2>الجمهور المستهدف</h2>
+  <img src="leaderscomunity.jpg" alt="مجتمع القادة" class="header-image">
 
-<table>
-    <thead>
-        <tr>
-            <th>أصحاب المصلحة الخارجيين</th>
-            <th>أصحاب المصلحة الداخليين</th>
-            <th>الجمهور المستهدف</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <ul>
-                    <li>الشباب القطري الطامح للتطور الوظيفي</li>
-                    <li>الجهات الحكومية الداعمة للتوظيف والتدريب</li>
-                    <li>الجامعات والمؤسسات التعليمية</li>
-                    <li>الشركات والمؤسسات الباحثة عن كوادر مؤهلة</li>
-                    <li>المجتمع المحلي ومؤسسات المجتمع المدني</li>
-                    <li>وسائل الإعلام والمؤثرون الرقميون</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>فريق العمل الداخلي في الشركة</li>
-                    <li>الشركاء المؤسسون</li>
-                    <li>الموظفون والمستشارون</li>
-                </ul>
-            </td>
-            <td style="text-align:center;">الجمهور المستهدف</td>
-        </tr>
-        <tr class="section-header">
-            <td colspan="3">أهمية التواصل مع هذه الفئة</td>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-                    <li><strong>الشباب القطري الطامح للتطور الوظيفي:</strong> هم الجمهور الرئيسي، وتوجيه الخطاب لهم بفعالية يسهم في بناء الثقة وتوسيع قاعدة المستفيدين.</li>
-                    <li><strong>الجهات الحكومية:</strong> دعمهم يعزز مصداقية الشركة ويفتح آفاقًا للتعاون في برامج التدريب.</li>
-                    <li><strong>الجامعات والمؤسسات التعليمية:</strong> قنوات لتغذية السوق بالكفاءات وتعزيز الثقافة المهنية.</li>
-                    <li><strong>الشركات والمؤسسات الباحثة عن كوادر مؤهلة:</strong> تمثل فرصًا لتسويق خدمات الشركة وتوسيع أثرها.</li>
-                    <li><strong>المجتمع المحلي ومؤسسات المجتمع المدني:</strong> يساهمون في تعزيز الصورة الذهنية للشركة ضمن المسؤولية المجتمعية.</li>
-                    <li><strong>وسائل الإعلام والمؤثرون الرقميون:</strong> أدوات فعالة لنشر الرسائل والوصول إلى شرائح أوسع.</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li><strong>فريق العمل الداخلي:</strong> يمثلون واجهة التنفيذ، وتحسين الاتصال معهم يسهم في رفع مستوى الكفاءة وتحقيق الانسجام التنظيمي.</li>
-                    <li><strong>الشركاء المؤسسون:</strong> يشكلون نواة اتخاذ القرار، ويوفر وضوح الرؤية الاتصالية لديهم في توجهات الشركة.</li>
-                    <li><strong>الموظفون والمستشارون:</strong> يشكلون قوة تشغيلية وفكرية، وتحفيزهم من خلال تواصل فعال يدعم الاستقرار والولاء الوظيفي.</li>
-                    <li><strong>التأثير المتوقع:</strong> رفع مستوى الرضا الوظيفي، تعزيز روح الفريق، وتحسين بيئة العمل الداخلي.</li>
-                </ul>
-            </td>
-            <td></td>
-        </tr>
-        <tr class="section-header">
-            <td colspan="3">قنوات الاتصال المشتركة</td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <ul style="text-align:center;">
-                    <li>البريد الإلكتروني الداخلي والنشرات الأسبوعية</li>
-                    <li>الاجتماعات الدورية وورش العمل الداخلية</li>
-                    <li>لوحات الإعلانات الرقمية داخل الشركة</li>
-                    <li>أدوات التواصل الجماعي مثل Microsoft Teams, Zoom، سناب شات، إنستغرام، منصة X</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
+  <header>
+    <h1>مجتمع القادة</h1>
+  </header>
 
-<div class="navigation">
-    <a class="nav-btn" href="tab2.html">السابق (الأهداف الاتصالية الاستراتيجية)</a>
-    <a class="nav-btn" href="tab4.html">التالي (الرسائل الرئيسة)</a>
-    <a class="nav-btn" href="presentation.html">الرئيسية</a>
-</div>
+  <div class="content">
+    <h2>فريق الراسخون</h2>
+    <ul class="team-list">
+      <li>مروة الكواري</li>
+      <li>لمياء النعيمي</li>
+      <li>دلال المالكي</li>
+      <li>الريم المري</li>
+      <li>شيخة الكلا</li>
+    </ul>
+
+    <h2>أعضاء الفريق الموسع</h2>
+    <ul class="team-list">
+      <li>إبراهيم العلي</li>
+      <li>إبراهيم القعود</li>
+      <li>البندري الفهيدة</li>
+      <li>العنود آل ثاني</li>
+      <li>خليفة المنصوري</li>
+      <li>عائشة الهاجري</li>
+      <li>عائشة المري</li>
+      <li>عبدالله الموسى</li>
+      <li>عجلان المري</li>
+      <li>علي المري</li>
+      <li>غانم الكواري</li>
+      <li>فاطمة الكواري</li>
+      <li>فاطمة المريخي</li>
+      <li>فاطمة النعيمي</li>
+      <li>فيصل المنصوري</li>
+      <li>محمد النعيمي</li>
+      <li>موزة النعيمي</li>
+      <li>وضحى القحطاني</li>
+      <li>حسن المفتاح</li>
+      <li>حسين المقيف</li>
+      <li>حمد الحبابي</li>
+      <li>حمد الكواري</li>
+      <li>سعيد الأحمري</li>
+      <li>سلطان العسيري</li>
+    </ul>
+
+    <a href="index.html" class="home-link">العودة إلى الرئيسية</a>
+  </div>
 
 </body>
 </html>

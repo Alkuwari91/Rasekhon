@@ -1,115 +1,138 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الجمهور المستهدف</title>
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background-color: #f9f9f9;
       margin: 0;
-      padding: 0;
+      padding: 2em;
+      background-color: #f9fbfc;
+      color: #004d40;
+      direction: rtl;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00695c;
+      margin-bottom: 1.5em;
     }
 
     table {
-      width: 90%;
-      margin: 40px auto;
+      width: 100%;
       border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 3em;
+    }
+
+    th, td {
+      padding: 1em;
       text-align: center;
+      border: 1px solid #b2dfdb;
+      font-size: 1.05em;
     }
 
     th {
-      background-color: #2e7d32;
-      color: white;
-      padding: 12px;
-      font-size: 18px;
+      background-color: #e0f2f1;
+      color: #00695c;
     }
 
-    td {
-      background-color: #dbe8cd;
-      padding: 15px;
-      vertical-align: top;
-      font-size: 16px;
+    tr:nth-child(even) {
+      background-color: #f0fdfc;
     }
 
-    .nav-buttons {
+    .section-title {
       text-align: center;
-      margin: 30px;
+      font-size: 1.5em;
+      color: #004d40;
+      margin: 2em 0 1em;
     }
 
-    .nav-buttons a {
-      text-decoration: none;
-      background-color: #4CAF50;
+    .navigation-buttons {
+      text-align: center;
+      margin-top: 3em;
+    }
+
+    .navigation-buttons a {
+      background-color: #00796b;
       color: white;
-      padding: 12px 25px;
-      margin: 5px;
-      border-radius: 6px;
-      font-size: 16px;
+      text-decoration: none;
+      padding: 0.7em 1.5em;
+      border-radius: 8px;
+      margin: 0 0.5em;
+      display: inline-block;
+      transition: background 0.3s ease;
     }
 
-    ul {
-      text-align: right;
-      padding-right: 20px;
-    }
-
-    li {
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-
-    b {
-      color: #2e7d32;
+    .navigation-buttons a:hover {
+      background-color: #004d40;
     }
   </style>
 </head>
 <body>
 
-<table border="1">
-  <tr>
-    <th>أصحاب المصلحة الخارجيين</th>
-    <th>أصحاب المصلحة الداخليين</th>
-    <th>الجمهور المستهدف</th>
-  </tr>
-  <tr>
-    <td>
-      ✓ الشاب القطري الطامح للتطور الوظيفي<br>
-      ✓ الجهات الحكومية الداعمة للتوظيف والتدريب<br>
-      ✓ الجامعات والمؤسسات التعليمية<br>
-      ✓ الشركات والمؤسسات الباحثة عن كوادر مؤهلة<br>
-      ✓ المجتمع المحلي ومؤسسات المجتمع المدني<br>
-      ✓ وسائل الإعلام والمؤثرون الرقميون
-    </td>
-    <td>
-      ✓ فريق العمل الداخلي في الشركة<br>
-      ✓ الشركاء المؤسسون<br>
-      ✓ الموظفون والمستشارون
-    </td>
-    <td>الجمهور المستهدف</td>
-  </tr>
-  <tr>
-    <td style="text-align:right">
-      <b>الشباب القطري الطامح للتطور الوظيفي:</b> هم الجمهور الرئيسي، وتوجيه الخطاب لهم بفعالية يسهم في بناء الثقة وتوسيع قاعدة المستفيدين.<br><br>
-      <b>الجهات الحكومية:</b> دعمهم يعزز مصداقية الشركة ويفتح آفاقًا للتعاون في برامج وطنية.<br><br>
-      <b>الجامعات والمؤسسات التعليمية:</b> قنوات لتغذية السوق بالكفاءات وتعزيز الثقافة المهنية.<br><br>
-      <b>الشركات والمؤسسات الباحثة عن كوادر مؤهلة:</b> تمثل فرصًا لتسويق خدمات الشركة وتوسيع الأثر.<br><br>
-      <b>المجتمع المحلي ومؤسسات المجتمع المدني:</b> يساهمون في تعزيز الصورة الذهنية للشركة ضمن المسؤولية المجتمعية.<br><br>
-      <b>وسائل الإعلام والمؤثرون الرقميون:</b> أدوات فعالة لنشر الرسائل والوصول إلى شرائح أوسع.
-    </td>
-    <td style="text-align:right">
-      <b>فريق العمل الداخلي:</b> يمثلون واجهة التنفيذ، وتحسين الاتصال معهم يسهم في رفع مستوى الكفاءة وتحقيق الانسجام التنظيمي.<br><br>
-      <b>الشركاء المؤسسون:</b> يشكّلون نواة اتخاذ القرار، ويؤثر وضوح الرؤية الاتصالية لديهم في توجهات الشركة.<br><br>
-      <b>الموظفون والمستشارون:</b> يشكّلون قوة تشغيلية وفكرية، وتحفيزهم من خلال تواصل فعّال يدعم الاستقرار والولاء الوظيفي.<br><br>
-      <b>التأثير المتوقع:</b> رفع مستوى الرضا الوظيفي، تعزيز روح الفريق، وتحسين بيئة العمل الداخلي.
-    </td>
-    <td>أهمية التواصل مع هذه الفئة</td>
-  </tr>
-</table>
+  <h1>الجمهور المستهدف</h1>
 
-<div class="nav-buttons">
-  <a href="tab2.html">السابق: الأهداف الاتصالية</a>
-  <a href="presentation.html">الرئيسية</a>
-  <a href="tab4.html">التالي: الرسائل الرئيسية</a>
-</div>
+  <div class="section-title">أولًا: أصحاب المصلحة الداخليين</div>
+  <table>
+    <tr>
+      <th>الجمهور المستهدف</th>
+      <th>أهمية التواصل مع هذه الفئة</th>
+    </tr>
+    <tr>
+      <td>فريق العمل الداخلي في الشركة</td>
+      <td>يمثلون الأساس التشغيلي ويحتاجون إلى إشراك فعّال لضمان تنفيذ المهام بانسجام.</td>
+    </tr>
+    <tr>
+      <td>الشركاء المؤسسون</td>
+      <td>يمتلكون الرؤية والاستراتيجية ويتطلبون تواصلًا مستمرًا لضمان تحقيق الأهداف.</td>
+    </tr>
+    <tr>
+      <td>الخبراء والمستشارون</td>
+      <td>يقدمون محتوى استشاري حيوي ويحتاجون إلى معلومات دقيقة عن توجهات الشركة والجمهور.</td>
+    </tr>
+  </table>
+
+  <div class="section-title">ثانيًا: أصحاب المصلحة الخارجيين</div>
+  <table>
+    <tr>
+      <th>الجمهور المستهدف</th>
+      <th>أهمية التواصل مع هذه الفئة</th>
+    </tr>
+    <tr>
+      <td>الشباب القطري (الفئة المستفيدة الرئيسية)</td>
+      <td>الفئة الأساسية لرسالة الشركة ويجب الوصول إليهم برسائل ملهمة ومباشرة.</td>
+    </tr>
+    <tr>
+      <td>الجهات الحكومية</td>
+      <td>شركاء استراتيجيون لتحقيق أهداف الرؤية الوطنية، خاصة في مجالات التوظيف والتدريب.</td>
+    </tr>
+    <tr>
+      <td>الجامعات ومؤسسات التعليم العالي</td>
+      <td>توفر فرص للتكامل المهني والأكاديمي، وتُعد مصدرًا أساسيًا لاستقطاب الجمهور.</td>
+    </tr>
+    <tr>
+      <td>القطاع الخاص وجهات التوظيف</td>
+      <td>يعتمد نجاح المنصة على إقناعهم بكفاءة المستفيدين كمرشحين جاهزين لسوق العمل.</td>
+    </tr>
+    <tr>
+      <td>المجتمع المدني</td>
+      <td>قادر على دعم أهداف المنصة ونشر أثرها في المجتمع المحلي بشكل أوسع.</td>
+    </tr>
+    <tr>
+      <td>وسائل الإعلام والمؤثرون</td>
+      <td>لهم دور كبير في تعزيز الصورة الذهنية ونشر قصص النجاح للمنصة.</td>
+    </tr>
+  </table>
+
+  <div class="navigation-buttons">
+    <a href="tab2.html">السابق الأهداف الاتصالية</a>
+    <a href="index.html">الرئيسية</a>
+    <a href="tab4.html">التالي الرسائل الرئيسة</a>
+  </div>
 
 </body>
 </html>

@@ -1,236 +1,198 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>الراسخون - منصة القيادة الحكيمة</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الراسخون – منصة القيادة الحكيمة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
-      color: #004d40;
-      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #F9FBFC;
+      color: #333;
       padding: 0;
+      margin: 0;
       direction: rtl;
     }
-
-    nav {
-      background-color: #004d40;
-      color: white;
-      padding: 1em 2em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: bold;
-    }
-
     header {
-      background: linear-gradient(rgba(0, 77, 64, 0.75), rgba(0, 77, 64, 0.75)),
-                  url('https://images.unsplash.com/photo-1531497865142-3423e1b0d1c1?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
-      background-size: cover;
+      background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
-      padding: 3em 2em;
+      padding: 2em 1em;
       text-align: center;
+      position: relative;
     }
-
     header h1 {
       font-size: 3em;
+      margin-bottom: 0.3em;
+    }
+    header p {
+      font-size: 1.1em;
+      margin-top: 0;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: #00695c;
+      padding: 1em;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0.5em 1em;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .vision-mission {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      margin-bottom: 3em;
+      justify-content: center;
+      text-align: center;
+    }
+    .vision, .mission {
+      background-color: #fff;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      width: 100%;
+      max-width: 500px;
+    }
+    .vision h2, .mission h2 {
+      color: #00695c;
       margin-bottom: 0.5em;
     }
-
-    blockquote {
-      font-style: italic;
-      font-size: 1.2em;
-      color: #e0f2f1;
-      margin-top: 1em;
+    .tabs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
     }
-
-    .teaser {
-      font-size: 1.1em;
-      background-color: rgba(255,255,255,0.1);
-      padding: 1em 2em;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #ffffff;
-      margin-top: 1em;
-    }
-
-   main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 3em 2em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2em;
-}
-
-
     .tab-card {
       background-color: #ffffff;
-      border-radius: 15px;
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      padding: 2em;
-      transition: transform 0.3s ease;
+      padding: 1.5em;
+      transition: transform 0.3s;
       text-align: center;
+      width: 220px;
     }
-
     .tab-card:hover {
-      transform: translateY(-5px);
-      background-color: #f0fdfc;
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-
     .tab-card img {
       width: 60px;
-      margin-bottom: 1em;
+      margin-bottom: 0.7em;
     }
-
-    .tab-card h2 {
+    .tab-card h3 {
       color: #00796b;
-      margin-bottom: 0.5em;
+      margin: 0.5em 0;
     }
-
-    .tab-card p {
-      font-size: 0.95em;
-      color: #333;
-    }
-
-    .tab-card a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .team {
-      background-color: #e0f2f1;
-      padding: 2em;
-      margin: 3em auto 0;
-      border-radius: 12px;
-      max-width: 800px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .team h3 {
-      color: #00695c;
-      margin-bottom: 1em;
-    }
-
-    .team ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1em;
-      line-height: 2;
-    }
-
     footer {
       background-color: #004d40;
       color: white;
       text-align: center;
       padding: 1.5em;
+      margin-top: 2em;
+    }
+    .team {
+      text-align: center;
       margin-top: 3em;
+    }
+    .team h3 {
+      color: #00695c;
+    }
+    .team ul {
+      list-style: none;
+      padding: 0;
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <div><strong>منصة الراسخون</strong></div>
-    <div id="userArea">
-      <a href="login.html">تسجيل الدخول</a>
-      <a href="signup.html">إنشاء حساب</a>
-    </div>
-  </nav>
-
   <header>
     <h1>الراسخون</h1>
-    <blockquote>﴿وَالرَّاسِخُونَ فِي الْعِلْمِ يَقُولُونَ آمَنَّا بِهِ كُلٌّ مِّنْ عِندِ رَبِّنَا ۗ وَمَا يَذَّكَّرُ إِلَّا أُولُو الْأَلْبَابِ﴾ – آل عمران: 7</blockquote>
-    <p class="teaser">منصة رقمية تمكّن القادة من خلال محتوى معرفي، أدوات تفاعلية، واستشارات ذكية تستند إلى القيم والخبرة.</p>
+    <p>منصة القيادة الحكيمة وتمكين الشباب القطري</p>
   </header>
 
- <main>
-  <div class="tab-card">
-    <a href="diagnosis.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="قيادة">
-      <h2>تشخيص القيادة</h2>
-      <p>تعرف على نمط قيادتك من خلال أدوات تقييم مهنية.</p>
-    </a>
-  </div>
-
-  <div class="tab-card">
-    <a href="communication.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png" alt="تواصل">
-      <h2>الاتصال الفعّال</h2>
-      <p>مهارات التواصل الأساسية لكل قائد ناجح.</p>
-    </a>
-  </div>
-
-  <div class="tab-card">
-    <a href="advice.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png" alt="استشارة">
-      <h2>الاستشارات الفورية</h2>
-      <p>احصل على استشارة مباشرة من البوت أو مستشارينا.</p>
-    </a>
-  </div>
-
-  <div class="tab-card">
-    <a href="resources.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="مكتبة">
-      <h2>مكتبة القائد</h2>
-      <p>قوالب، كتب وأدوات قيادية رقمية بين يديك.</p>
-    </a>
-  </div>
-
-  <div class="tab-card">
-    <a href="community.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png" alt="مجتمع">
-      <h2>مجتمع القادة</h2>
-      <p>شارك تجاربك وتعلم من قادة يشبهونك.</p>
-    </a>
-  </div>
-</main>
-
-
-  <div class="team">
-    <h3>فريق العمل</h3>
+  <nav>
     <ul>
-      <li>مروة الكواري</li>
-      <li>لمياء النعيمي</li>
-      <li>دلال المالكي</li>
-      <li>الريم المري</li>
-      <li>شيخة الكلا</li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+      <li><a href="communication.html">الاتصال الفعّال</a></li>
+      <li><a href="advice.html">الاستشارات الفورية</a></li>
+      <li><a href="resources.html">مكتبة القائد</a></li>
+      <li><a href="community.html">مجتمع القادة</a></li>
+      <li><a href="presentation.html">العرض التقديمي</a></li>
     </ul>
-    <h3>إشراف:</h3>
-    <ul>
-      <li>د. حاتم الجوهري</li>
-      <li>د. ميرفت أبوعوف</li>
-    </ul>
-  </div>
+  </nav>
+
+  <main>
+    <section class="vision-mission">
+      <div class="vision">
+        <h2>رؤيتنا</h2>
+        <p>أن نكون منصة رائدة في تمكين الشباب القطريين لتحقيق التميز الوظيفي بثقة واحتراف.</p>
+      </div>
+      <div class="mission">
+        <h2>رسالتنا</h2>
+        <p>نقدّم استشارات مهنية مبتكرة تدعم الشباب القطريين في بناء مساراتهم الوظيفية وتطوير مهاراتهم لتحقيق مستقبل مهني مستدام.</p>
+      </div>
+    </section>
+
+    <section class="tabs-grid">
+      <a class="tab-card" href="diagnosis.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+        <h3>تشخيص القيادة</h3>
+      </a>
+      <a class="tab-card" href="communication.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png">
+        <h3>الاتصال الفعّال</h3>
+      </a>
+      <a class="tab-card" href="advice.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png">
+        <h3>الاستشارات الفورية</h3>
+      </a>
+      <a class="tab-card" href="resources.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+        <h3>مكتبة القائد</h3>
+      </a>
+      <a class="tab-card" href="community.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png">
+        <h3>مجتمع القادة</h3>
+      </a>
+      <a class="tab-card" href="presentation.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
+        <h3>العرض التقديمي</h3>
+      </a>
+    </section>
+
+    <section class="team">
+      <h3>فريق العمل</h3>
+      <ul>
+        <li>مروة الكواري | لمياء النعيمي | دلال المالكي | الريم المري | شيخة الكلا</li>
+      </ul>
+      <h3>إشراف:</h3>
+      <ul>
+        <li>د. حاتم الجوهري | د. ميرفت أبو العوف</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 الراسخون - جميع الحقوق محفوظة</p>
+    جميع الحقوق محفوظة &copy; الراسخون 2025
   </footer>
-
-  <script>
-    const user = JSON.parse(localStorage.getItem("user"));
-    const userArea = document.getElementById("userArea");
-
-    if (user && user.name) {
-      userArea.innerHTML = `
-        👤 مرحبًا، ${user.name}
-        <button onclick="logout()" style="margin-right: 15px; background: #c62828; color: white; border: none; padding: 0.4em 1em; border-radius: 6px; cursor: pointer;">تسجيل الخروج</button>
-      `;
-    }
-
-    function logout() {
-      localStorage.removeItem("user");
-      location.reload();
-    }
-  </script>
 
 </body>
 </html>

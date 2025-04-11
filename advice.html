@@ -7,8 +7,9 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #fefefe;
+      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
       color: #004d40;
+      margin: 0;
       padding: 2em;
       direction: rtl;
     }
@@ -19,42 +20,43 @@
     }
 
     h1 {
+      font-size: 2.2em;
       color: #00796b;
-      font-size: 2.5em;
     }
 
-    p {
-      max-width: 800px;
+    p.description {
+      max-width: 700px;
       margin: 1em auto;
-      font-size: 1.2em;
-      line-height: 1.8;
+      font-size: 1.1em;
+      color: #333;
     }
 
     form {
       max-width: 700px;
       margin: 2em auto;
-      background-color: #e0f2f1;
+      background-color: #ffffff;
       padding: 2em;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
     label {
       display: block;
-      margin-bottom: 0.5em;
+      margin-top: 1em;
       font-weight: bold;
     }
 
     select, textarea {
       width: 100%;
-      padding: 1em;
+      padding: 0.8em;
+      margin-top: 0.4em;
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 1em;
-      margin-bottom: 1em;
     }
 
     button {
+      margin-top: 1.5em;
       background-color: #00796b;
       color: white;
       padding: 0.8em 1.5em;
@@ -62,7 +64,6 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 1em;
-      transition: background 0.3s ease;
     }
 
     button:hover {
@@ -79,10 +80,78 @@
       font-weight: bold;
     }
 
-    .bot-response {
-      background-color: #f1f8e9;
-      color: #33691e;
-      font-style: italic;
+    .back-link {
+      text-align: center;
+      margin-top: 3em;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      background-color: #004d40;
+      color: white;
+      padding: 0.6em 1.2em;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* رشد - المساعد الذكي */
+    .chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #00796b;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    .chatbox {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1em;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    .chatbox textarea {
+      width: 100%;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 1em;
+      font-size: 0.95em;
+    }
+
+    .chatbox button {
+      margin-top: 0.5em;
+      background-color: #00796b;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .chat-response {
+      margin-top: 1em;
+      font-size: 0.95em;
+      color: #004d40;
     }
   </style>
 </head>
@@ -90,60 +159,109 @@
 
   <header>
     <h1>الاستشارات الفورية</h1>
-    <p>
-      هل تواجه موقفًا قياديًا صعبًا؟ اختر نوع الاستشارة وشاركنا التفاصيل، وسيتواصل معك أحد مستشارينا خلال 24 ساعة.  
-      كما سيقترح عليك "رُشد" توصية ذكية أولية تساعدك في التفكير المبدئي.
+    <p class="description">
+      اكتب لنا عن موقفك القيادي، وسيتفاعل "رُشد" معك فورًا، ثم يصلك رد بشري من أحد مستشارينا خلال 24 ساعة.
     </p>
   </header>
 
   <form id="adviceForm">
-    <label for="type">نوع الاستشارة:</label>
-    <select id="type" name="type" required>
-      <option value="" disabled selected>اختر نوع الاستشارة</option>
-      <option value="قيادة فريق">قيادة فريق</option>
-      <option value="اتخاذ قرار">اتخاذ قرار</option>
+    <label for="category">نوع الاستشارة:</label>
+    <select id="category" required>
+      <option value="">اختر نوع الاستشارة</option>
       <option value="صراع داخل الفريق">صراع داخل الفريق</option>
-      <option value="تطوير أداء">تطوير أداء</option>
-      <option value="أخرى">أخرى</option>
+      <option value="اتخاذ قرار">اتخاذ قرار</option>
+      <option value="تواصل مع المدير">تواصل مع المدير</option>
+      <option value="رفض الأوامر">رفض الأوامر</option>
+      <option value="قيادة في أزمة">قيادة في أزمة</option>
     </select>
 
-    <label for="situation">صف الموقف الذي تواجهه:</label>
-    <textarea id="situation" name="situation" required></textarea>
+    <label for="situation">صف الموقف بالتفصيل:</label>
+    <textarea id="situation" required placeholder="اكتب هنا ما تواجهه بدقة..."></textarea>
 
     <button type="submit">إرسال الاستشارة</button>
-
     <div class="confirmation" id="confirmationBox">✅ تم استلام استشارتك بنجاح. سنعود إليك قريبًا.</div>
     <div class="bot-response" id="botResponse"></div>
   </form>
 
+  <div class="back-link">
+    <a href="index.html">🔙 العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+  <!-- مساعد الذكاء "رشد" -->
+  <div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
+
+  <div class="chatbox" id="chatbox">
+    <strong>🧠 "رُشد" – مساعد القيادة الذكي:</strong>
+    <p>ما نوع الموقف الذي تواجهه؟ وسأقترح عليك نصيحة فورية:</p>
+    <textarea id="chatInput" placeholder="مثال: عندي صراع في الفريق..."></textarea>
+    <button onclick="handleChat()">إرسال</button>
+    <div class="chat-response" id="chatResponse"></div>
+  </div>
+
   <script>
-    const botResponse = (text) => {
-      const keywords = {
-        "صراع": "في حالات الصراع، حاول أولًا التهدئة ثم الاستماع لجميع الأطراف، وضع إطارًا للحوار البنّاء.",
-        "تأخير": "عند تكرار التأخير من أعضاء الفريق، ناقش الأثر معهم وحدد توقّعات واضحة.",
-        "اتخاذ": "لتحسين اتخاذ القرار، ضع قائمة بالخيارات وقارنها بالمخاطر والنتائج.",
-        "رفض": "الرفض قد يكون بسبب عدم الفهم أو الخوف من التغيير. استوضح النوايا ثم ناقش الحل.",
-        "فريق": "عزّز الثقة داخل الفريق بالتغذية الراجعة والتواصل المفتوح."
-      };
-
-      for (let word in keywords) {
-        if (text.includes(word)) {
-          return keywords[word];
-        }
-      }
-      return "رُشد يقترح عليك التريث، وتحليل الموقف بهدوء. سيقوم مستشارنا بتحليل التفاصيل والرد عليك قريبًا.";
-    };
-
+    // نموذج الاستشارة
     document.getElementById("adviceForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const inputText = document.getElementById("situation").value;
+      const category = document.getElementById("category").value;
+      const text = document.getElementById("situation").value;
+
       document.getElementById("confirmationBox").style.display = "block";
 
-      const response = botResponse(inputText);
+      const response = botResponse(text);
       const botBox = document.getElementById("botResponse");
-      botBox.innerText = "🤖 رُشد يقترح: " + response;
+      botBox.innerText = response;
       botBox.style.display = "block";
     });
+
+    // الرد الآلي
+    function botResponse(text) {
+      const keywords = {
+        "صراع": "في حالات الصراع، استمع لجميع الأطراف بتجرد، ثم بادر بتقريب وجهات النظر.",
+        "اتخاذ قرار": "إذا كنت أمام قرار حاسم، استخدم تحليل SWOT أو استشارة ذوي الخبرة.",
+        "رفض": "ابدأ بفهم سبب الرفض، أحيانًا يكون وراءه ضعف تواصل أو خوف من التغيير.",
+        "تواصل": "وضّح نيتك وتوقعاتك عند التواصل مع مديرك، واطلب تغذية راجعة صادقة.",
+        "أزمة": "في الأزمات، القيادة تتطلب وضوحًا وهدوءًا، ضع خطة سريعة وتواصل بشكل مستمر."
+      };
+
+      for (let key in keywords) {
+        if (text.includes(key)) return keywords[key];
+      }
+
+      return "تم استلام استشارتك وسيرد عليك أحد مستشارينا خلال 24 ساعة.";
+    }
+
+    // رشد - فتح/إغلاق المساعد
+    function toggleChatbox() {
+      const box = document.getElementById("chatbox");
+      box.style.display = (box.style.display === "flex") ? "none" : "flex";
+    }
+
+    // رشد - الرد السريع
+    function handleChat() {
+      const input = document.getElementById("chatInput").value.toLowerCase();
+      const responseBox = document.getElementById("chatResponse");
+
+      const responses = {
+        "صراع": "جرب استخدام وسيط داخلي لإعادة بناء الثقة.",
+        "تأخير": "وضح أثر التأخير على الفريق، وحدد مواعيد بديلة واضحة.",
+        "تحدي": "واجه التحدي بتحليل دقيق، واطلب الدعم عند الحاجة.",
+        "رفض": "تفهّم أسباب الرفض، ثم حاول تقديم الأمر بأسلوب محفز.",
+        "أزمة": "ابدأ بالتواصل، ثم خطط، ثم نفّذ بخطوات واضحة."
+      };
+
+      let found = false;
+      for (let key in responses) {
+        if (input.includes(key)) {
+          responseBox.textContent = responses[key];
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        responseBox.textContent = "رجاءً صف الموقف بدقة وسأقترح حلاً مناسبًا.";
+      }
+    }
   </script>
 
 </body>

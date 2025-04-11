@@ -47,7 +47,7 @@
       padding: 2em;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      max-width: 900px;
+      max-width: 1100px;
       margin: 2em auto;
     }
 
@@ -55,22 +55,35 @@
       color: #00796b;
       font-size: 2em;
       text-align: center;
-      margin-bottom: 1em;
+      margin-bottom: 1.5em;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .column {
+      width: 48%;
+    }
+
+    .divider {
+      width: 2%;
+      border-left: 2px solid #b2dfdb;
     }
 
     h3 {
       color: #00695c;
-      margin-top: 1.5em;
-      margin-bottom: 0.8em;
       border-bottom: 2px solid #e0f2f1;
       padding-bottom: 0.3em;
+      margin-bottom: 1em;
     }
 
     ul {
       list-style-type: disc;
-      padding-right: 2em;
+      padding-right: 1em;
       font-size: 1em;
-      margin-top: 0.5em;
       line-height: 2;
     }
 
@@ -79,7 +92,7 @@
     }
 
     .navigation {
-      margin-top: 2em;
+      margin-top: 3em;
       text-align: center;
     }
 
@@ -98,6 +111,20 @@
     .navigation a:hover {
       background-color: #004d40;
     }
+
+    @media screen and (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
+      .column, .divider {
+        width: 100%;
+      }
+      .divider {
+        border-left: none;
+        border-top: 2px solid #b2dfdb;
+        margin: 2em 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -115,31 +142,39 @@
   <div class="container">
     <h2>قنوات الاتصال</h2>
 
-    <h3>أولاً: الاتصال الداخلي</h3>
-    <ul>
-      <li>الاجتماعات اليومية أو الأسبوعية القصيرة (Stand-up Meetings).</li>
-      <li>مجموعات دردشة مرنة (مثل WhatsApp أو Microsoft Teams).</li>
-      <li>التواصل وجهًا لوجه (Face-to-Face).</li>
-      <li>نظام الملاحظات المفتوحة (Open Feedback System).</li>
-      <li>الاتصال الهاتفي المباشر.</li>
-      <li>لوحات الإعلانات في الموقع (Site Boards).</li>
-      <li>الاجتماعات العفوية غير الرسمية (Casual Check-ins).</li>
-    </ul>
+    <div class="columns">
+      <div class="column">
+        <h3>الاتصال الداخلي</h3>
+        <ul>
+          <li>الاجتماعات اليومية أو الأسبوعية القصيرة (Stand-up Meetings)</li>
+          <li>مجموعات دردشة مرنة (مثل WhatsApp أو Microsoft Teams)</li>
+          <li>التواصل وجهًا لوجه (Face-to-Face)</li>
+          <li>نظام الملاحظات المفتوحة (Open Feedback System)</li>
+          <li>الاتصال الهاتفي المباشر</li>
+          <li>لوحات الإعلانات في الموقع (Site Boards)</li>
+          <li>الاجتماعات العفوية غير الرسمية (Casual Check-ins)</li>
+        </ul>
+      </div>
 
-    <h3>ثانيًا: الاتصال الخارجي (مع أصحاب المصلحة الخارجيين)</h3>
-    <ul>
-      <li>منصات التواصل الاجتماعي (Instagram – LinkedIn – X – TikTok).</li>
-      <li>الموقع الإلكتروني الرسمي للشركة.</li>
-      <li>ورش العمل والفعاليات الميدانية.</li>
-      <li>البريد الإلكتروني الخارجي.</li>
-      <li>الإعلانات الرقمية والمحتوى الترويجي.</li>
-      <li>وسائل الإعلام والمؤثرون.</li>
-    </ul>
+      <div class="divider"></div>
+
+      <div class="column">
+        <h3>الاتصال الخارجي</h3>
+        <ul>
+          <li>منصات التواصل الاجتماعي (Instagram – LinkedIn – X – TikTok)</li>
+          <li>الموقع الإلكتروني الرسمي للشركة</li>
+          <li>ورش العمل والفعاليات الميدانية</li>
+          <li>البريد الإلكتروني الخارجي</li>
+          <li>الإعلانات الرقمية والمحتوى الترويجي</li>
+          <li>وسائل الإعلام والمؤثرون</li>
+        </ul>
+      </div>
+    </div>
 
     <div class="navigation">
-      <a href="tab4.html"> السابق: الرسائل الرئيسة</a>
-      <a href="index.html"> الرئيسية</a>
-      <a href="tab6.html">التالي: خطة التنفيذ والجدول الزمني </a>
+      <a href="tab4.html">⬅ السابق: الرسائل الرئيسة</a>
+      <a href="index.html">🏠 الرئيسية</a>
+      <a href="tab6.html">التالي: خطة التنفيذ والجدول الزمني ➡</a>
     </div>
   </div>
 

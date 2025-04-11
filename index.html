@@ -11,30 +11,30 @@
       background-color: #F9FBFC;
       color: #333;
       margin: 0;
-      padding: 0;
       direction: rtl;
     }
 
     header {
       background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
-      padding: 2em 1em;
+      padding: 1.5em 1em;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 2em;
-      flex-wrap: wrap;
-      text-align: right;
     }
 
     header img {
-      width: 140px;
-      max-width: 100%;
+      width: 100px;
       height: auto;
     }
 
+    .header-text {
+      text-align: right;
+    }
+
     .header-text h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin: 0 0 0.3em;
     }
 
@@ -127,6 +127,22 @@
       margin: 0.5em 0;
     }
 
+    .rating, .counter {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+    .star {
+      font-size: 2em;
+      color: lightgray;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star.selected {
+      color: gold;
+    }
+
     .team {
       text-align: center;
       margin-top: 3em;
@@ -173,7 +189,6 @@
   </nav>
 
   <main>
-    <!-- الرؤية والرسالة -->
     <section class="vision-mission">
       <div class="vision">
         <h2>رؤيتنا</h2>
@@ -185,7 +200,6 @@
       </div>
     </section>
 
-    <!-- الكروت -->
     <section class="tabs-grid">
       <a class="tab-card" href="diagnosis.html">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
@@ -213,7 +227,21 @@
       </a>
     </section>
 
-    <!-- الفريق -->
+    <section class="rating">
+      <h3>قيّم الموقع</h3>
+      <span class="star" onclick="rate(1)">★</span>
+      <span class="star" onclick="rate(2)">★</span>
+      <span class="star" onclick="rate(3)">★</span>
+      <span class="star" onclick="rate(4)">★</span>
+      <span class="star" onclick="rate(5)">★</span>
+      <p id="ratingResult" style="margin-top: 0.5em;">تقييمك: 0 من 5</p>
+    </section>
+
+    <section class="counter">
+      <h3>عدد الزوار</h3>
+      <p>📊 <strong id="visitorCount">100</strong> زائر</p>
+    </section>
+
     <section class="team">
       <h3>فريق العمل</h3>
       <ul>
@@ -229,6 +257,57 @@
   <footer>
     جميع الحقوق محفوظة &copy; الراسخون 2025
   </footer>
+
+  <script>
+    function rate(stars) {
+      const starElements = document.querySelectorAll('.star');
+      starElements.forEach((el, index) => {
+        el.classList.toggle('selected', index < stars);
+      });
+      document.getElementById('ratingResult').textContent = `تقييمك: ${stars} من 5`;
+    }
+  </script>
+<!-- أضف هذا الجزء داخل <script> قبل نهاية الوسم </body> -->
+
+<script>
+  // --- العداد الحقيقي ---
+  let visitCount = localStorage.getItem('visitCount');
+  if (!visitCount) {
+    visitCount = 1;
+  } else {
+    visitCount = parseInt(visitCount) + 1;
+  }
+  localStorage.setItem('visitCount', visitCount);
+  document.getElementById('visitorCount').textContent = visitCount;
+
+  // --- التقييم وحساب المتوسط ---
+  let ratings = JSON.parse(localStorage.getItem('ratings')) || [];
+  let userRated = localStorage.getItem('userRated');
+
+  function updateRatingDisplay() {
+    const total = ratings.reduce((sum, val) => sum + val, 0);
+    const avg = ratings.length > 0 ? (total / ratings.length).toFixed(1) : 0;
+    document.getElementById('ratingResult').textContent = `متوسط التقييم: ${avg} من 5 (${ratings.length} تقييم)`;
+  }
+
+  function rate(stars) {
+    if (userRated) {
+      alert('لقد قمت بالتقييم مسبقًا.');
+      return;
+    }
+    ratings.push(stars);
+    localStorage.setItem('ratings', JSON.stringify(ratings));
+    localStorage.setItem('userRated', true);
+    const starElements = document.querySelectorAll('.star');
+    starElements.forEach((el, index) => {
+      el.classList.toggle('selected', index < stars);
+    });
+    updateRatingDisplay();
+  }
+
+  // تفعيل العرض عند تحميل الصفحة
+  updateRatingDisplay();
+</script>
 
 </body>
 </html>

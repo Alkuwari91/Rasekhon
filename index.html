@@ -14,21 +14,24 @@
       margin: 0;
       direction: rtl;
     }
+
     header {
       background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
       padding: 2em 1em;
       text-align: center;
-      position: relative;
     }
+
     header h1 {
       font-size: 3em;
       margin-bottom: 0.3em;
     }
+
     header p {
       font-size: 1.1em;
       margin-top: 0;
     }
+
     nav ul {
       display: flex;
       justify-content: center;
@@ -38,14 +41,17 @@
       margin: 0;
       flex-wrap: wrap;
     }
+
     nav ul li {
       margin: 0.5em 1em;
     }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
     main {
       max-width: 1100px;
       margin: auto;
@@ -54,6 +60,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     .vision-mission {
       display: flex;
       flex-wrap: wrap;
@@ -62,6 +69,7 @@
       justify-content: center;
       text-align: center;
     }
+
     .vision, .mission {
       background-color: #fff;
       padding: 1.5em;
@@ -70,16 +78,19 @@
       width: 100%;
       max-width: 500px;
     }
+
     .vision h2, .mission h2 {
       color: #00695c;
       margin-bottom: 0.5em;
     }
+
     .tabs-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5em;
     }
+
     .tab-card {
       background-color: #ffffff;
       border-radius: 12px;
@@ -89,39 +100,64 @@
       text-align: center;
       width: 220px;
     }
+
     .tab-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+
     .tab-card img {
       width: 60px;
       margin-bottom: 0.7em;
     }
+
     .tab-card h3 {
       color: #00796b;
       margin: 0.5em 0;
     }
+
+    .team {
+      text-align: center;
+      margin-top: 3em;
+    }
+
+    .team h3 {
+      color: #00695c;
+    }
+
+    .team ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .rating, .counter {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+    .star {
+      font-size: 2em;
+      color: lightgray;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star.hover,
+    .star.selected {
+      color: gold;
+    }
+
     footer {
       background-color: #004d40;
       color: white;
       text-align: center;
       padding: 1.5em;
-      margin-top: 2em;
-    }
-    .team {
-      text-align: center;
       margin-top: 3em;
-    }
-    .team h3 {
-      color: #00695c;
-    }
-    .team ul {
-      list-style: none;
-      padding: 0;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>الراسخون</h1>
     <p>منصة القيادة الحكيمة وتمكين الشباب القطري</p>
@@ -178,6 +214,22 @@
       </a>
     </section>
 
+    <section class="rating">
+      <h3>قيّم هذه الصفحة:</h3>
+      <div id="rating-stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <p id="rating-result" style="margin-top: 10px;"></p>
+    </section>
+
+    <section class="counter">
+      <p>عدد الزوار: <span id="visits">...</span></p>
+    </section>
+
     <section class="team">
       <h3>فريق العمل</h3>
       <ul>
@@ -194,5 +246,42 @@
     جميع الحقوق محفوظة &copy; الراسخون 2025
   </footer>
 
+  <script>
+    // عداد الزوار
+    fetch('https://api.countapi.xyz/hit/rasekhon.site/visits')
+      .then(res => res.json())
+      .then(res => {
+        document.getElementById('visits').innerText = res.value;
+      });
+
+    // تقييم النجوم
+    const stars = document.querySelectorAll('.star');
+    const result = document.getElementById('rating-result');
+
+    stars.forEach(star => {
+      star.addEventListener('mouseover', () => {
+        highlightStars(star.dataset.value);
+      });
+
+      star.addEventListener('mouseout', () => {
+        highlightStars(0);
+      });
+
+      star.addEventListener('click', () => {
+        const value = star.dataset.value;
+        highlightStars(value);
+        result.innerText = `شكرًا! تقييمك: ${value} من 5`;
+      });
+    });
+
+    function highlightStars(value) {
+      stars.forEach(star => {
+        star.classList.remove('hover', 'selected');
+        if (star.dataset.value <= value) {
+          star.classList.add('hover');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

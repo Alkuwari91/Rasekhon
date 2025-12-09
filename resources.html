@@ -112,25 +112,13 @@
       line-height: 1.8;
     }
 
-    /* (موجودة لو احتجتيها في صفحات ثانية) */
-    .grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1.1fr;
-      gap: 1.8em;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .card {
       background-color: #ffffff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.07);
       padding: 1.5em;
       box-sizing: border-box;
+      margin-bottom: 1.8em;
     }
 
     .card h2 {
@@ -139,99 +127,14 @@
       font-size: 1.3em;
     }
 
-    label {
-      display: block;
+    .item-title {
+      font-weight: bold;
+      color: #8A1538;
+      font-size: 1.05em;
       margin-bottom: 0.3em;
-      font-weight: 600;
-      font-size: 0.95em;
     }
 
-    input[type="text"], textarea, select {
-      width: 100%;
-      padding: 0.6em 0.8em;
-      border-radius: 8px;
-      border: 1px solid #cfd8dc;
-      font-family: 'Cairo', sans-serif;
-      font-size: 0.95em;
-      box-sizing: border-box;
-      margin-bottom: 0.9em;
-      background-color: #FAFDFF;
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    .member-row {
-      display: flex;
-      gap: 0.5em;
-      margin-bottom: 0.5em;
-      align-items: center;
-    }
-
-    .member-row input {
-      margin-bottom: 0;
-    }
-
-    .member-row span {
-      font-size: 0.8em;
-      color: #607d8b;
-    }
-
-    button {
-      background-color: #8A1538;
-      color: white;
-      border: none;
-      padding: 0.6em 1.6em;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.95em;
-    }
-
-    button:hover {
-      background-color: #6E0F2C;
-    }
-
-    .btn-secondary {
-      background-color: #B68CA5;
-      margin-right: 0.4em;
-    }
-
-    .info {
-      font-size: 0.85em;
-      color: #607d8b;
-      margin-top: 0.5em;
-      line-height: 1.7;
-    }
-
-    .group-box {
-      background-color: #F8E8EE;
-      border-radius: 10px;
-      padding: 1em 1.2em;
-      margin-top: 1em;
-      line-height: 1.7;
-      font-size: 0.95em;
-      border-right: 4px solid #8A1538;
-    }
-
-    .group-box strong {
-      color: #6E0F2C;
-    }
-
-    .link-text {
-      font-family: 'Cairo', sans-serif;
-      font-size: 0.85em;
-      background-color: #ffffff;
-      padding: 0.4em 0.7em;
-      border-radius: 6px;
-      border: 1px dashed #B68CA5;
-      word-break: break-all;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .tag {
+    .pill {
       display: inline-block;
       padding: 0.15em 0.6em;
       border-radius: 999px;
@@ -241,139 +144,27 @@
       margin-right: 0.3em;
     }
 
-    .feed-empty {
+    .item-desc {
       font-size: 0.9em;
-      color: #78909c;
-    }
-
-    .post {
-      border-bottom: 1px solid #eceff1;
-      padding: 0.8em 0;
-    }
-
-    .post:last-child {
-      border-bottom: none;
-    }
-
-    .post-meta {
-      font-size: 0.8em;
-      color: #78909c;
-      margin-bottom: 0.2em;
-    }
-
-    .post-content {
-      font-size: 0.95em;
       line-height: 1.8;
+      color: #444;
     }
 
-    /* الرؤية والرسالة – بوكس قابل للفتح والإغلاق */
-    .vision-mission {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      margin-bottom: 3em;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .toggle-box {
-      background-color: #ffffff;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      width: 100%;
-      max-width: 500px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .toggle-box h2 {
-      color: #8A1538;
-      margin: 0;
-      font-size: 1.6em;
-    }
-
-    .toggle-box:hover {
-      background-color: #F8E8EE;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .toggle-content {
-      margin-top: 1em;
-      line-height: 1.8;
-      color: #333;
-    }
-
-    /* بطاقات الأقسام */
-    .tabs-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5em;
-    }
-
-    .tab-card {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      padding: 1.5em;
-      transition: transform 0.3s;
-      text-align: center;
-      width: 220px;
+    .podcast-link,
+    .book-link {
+      display: inline-block;
+      margin-top: 0.7em;
+      padding: 0.6em 1.4em;
+      background-color: #8A1538;
+      color: #ffffff;
       text-decoration: none;
-      color: inherit;
+      border-radius: 8px;
+      font-size: 0.9em;
     }
 
-    .tab-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 22px rgba(138, 21, 56, 0.25);
-    }
-
-    .tab-card img {
-      width: 60px;
-      margin-bottom: 0.7em;
-    }
-
-    .tab-card h3 {
-      color: #8A1538;
-      margin: 0.5em 0;
-      font-size: 1.05em;
-    }
-
-    .rating, .counter {
-      margin-top: 3em;
-      text-align: center;
-    }
-
-    .star {
-      font-size: 2em;
-      color: lightgray;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .star.selected {
-      color: gold;
-    }
-
-    .owner {
-      text-align: center;
-      margin-top: 3em;
-      background-color: #ffffff;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .owner h3 {
-      color: #8A1538;
-      margin-top: 0;
+    .podcast-link:hover,
+    .book-link:hover {
+      background-color: #6E0F2C;
     }
 
     footer {
@@ -413,13 +204,13 @@
 <main>
 
   <h1>مكتبـتـي</h1>
-  <p class="intro" style="text-align:center; line-height:1.8;">
-    هنا تجدين مكتبتك القيادية… كتب، بودكاستات، موارد عملية، وملخصات تساعدك في تطوير مهاراتك وصناعة أثر في فريقك وبيئتك المهنية.
+  <p class="intro">
+    هنا تجد مكتبتك القيادية… كتب، بودكاستات، موارد عملية، وملخصات تساعدك في تطوير مهاراتك وصناعة أثر في فريقك وبيئتك المهنية.
   </p>
 
   <!-- بودكاست -->
   <section class="card">
-    <h2 style="color:#8A1538;"> بودكاستات قيادية</h2>
+    <h2>بودكاستات قيادية</h2>
 
     <div class="item">
       <div class="item-title">
@@ -437,7 +228,7 @@
 
   <!-- الكتب -->
   <section class="card">
-    <h2 style="color:#8A1538;"> كتــب قيــاديــة</h2>
+    <h2>كتــب قيــاديــة</h2>
 
     <div class="item">
       <div class="item-title">
@@ -447,7 +238,7 @@
       <div class="item-desc">
         مرجع يشرح مبادئ القيادة الحديثة، واتخاذ القرار، وأساليب إدارة الفريق بفعالية.
       </div>
-      <a class="book-link" href="كتاب القيادة الإدارية PDF (arab-books.com).pdf" target="_blank">
+      <a class="book-link" href="القيادة_الإدارية.pdf" target="_blank">
          تحميل الكتاب
       </a>
     </div>
@@ -460,7 +251,7 @@
       <div class="item-desc">
         أحد أشهر كتب القيادة والتنمية الذاتية، يقدّم إطارًا قويًا لبناء شخصية قيادية مؤثرة.
       </div>
-      <a class="book-link" href="العادات السبع.pdf" target="_blank">
+      <a class="book-link" href="العادات_السبع.pdf" target="_blank">
          تحميل الكتاب
       </a>
     </div>

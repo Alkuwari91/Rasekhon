@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الراسخون – منصة القيادة واستكشاف الذات</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  
   <style>
     body {
       font-family: 'Cairo', sans-serif;
@@ -14,7 +15,7 @@
       direction: rtl;
     }
 
-    /* الحفاظ على الشعار باللون الأبيض */
+    /* نص الهيدر */
     .header-text h1 {
       color: white !important;
     }
@@ -22,8 +23,9 @@
       color: white !important;
     }
 
+    /* الهيدر */
     header {
-      background: linear-gradient(135deg, #8A1538, #6E0F2C); /* برغندي */
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
       padding: 1.5em 1em;
       display: flex;
@@ -44,7 +46,7 @@
 
     .header-text h1 {
       font-size: 2em;
-      margin: 0 0 0.3em;
+      margin: 0 0 0.2em;
     }
 
     .header-text p {
@@ -52,11 +54,35 @@
       margin: 0;
     }
 
+    /* أزرار الهيدر */
+    .small-btn {
+      padding: 0.35em 0.9em;
+      font-size: 0.85em !important;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538 !important;
+    }
+
+    .maroon-btn {
+      background-color: #8A1538;
+      color: white !important;
+    }
+
+    .maroon-btn:hover {
+      background-color: #6E0F2C;
+    }
+
+    /* شريط التنقل */
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: #8A1538; /* برغندي */
+      background-color: #8A1538;
       padding: 1em;
       margin: 0;
       flex-wrap: wrap;
@@ -72,6 +98,7 @@
       font-weight: bold;
     }
 
+    /* المحتوى */
     main {
       max-width: 1100px;
       margin: auto;
@@ -81,6 +108,7 @@
       align-items: center;
     }
 
+    /* صندوقي الرؤية والرسالة */
     .vision-mission {
       display: flex;
       flex-wrap: wrap;
@@ -90,20 +118,38 @@
       text-align: center;
     }
 
-    .vision, .mission {
+    .toggle-box {
       background-color: #fff;
       padding: 1.5em;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.07);
       width: 100%;
       max-width: 500px;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .vision h2, .mission h2 {
-      color: #8A1538; /* برغندي للعناوين */
-      margin-bottom: 0.5em;
+    .toggle-box h2 {
+      color: #8A1538;
+      margin: 0;
+      font-size: 1.6em;
     }
 
+    .toggle-box:hover {
+      background-color: #F8E8EE;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .toggle-content {
+      margin-top: 1em;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* البطاقات */
     .tabs-grid {
       display: flex;
       flex-wrap: wrap;
@@ -125,7 +171,7 @@
 
     .tab-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 22px rgba(138, 21, 56, 0.25);
     }
 
     .tab-card img {
@@ -134,7 +180,7 @@
     }
 
     .tab-card h3 {
-      color: #8A1538; /* برغندي لعناوين الكروت */
+      color: #8A1538;
       margin: 0.5em 0;
       font-size: 1.05em;
     }
@@ -150,7 +196,6 @@
       cursor: pointer;
       transition: color 0.2s;
     }
-
     .star.selected {
       color: gold;
     }
@@ -166,12 +211,12 @@
     }
 
     .owner h3 {
-      color: #8A1538; /* برغندي */
+      color: #8A1538;
       margin-top: 0;
     }
 
     footer {
-      background-color: #6E0F2C; /* برغندي أغمق للفوتر */
+      background-color: #6E0F2C;
       color: white;
       text-align: center;
       padding: 1.5em;
@@ -179,11 +224,12 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون">
+    <img src="logo1.png" alt="شعار الراسخون">
     <div class="header-text">
       <h1>الراسخون</h1>
       <p>نرسّخ القيم… ونُمكّن القادة</p>
@@ -191,8 +237,8 @@
   </div>
 
   <div style="margin-top: 10px;">
-    <a href="login.html" style="background-color: white; color: #8A1538; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
-    <a href="signup.html" style="background-color: #8A1538; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
+    <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
@@ -209,18 +255,29 @@
 </nav>
 
 <main>
+
+  <!-- الرؤية والرسالة (قابلة للفتح والإغلاق) -->
   <section class="vision-mission">
-    <div class="vision">
-      <h2>رؤيتنا</h2>
-      <p>أن تكون «الراسخون» منصة رائدة في تمكين القادة الحاليين والناشئين في قطر من فهم ذواتهم القيادية وبناء أثر مهني مستدام.</p>
+
+    <div class="toggle-box" onclick="toggleContent('visionBox')">
+      <h2>رؤيتنا ▼</h2>
+      <div id="visionBox" class="toggle-content hidden">
+        <p>أن تكون «الراسخون» منصة رائدة في تمكين القادة الحاليين والناشئين في قطر من فهم ذواتهم القيادية وبناء أثر مهني مستدام.</p>
+      </div>
     </div>
-    <div class="mission">
-      <h2>رسالتنا</h2>
-      <p>تقديم أدوات رقمية ذكية ومحتوى قيادي أصيل يساعد الأفراد على تشخيص نمط قيادتهم، وقياس جاهزيتهم، وبناء خارطة تطوير شخصية تعزّز مساهمتهم في مجتمعهم ووطنهم.</p>
+
+    <div class="toggle-box" onclick="toggleContent('missionBox')">
+      <h2>رسالتنا ▼</h2>
+      <div id="missionBox" class="toggle-content hidden">
+        <p>تقديم أدوات رقمية ذكية ومحتوى قيادي أصيل يساعد الأفراد على تشخيص نمط قيادتهم، وقياس جاهزيتهم، وبناء خارطة تطوير شخصية تعزّز مساهمتهم في مجتمعهم ووطنهم.</p>
+      </div>
     </div>
+
   </section>
 
+  <!-- بطاقات الأقسام -->
   <section class="tabs-grid">
+
     <a class="tab-card" href="diagnosis.html">
       <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
       <h3>تشخيص القيادة</h3>
@@ -253,25 +310,27 @@
 
     <a class="tab-card" href="resources.html">
       <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
-      <h3>مكتبة القائد</h3>
+      <h3>مكتـبـتـي</h3>
       <p style="font-size:0.85em;">مقالات وملخصات وأدوات عملية لتطويرك القيادي.</p>
     </a>
 
     <a class="tab-card" href="community.html">
       <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png">
       <h3>مجتمع القادة</h3>
-      <p style="font-size:0.85em;">مساحة للتفاعل ومشاركة الخبرات بين القادة والمتعلمين.</p>
+      <p style="font-size:0.85em;">مساحة للتفاعل ومشاركة الخبرات.</p>
     </a>
 
     <a class="tab-card" href="presentation.html">
       <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
       <h3>من نحن؟</h3>
-      <p style="font-size:0.85em;">عرض يشرح قصة المنصة وأدواتها ومراحل بنائها.</p>
+      <p style="font-size:0.85em;">عرض يشرح قصة المنصة ومراحل بنائها.</p>
     </a>
+
   </section>
 
+  <!-- التقييم -->
   <section class="rating">
-    <h3>قيّم المنصة</h3>
+    <h3 style="color:#8A1538;">قيّم المنصة</h3>
     <span class="star" onclick="rate(1)">★</span>
     <span class="star" onclick="rate(2)">★</span>
     <span class="star" onclick="rate(3)">★</span>
@@ -280,44 +339,40 @@
     <p id="ratingResult" style="margin-top: 0.5em;">متوسط التقييم: 0 من 5 (0 تقييم)</p>
   </section>
 
+  <!-- عداد الزوار -->
   <section class="counter">
-    <h3>عدد الزوار</h3>
-    <p>📊 <strong id="visitorCount">0</strong> زائر</p>
+    <h3 style="color:#8A1538;">عدد الزوار</h3>
+    <p> <strong id="visitorCount">0</strong> زائر</p>
   </section>
 
+  <!-- عن المؤسس -->
   <section class="owner">
     <h3>عن صاحبة المنصة</h3>
     <p>
-      «الراسخون» مبادرة فردية طورتها <strong>مروة الكواري</strong>،  
+      «الراسخون» مبادرة طورتها <strong>مروة الكواري</strong>،  
       انطلقت من شغفها بالقيادة والتعليم والتحول الرقمي، وتهدف إلى تمكين القادة في قطر
       من استكشاف ذواتهم القيادية وبناء أثر مهني وإنساني عميق.
     </p>
   </section>
+
 </main>
 
-<section style="margin-top: 4em; text-align: center; padding: 0 1.5em;">
-  <h2 style="color: #8A1538; font-size: 2em; margin-bottom: 1em;">قصتنا</h2>
-  <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
-    <iframe 
-      src="https://drive.google.com/file/d/198z2-Djo4nZ68kv5fCNzkTRk8S_8LleA/preview" 
-      width="100%" height="480" allow="autoplay" 
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px; border:0;" 
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
+
 
 <footer>
-  جميع الحقوق محفوظة &copy; الراسخون 2025
+  جميع الحقوق محفوظة © الراسخون 2025
 </footer>
 
 <script>
-  let visitCount = localStorage.getItem('visitCount');
-  if (!visitCount) {
-    visitCount = 1;
-  } else {
-    visitCount = parseInt(visitCount) + 1;
+  function toggleContent(id) {
+    const box = document.getElementById(id);
+    box.classList.toggle("hidden");
   }
+
+  let visitCount = localStorage.getItem('visitCount');
+  if (!visitCount) visitCount = 1;
+  else visitCount = parseInt(visitCount) + 1;
+
   localStorage.setItem('visitCount', visitCount);
   document.getElementById('visitorCount').textContent = visitCount;
 
@@ -327,7 +382,8 @@
   function updateRatingDisplay() {
     const total = ratings.reduce((sum, val) => sum + val, 0);
     const avg = ratings.length > 0 ? (total / ratings.length).toFixed(1) : 0;
-    document.getElementById('ratingResult').textContent = `متوسط التقييم: ${avg} من 5 (${ratings.length} تقييم)`;
+    document.getElementById('ratingResult').textContent =
+      `متوسط التقييم: ${avg} من 5 (${ratings.length} تقييم)`;
   }
 
   function rate(stars) {
@@ -338,10 +394,12 @@
     ratings.push(stars);
     localStorage.setItem('ratings', JSON.stringify(ratings));
     localStorage.setItem('userRated', true);
+
     const starElements = document.querySelectorAll('.star');
     starElements.forEach((el, index) => {
       el.classList.toggle('selected', index < stars);
     });
+
     updateRatingDisplay();
   }
 

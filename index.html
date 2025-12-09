@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الراسخون – منصة القيادة الحكيمة</title>
+  <title>الراسخون – منصة القيادة واستكشاف الذات</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
@@ -14,19 +14,28 @@
       direction: rtl;
     }
 
+    /* تعديل اللون – الحفاظ على الشعار باللون الأبيض */
+    .header-text h1 {
+      color: white !important;
+    }
+    .header-text p {
+      color: white !important;
+    }
+
     header {
       background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
       padding: 1.5em 1em;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 2em;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     header img {
-      width: 100px;
+      width: 80px;
       height: auto;
+      margin-left: 20px;
     }
 
     .header-text {
@@ -34,12 +43,12 @@
     }
 
     .header-text h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       margin: 0 0 0.3em;
     }
 
     .header-text p {
-      font-size: 1.1em;
+      font-size: 1em;
       margin: 0;
     }
 
@@ -110,6 +119,8 @@
       transition: transform 0.3s;
       text-align: center;
       width: 220px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .tab-card:hover {
@@ -125,6 +136,7 @@
     .tab-card h3 {
       color: #00796b;
       margin: 0.5em 0;
+      font-size: 1.05em;
     }
 
     .rating, .counter {
@@ -143,18 +155,19 @@
       color: gold;
     }
 
-    .team {
+    .owner {
       text-align: center;
       margin-top: 3em;
+      background-color: #ffffff;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      max-width: 700px;
     }
 
-    .team h3 {
+    .owner h3 {
       color: #00695c;
-    }
-
-    .team ul {
-      list-style: none;
-      padding: 0;
+      margin-top: 0;
     }
 
     footer {
@@ -168,133 +181,137 @@
 </head>
 <body>
 
- <header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+<header>
   <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
+    <img src="logo1.jpg" alt="شعار الراسخون">
+    <div class="header-text">
+      <h1>الراسخون</h1>
+      <p>منصة رقمية لتمكين القادة واستكشاف الذات القيادية</p>
     </div>
   </div>
 
-  <!-- أزرار التسجيل -->
   <div style="margin-top: 10px;">
     <a href="login.html" style="background-color: white; color: #00796b; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
     <a href="signup.html" style="background-color: #004d40; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
   </div>
 </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">الرئيسية</a></li>
-      <li><a href="diagnosis.html">تشخيص القيادة</a></li>
-      <li><a href="communication.html">الاتصال الفعّال</a></li>
-      <li><a href="advice.html">الاستشارات الفورية</a></li>
-      <li><a href="resources.html">مكتبة القائد</a></li>
-      <li><a href="community.html">مجتمع القادة</a></li>
-      <li><a href="presentation.html">العرض التقديمي</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+    <li><a href="communication.html">الاتصال الفعّال</a></li>
+    <li><a href="advice.html">الاستشارات الفورية</a></li>
+    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="community.html">مجتمع القادة</a></li>
+    <li><a href="presentation.html">العرض التقديمي</a></li>
+  </ul>
+</nav>
 
-  <main>
-    <section class="vision-mission">
-      <div class="vision">
-        <h2>رؤيتنا</h2>
-        <p>أن نكون منصة رائدة في تمكين الشباب القطريين لتحقيق التميز الوظيفي بثقة واحتراف.</p>
-      </div>
-      <div class="mission">
-        <h2>رسالتنا</h2>
-        <p>نقدّم استشارات مهنية مبتكرة تدعم الشباب القطريين في بناء مساراتهم الوظيفية وتطوير مهاراتهم لتحقيق مستقبل مهني مستدام.</p>
-      </div>
-    </section>
+<main>
+  <section class="vision-mission">
+    <div class="vision">
+      <h2>رؤيتنا</h2>
+      <p>أن تكون «الراسخون» منصة رائدة في تمكين القادة الحاليين والناشئين في قطر من فهم ذواتهم القيادية وبناء أثر مهني مستدام.</p>
+    </div>
+    <div class="mission">
+      <h2>رسالتنا</h2>
+      <p>تقديم أدوات رقمية ذكية ومحتوى قيادي أصيل يساعد الأفراد على تشخيص نمط قيادتهم، وقياس جاهزيتهم، وبناء خارطة تطوير شخصية تعزّز مساهمتهم في مجتمعهم ووطنهم.</p>
+    </div>
+  </section>
 
-    <section class="tabs-grid">
-      <a class="tab-card" href="diagnosis.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
-        <h3>تشخيص القيادة</h3>
-      </a>
-      <a class="tab-card" href="communication.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png">
-        <h3>الاتصال الفعّال</h3>
-      </a>
-      <a class="tab-card" href="advice.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png">
-        <h3>الاستشارات الفورية</h3>
-      </a>
-      <a class="tab-card" href="resources.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
-        <h3>مكتبة القائد</h3>
-      </a>
-      <a class="tab-card" href="community.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png">
-        <h3>مجتمع القادة</h3>
-      </a>
-      <a class="tab-card" href="presentation.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
-        <h3>العرض التقديمي</h3>
-      </a>
-    </section>
+  <section class="tabs-grid">
+    <a class="tab-card" href="diagnosis.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+      <h3>تشخيص القيادة</h3>
+      <p style="font-size:0.85em;">اختبار لاكتشاف نمطك القيادي وتحليل نقاط قوتك.</p>
+    </a>
 
-    <section class="rating">
-      <h3>قيّم الموقع</h3>
-      <span class="star" onclick="rate(1)">★</span>
-      <span class="star" onclick="rate(2)">★</span>
-      <span class="star" onclick="rate(3)">★</span>
-      <span class="star" onclick="rate(4)">★</span>
-      <span class="star" onclick="rate(5)">★</span>
-      <p id="ratingResult" style="margin-top: 0.5em;">تقييمك: 0 من 5</p>
-    </section>
+    <a class="tab-card" href="readiness.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png">
+      <h3>مقياس جاهزية القيادة</h3>
+      <p style="font-size:0.85em;">قياس رقمي لمدى استعدادك لتحمّل أدوار قيادية.</p>
+    </a>
 
-    <section class="counter">
-      <h3>عدد الزوار</h3>
-      <p>📊 <strong id="visitorCount">100</strong> زائر</p>
-    </section>
+    <a class="tab-card" href="leadership-map.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png">
+      <h3>خارطة ذاتي القيادية</h3>
+      <p style="font-size:0.85em;">صمّم/ي خارطة لرؤيتك وقيمك وأهدافك القيادية.</p>
+    </a>
 
-    <section class="team">
-      <h3>فريق العمل</h3>
-      <ul>
-        <li>مروة الكواري | لمياء النعيمي | دلال المالكي | الريم المري | شيخة الكلا</li>
-      </ul>
-      <h3>إشراف:</h3>
-      <ul>
-        <li>د. حاتم الجوهري | د. ميرفت أبو عوف</li>
-      </ul>
-    </section>
-  </main>
-    </section>
+    <a class="tab-card" href="communication.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png">
+      <h3>الاتصال الفعّال</h3>
+      <p style="font-size:0.85em;">مفاهيم وأدوات تساعدك على بناء تواصل قيادي مؤثر.</p>
+    </a>
 
- <section style="margin-top: 4em; text-align: center;">
+    <a class="tab-card" href="advice.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png">
+      <h3>الاستشارات الفورية – رُشد</h3>
+      <p style="font-size:0.85em;">مساعد ذكي لدعم قراراتك في المواقف القيادية اليومية.</p>
+    </a>
+
+    <a class="tab-card" href="resources.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+      <h3>مكتبة القائد</h3>
+      <p style="font-size:0.85em;">مقالات وملخصات وأدوات عملية لتطويرك القيادي.</p>
+    </a>
+
+    <a class="tab-card" href="community.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png">
+      <h3>مجتمع القادة</h3>
+      <p style="font-size:0.85em;">مساحة للتفاعل ومشاركة الخبرات بين القادة والمتعلمين.</p>
+    </a>
+
+    <a class="tab-card" href="presentation.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
+      <h3>العرض التقديمي</h3>
+      <p style="font-size:0.85em;">عرض يشرح قصة المنصة وأدواتها ومراحل بنائها.</p>
+    </a>
+  </section>
+
+  <section class="rating">
+    <h3>قيّم المنصة</h3>
+    <span class="star" onclick="rate(1)">★</span>
+    <span class="star" onclick="rate(2)">★</span>
+    <span class="star" onclick="rate(3)">★</span>
+    <span class="star" onclick="rate(4)">★</span>
+    <span class="star" onclick="rate(5)">★</span>
+    <p id="ratingResult" style="margin-top: 0.5em;">متوسط التقييم: 0 من 5 (0 تقييم)</p>
+  </section>
+
+  <section class="counter">
+    <h3>عدد الزوار</h3>
+    <p>📊 <strong id="visitorCount">0</strong> زائر</p>
+  </section>
+
+  <section class="owner">
+    <h3>عن صاحبة المنصة</h3>
+    <p>
+      «الراسخون» مبادرة فردية طورتها <strong>مروة سعد الكواري</strong>،  
+      انطلقت من شغفها بالقيادة والتعليم والتحول الرقمي، وتهدف إلى تمكين القادة في قطر
+      من استكشاف ذواتهم القيادية وبناء أثر مهني وإنساني عميق.
+    </p>
+  </section>
+</main>
+
+<section style="margin-top: 4em; text-align: center; padding: 0 1.5em;">
   <h2 style="color: #00695c; font-size: 2em; margin-bottom: 1em;">قصتنا</h2>
   <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
     <iframe 
       src="https://drive.google.com/file/d/198z2-Djo4nZ68kv5fCNzkTRk8S_8LleA/preview" 
       width="100%" height="480" allow="autoplay" 
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px;" 
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px; border:0;" 
       allowfullscreen>
     </iframe>
   </div>
 </section>
 
-
-    <footer>
-      جميع الحقوق محفوظة &copy; الراسخون 2025
-    </footer>
-
-
-
-  <script>
-    function rate(stars) {
-      const starElements = document.querySelectorAll('.star');
-      starElements.forEach((el, index) => {
-        el.classList.toggle('selected', index < stars);
-      });
-      document.getElementById('ratingResult').textContent = `تقييمك: ${stars} من 5`;
-    }
-  </script>
-<!-- أضف هذا الجزء داخل <script> قبل نهاية الوسم </body> -->
+<footer>
+  جميع الحقوق محفوظة &copy; الراسخون 2025
+</footer>
 
 <script>
-  // --- العداد الحقيقي ---
   let visitCount = localStorage.getItem('visitCount');
   if (!visitCount) {
     visitCount = 1;
@@ -304,7 +321,6 @@
   localStorage.setItem('visitCount', visitCount);
   document.getElementById('visitorCount').textContent = visitCount;
 
-  // --- التقييم وحساب المتوسط ---
   let ratings = JSON.parse(localStorage.getItem('ratings')) || [];
   let userRated = localStorage.getItem('userRated');
 
@@ -329,7 +345,6 @@
     updateRatingDisplay();
   }
 
-  // تفعيل العرض عند تحميل الصفحة
   updateRatingDisplay();
 </script>
 

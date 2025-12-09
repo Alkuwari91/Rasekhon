@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>رُشـــد</title>
+  <title>رُشـــد – مساعد الاستشارات القيادية</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
@@ -13,21 +13,70 @@
       margin: 0;
       direction: rtl;
     }
+
+    /* الهيدر بنفس تنسيق الرئيسية */
     header {
-      background: linear-gradient(135deg, #004d40, #00796b);
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
-      padding: 1.5em 1em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 2.2em 1em;
+      position: relative;
+      text-align: center;
     }
-    header img { width: 80px; height:auto; margin-left:20px; }
+
+    .header-center {
+      display: block;
+    }
+
+    .brand-title {
+      font-size: 2.7em;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .brand-slogan {
+      font-size: 1.1em;
+      margin-top: 0.4em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .small-btn {
+      padding: 0.35em 0.9em;
+      font-size: 0.85em;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538 !important;
+    }
+
+    .maroon-btn {
+      background-color: #8A1538;
+      color: #ffffff !important;
+    }
+
+    .maroon-btn:hover {
+      background-color: #6E0F2C;
+    }
+
+    /* شريط التنقل */
     nav ul {
       display:flex;
       justify-content:center;
       list-style:none;
-      background-color:#00695c;
+      background-color:#8A1538;
       padding:1em;
       margin:0;
       flex-wrap:wrap;
@@ -38,17 +87,26 @@
       text-decoration:none;
       font-weight:bold;
     }
+
+    /* المحتوى */
     main {
       max-width:1100px;
       margin:auto;
       padding:2em 1em 3em;
     }
-    h1 { color:#00695c; text-align:center; }
+
+    h1 { 
+      color:#8A1538; 
+      text-align:center; 
+      margin-top:0;
+    }
+
     .intro {
       text-align:center;
       margin-bottom:2em;
       line-height:1.8;
     }
+
     .card {
       background-color:#fff;
       border-radius:12px;
@@ -56,7 +114,13 @@
       padding:1.5em;
       margin-bottom:1.5em;
     }
-    label { display:block; margin-bottom:0.5em; font-weight:600; }
+
+    label { 
+      display:block; 
+      margin-bottom:0.5em; 
+      font-weight:600; 
+    }
+
     select, textarea {
       width:100%;
       padding:0.7em;
@@ -65,10 +129,16 @@
       font-family:'Cairo',sans-serif;
       margin-bottom:1em;
       box-sizing:border-box;
+      background-color:#FAFDFF;
     }
-    textarea { min-height:120px; resize:vertical; }
+
+    textarea { 
+      min-height:120px; 
+      resize:vertical; 
+    }
+
     button {
-      background-color:#00796b;
+      background-color:#8A1538;
       color:white;
       border:none;
       padding:0.7em 2em;
@@ -76,37 +146,50 @@
       cursor:pointer;
       font-size:1em;
     }
-    button:hover { background-color:#004d40; }
+
+    button:hover { 
+      background-color:#6E0F2C; 
+    }
+
     .response {
       margin-top:1.5em;
-      background-color:#E0F2F1;
+      background-color:#F8E8EE;
       border-radius:12px;
       padding:1.5em;
       line-height:1.9;
+      border-right:4px solid #8A1538;
     }
+
     .response h2 {
       margin-top:0;
-      color:#004d40;
+      color:#8A1538;
     }
+
     .tip {
       font-size:0.9em;
       color:#455a64;
       margin-top:0.7em;
     }
+
+    footer {
+      background-color:#6E0F2C;
+      color:white;
+      text-align:center;
+      padding:1.5em;
+      margin-top:3em;
+    }
   </style>
 </head>
 <body>
+
 <header>
-  <div style="display:flex;align-items:center;">
-    <img src="logo1.jpg" alt="شعار الراسخون">
-    <div>
-      <h1 style="margin:0;font-size:2em;">الراسخون</h1>
-      <p style="margin:0;font-size:1em;">مساعد رُشد – استشارات قيادية فورية</p>
-    </div>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">مساعد رُشد – استشارات قيادية فورية</p>
   </div>
-  <div>
-    <a href="login.html" style="background-color:white;color:#00796b;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">تسجيل الدخول</a>
-    <a href="signup.html" style="background-color:#004d40;color:white;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">إنشاء حساب</a>
+  <div class="header-buttons">
+    <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
@@ -114,7 +197,7 @@
   <ul>
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="diagnosis.html">تشخيص القيادة</a></li>
-    <li><a href="communication.html">اقائـد مُلهِـم</a></li>
+    <li><a href="communication.html">قائـد مُلهِـم</a></li>
     <li><a href="advice.html">رُشـــد</a></li>
     <li><a href="resources.html">مكتـبـتـي</a></li>
     <li><a href="community.html">مجتمع القادة</a></li>
@@ -152,7 +235,7 @@
   </p>
 </main>
 
-<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+<footer>
   جميع الحقوق محفوظة &copy; الراسخون 2025
 </footer>
 

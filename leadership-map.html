@@ -13,21 +13,70 @@
       margin:0;
       direction:rtl;
     }
+
+    /* الهيدر الموحد */
     header {
-      background:linear-gradient(135deg,#004d40,#00796b);
+      background:linear-gradient(135deg,#8A1538,#6E0F2C);
       color:white;
-      padding:1.5em 1em;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
+      padding:2.2em 1em;
+      position:relative;
+      text-align:center;
     }
-    header img{width:80px;height:auto;margin-left:20px;}
+
+    .header-center {
+      display:block;
+    }
+
+    .brand-title {
+      font-size:2.7em;
+      font-weight:800;
+      letter-spacing:3px;
+      margin:0;
+      color:#ffffff;
+    }
+
+    .brand-slogan {
+      font-size:1.1em;
+      margin-top:0.4em;
+      color:#F8E8EE;
+    }
+
+    .header-buttons {
+      position:absolute;
+      right:20px;
+      top:20px;
+      display:flex;
+      gap:0.5em;
+    }
+
+    .small-btn {
+      padding:0.35em 0.9em;
+      font-size:0.85em;
+      border-radius:6px;
+      font-weight:bold;
+      text-decoration:none;
+    }
+
+    .white-btn {
+      background-color:#ffffff;
+      color:#8A1538 !important;
+    }
+
+    .maroon-btn {
+      background-color:#8A1538;
+      color:#ffffff !important;
+    }
+
+    .maroon-btn:hover {
+      background-color:#6E0F2C;
+    }
+
+    /* شريط التنقل */
     nav ul{
       display:flex;
       justify-content:center;
       list-style:none;
-      background-color:#00695c;
+      background-color:#8A1538;
       padding:1em;
       margin:0;
       flex-wrap:wrap;
@@ -38,12 +87,24 @@
       text-decoration:none;
       font-weight:bold;
     }
+
+    /* المحتوى */
     main{
       max-width:1100px;
       margin:auto;
       padding:2em 1em 3em;
     }
-    h1{color:#00695c;text-align:center;}
+    h1{
+      color:#8A1538;
+      text-align:center;
+    }
+
+    .intro {
+      text-align:center;
+      margin-bottom:2em;
+      line-height:1.8;
+    }
+
     .grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -52,6 +113,7 @@
     @media (max-width:900px){
       .grid{grid-template-columns:1fr;}
     }
+
     .card{
       background-color:#fff;
       border-radius:12px;
@@ -59,7 +121,13 @@
       padding:1.5em;
       box-sizing:border-box;
     }
-    label{display:block;margin-bottom:0.4em;font-weight:600;}
+
+    label{
+      display:block;
+      margin-bottom:0.4em;
+      font-weight:600;
+    }
+
     input[type="text"],textarea{
       width:100%;
       padding:0.7em;
@@ -69,9 +137,13 @@
       box-sizing:border-box;
       margin-bottom:1em;
     }
-    textarea{min-height:90px;resize:vertical;}
+    textarea{
+      min-height:90px;
+      resize:vertical;
+    }
+
     button{
-      background-color:#00796b;
+      background-color:#8A1538;
       color:white;
       border:none;
       padding:0.7em 2em;
@@ -80,35 +152,50 @@
       font-size:1em;
       margin-top:0.5em;
     }
-    button:hover{background-color:#004d40;}
+    button:hover{
+      background-color:#6E0F2C;
+    }
+
+    .secondary-btn {
+      background-color:#B68CA5;
+      margin-right:0.5em;
+    }
+
     .map-output{
-      border-right:4px solid #00796b;
+      border-right:4px solid #8A1538;
       padding-right:1em;
       line-height:1.9;
     }
+
     .badge{
       display:inline-block;
       padding:0.2em 0.7em;
       border-radius:999px;
       font-size:0.8em;
-      background-color:#E0F2F1;
-      color:#004d40;
+      background-color:#F8E8EE;
+      color:#6E0F2C;
       margin-right:0.4em;
+    }
+
+    footer {
+      background-color:#6E0F2C;
+      color:white;
+      text-align:center;
+      padding:1.5em;
+      margin-top:3em;
     }
   </style>
 </head>
 <body>
+
 <header>
-  <div style="display:flex;align-items:center;">
-    <img src="logo1.jpg" alt="شعار الراسخون">
-    <div>
-      <h1 style="margin:0;font-size:2em;">الراسخون</h1>
-      <p style="margin:0;font-size:1em;">خارطة ذاتي القيادية</p>
-    </div>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
   </div>
-  <div>
-    <a href="login.html" style="background-color:white;color:#00796b;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">تسجيل الدخول</a>
-    <a href="signup.html" style="background-color:#004d40;color:white;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">إنشاء حساب</a>
+  <div class="header-buttons">
+    <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
@@ -116,27 +203,27 @@
   <ul>
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="diagnosis.html">تشخيص القيادة</a></li>
-    <li><a href="communication.html">الاتصال الفعّال</a></li>
-    <li><a href="advice.html">الاستشارات الفورية</a></li>
-    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="communication.html">قائـد مُلهِـم</a></li>
+    <li><a href="advice.html">رُشـــد</a></li>
+    <li><a href="resources.html">مكتـبـتـي</a></li>
     <li><a href="community.html">مجتمع القادة</a></li>
-    <li><a href="presentation.html">العرض التقديمي</a></li>
+    <li><a href="presentation.html">من نحن؟</a></li>
   </ul>
 </nav>
 
 <main>
-  <h1>خارطة ذاتي القيادية</h1>
-  <p style="text-align:center;margin-bottom:2em;line-height:1.8;">
-    صمّمي خارطة قيادتك الشخصية: رؤيتك، قيمك، نقاط قوتك، مجالات تطويرك، وأهدافك المستقبلية.
+  <h1>Leadership Self-Mapping</h1>
+  <p class="intro">
+    صمّم خارطة قيادتك الشخصية: رؤيتك، قيمك، نقاط قوتك، مجالات تطويرك، وأهدافك المستقبلية.
   </p>
 
   <div class="grid">
     <div class="card">
       <label for="name">اسمي / هويتي القيادية:</label>
-      <input type="text" id="name" placeholder="مثال: مروة – قائدة تحب تمكين الآخرين">
+      <input type="text" id="name" placeholder="مثال: أحمد – قائدة تحب تمكين الآخرين">
 
       <label for="role">دوري الحالي (الوظيفة / المجال):</label>
-      <input type="text" id="role" placeholder="مثال: معلمة لغة إنجليزية – قائدة فريق / منسقة قسم">
+      <input type="text" id="role" placeholder="مثال: رئيس قسم – قائدة فريق / منسقة قسم">
 
       <label for="vision">رؤيتي القيادية:</label>
       <textarea id="vision" placeholder="كيف تتخيلين أثر قيادتك بعد 3–5 سنوات؟"></textarea>
@@ -157,19 +244,19 @@
       <textarea id="actions" placeholder="مثال: حضور دورة، طلب مرافقة قائد آخر، إنشاء مبادرة صغيرة..."></textarea>
 
       <button type="button" onclick="buildMap()">إنشاء خارطة قيادتي</button>
-      <button type="button" onclick="window.print()" style="background-color:#546e7a;margin-right:0.5em;">طباعة / حفظ كـ PDF</button>
+      <button type="button" class="secondary-btn" onclick="window.print()">طباعة / حفظ كـ PDF</button>
     </div>
 
     <div class="card">
-      <h2 style="margin-top:0;">خارطتي القيادية</h2>
+      <h2 style="margin-top:0;color:#8A1538;">الخارطة القيادية</h2>
       <div id="mapOutput" class="map-output">
-        <p>املئي البيانات في الجهة اليسرى، ثم اضغطي على زر <strong>إنشاء خارطة قيادتي</strong>.</p>
+        <p>املأ البيانات في الجهة اليسرى، ثم اضغط على زر <strong>إنشاء خارطة </strong>.</p>
       </div>
     </div>
   </div>
 </main>
 
-<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+<footer>
   جميع الحقوق محفوظة &copy; الراسخون 2025
 </footer>
 
@@ -216,5 +303,6 @@ function buildMap() {
   document.getElementById('mapOutput').innerHTML = html;
 }
 </script>
+
 </body>
 </html>

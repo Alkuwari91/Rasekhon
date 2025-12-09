@@ -4,63 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>تسجيل الدخول - الراسخون</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
-      color: #004d40;
-      padding: 2em;
+      font-family: 'Cairo', sans-serif;
+      background-color: #F9FBFC;
+      color: #333;
+      margin: 0;
+      direction: rtl;
+    }
+
+    /* هيدر موحّد مع بقية الصفحات */
+    header {
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
+      color: white;
+      padding: 2.2em 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      min-height: 140px;
+    }
+
+    .header-center {
+      text-align: center;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 2.6em;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .brand-slogan {
+      margin: 0.3em 0 0;
+      font-size: 1.15em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .header-buttons a {
+      font-size: 0.85em;
+      padding: 0.35em 0.9em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538;
+    }
+
+    .maroon-btn {
+      background-color: #6E0F2C;
+      color: #ffffff;
+    }
+
+    /* حاوية نموذج تسجيل الدخول */
+    .page-wrap {
+      max-width: 600px;
+      margin: 2.5em auto 3em;
+      padding: 0 1em;
     }
 
     .container {
-      max-width: 500px;
-      margin: auto;
       background-color: #ffffff;
-      padding: 2em;
+      padding: 2em 1.8em;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     h2 {
       text-align: center;
-      color: #00796b;
+      color: #8A1538;
       margin-bottom: 1em;
+      margin-top: 0;
     }
 
     label {
       display: block;
       margin-top: 1em;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.95em;
     }
 
     input {
       width: 100%;
       padding: 0.8em;
       margin-top: 0.3em;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      font-family: 'Cairo', sans-serif;
+      box-sizing: border-box;
+      font-size: 0.95em;
+      background-color: #FAFDFF;
     }
 
     button {
       width: 100%;
       padding: 0.8em;
-      background-color: #00796b;
+      background-color: #8A1538;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       margin-top: 1.5em;
       font-size: 1em;
       cursor: pointer;
+      font-family: 'Cairo', sans-serif;
     }
 
     button:hover {
-      background-color: #004d40;
+      background-color: #6E0F2C;
     }
 
     .message {
       text-align: center;
       margin-top: 1em;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.95em;
     }
 
     .success {
@@ -74,26 +145,44 @@
     .link {
       text-align: center;
       margin-top: 1.5em;
-      font-size: 0.95em;
+      font-size: 0.9em;
     }
 
     .link a {
-      color: #00796b;
+      color: #8A1538;
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #6E0F2C;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-<header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
-    </div>
+
+<header>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
+  </div>
+
+  <div class="header-buttons">
+    <a href="login.html" class="white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
+<div class="page-wrap">
   <div class="container">
     <h2>تسجيل الدخول</h2>
 
@@ -110,33 +199,38 @@
     </form>
 
     <div class="link">
-      ليس لديك حساب؟ <a href="signup.html">أنشئ حساب جديد</a>
+      ليس لديك حساب؟ <a href="signup.html">أنشئ حسابًا جديدًا</a>
     </div>
   </div>
+</div>
 
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+<footer>
+  جميع الحقوق محفوظة © الراسخون 2025
+</footer>
 
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-      const messageBox = document.getElementById('messageBox');
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      const user = JSON.parse(localStorage.getItem('user'));
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const messageBox = document.getElementById('messageBox');
 
-      if (user && user.email === email && user.password === password) {
-        messageBox.textContent = "✅ تم تسجيل الدخول بنجاح!";
-        messageBox.className = "message success";
+    const user = JSON.parse(localStorage.getItem('user'));
 
-        setTimeout(() => {
-          window.location.href = "index.html"; // يمكن تغييره إلى لوحة المستخدم
-        }, 1500);
-      } else {
-        messageBox.textContent = "❌ البريد الإلكتروني أو كلمة المرور غير صحيحة.";
-        messageBox.className = "message error";
-      }
-    });
-  </script>
+    if (user && user.email === email && user.password === password) {
+      messageBox.textContent = "✅ تم تسجيل الدخول بنجاح!";
+      messageBox.className = "message success";
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    } else {
+      messageBox.textContent = "❌ البريد الإلكتروني أو كلمة المرور غير صحيحة.";
+      messageBox.className = "message error";
+    }
+  });
+</script>
 
 </body>
 </html>

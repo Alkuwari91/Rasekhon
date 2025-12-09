@@ -6,7 +6,7 @@
   <title>الراسخون – نرسّخ القيم… ونُمكّن القادة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   
- <style>
+  <style>
     body {
       font-family: 'Cairo', sans-serif;
       background-color: #F9FBFC;
@@ -15,37 +15,61 @@
       direction: rtl;
     }
 
-    /* الهيدر */
+    /* الهيدر – العنوان في المنتصف والأزرار يمين */
     header {
-      background: linear-gradient(135deg, #8A1538, #6E0F2C); /* برغندي */
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
-      padding: 1.5em 1em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 2.2em 1em;
+      position: relative;
+      text-align: center;
     }
 
-    header img {
-      width: 80px;
-      height: auto;
-      margin-left: 20px;
+    .header-center {
+      display: block;
     }
 
-    .header-text {
-      text-align: right;
-    }
-
-    .header-text h1 {
-      font-size: 2em;
-      margin: 0 0 0.3em;
-      color: white;
-    }
-
-    .header-text p {
-      font-size: 1em;
+    .brand-title {
+      font-size: 2.7em;
+      font-weight: 800;
+      letter-spacing: 3px;
       margin: 0;
-      color: white;
+      color: #ffffff;
+    }
+
+    .brand-slogan {
+      font-size: 1.1em;
+      margin-top: 0.4em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .small-btn {
+      padding: 0.35em 0.9em;
+      font-size: 0.85em;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538 !important;
+    }
+
+    .maroon-btn {
+      background-color: #8A1538;
+      color: #ffffff !important;
+    }
+
+    .maroon-btn:hover {
+      background-color: #6E0F2C;
     }
 
     /* شريط التنقل */
@@ -53,7 +77,7 @@
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: #8A1538; /* برغندي */
+      background-color: #8A1538;
       padding: 1em;
       margin: 0;
       flex-wrap: wrap;
@@ -77,7 +101,7 @@
     }
 
     h1 {
-      color: #8A1538; /* برغندي */
+      color: #8A1538;
       text-align: center;
       margin-top: 0;
     }
@@ -88,6 +112,7 @@
       line-height: 1.8;
     }
 
+    /* (موجودة لو احتجتيها في صفحات ثانية) */
     .grid {
       display: grid;
       grid-template-columns: 1.1fr 1.1fr;
@@ -100,7 +125,6 @@
       }
     }
 
-    /* الكروت */
     .card {
       background-color: #ffffff;
       border-radius: 12px;
@@ -111,11 +135,10 @@
 
     .card h2 {
       margin-top: 0;
-      color: #8A1538; /* برغندي */
+      color: #8A1538;
       font-size: 1.3em;
     }
 
-    /* الحقول */
     label {
       display: block;
       margin-bottom: 0.3em;
@@ -140,7 +163,6 @@
       resize: vertical;
     }
 
-    /* صفوف الأعضاء */
     .member-row {
       display: flex;
       gap: 0.5em;
@@ -157,9 +179,8 @@
       color: #607d8b;
     }
 
-    /* الأزرار */
     button {
-      background-color: #8A1538; /* برغندي */
+      background-color: #8A1538;
       color: white;
       border: none;
       padding: 0.6em 1.6em;
@@ -169,15 +190,14 @@
     }
 
     button:hover {
-      background-color: #6E0F2C; /* برغندي أغمق */
+      background-color: #6E0F2C;
     }
 
     .btn-secondary {
-      background-color: #B68CA5; /* برغندي فاتح */
+      background-color: #B68CA5;
       margin-right: 0.4em;
     }
 
-    /* المعلومات */
     .info {
       font-size: 0.85em;
       color: #607d8b;
@@ -185,9 +205,8 @@
       line-height: 1.7;
     }
 
-    /* صناديق المجموعات */
     .group-box {
-      background-color: #F8E8EE; /* وردي قطري فاتح */
+      background-color: #F8E8EE;
       border-radius: 10px;
       padding: 1em 1.2em;
       margin-top: 1em;
@@ -200,7 +219,6 @@
       color: #6E0F2C;
     }
 
-    /* النصوص */
     .link-text {
       font-family: 'Cairo', sans-serif;
       font-size: 0.85em;
@@ -213,7 +231,6 @@
       text-align: left;
     }
 
-    /* التاق */
     .tag {
       display: inline-block;
       padding: 0.15em 0.6em;
@@ -224,7 +241,6 @@
       margin-right: 0.3em;
     }
 
-    /* التغذية */
     .feed-empty {
       font-size: 0.9em;
       color: #78909c;
@@ -249,56 +265,125 @@
       font-size: 0.95em;
       line-height: 1.8;
     }
-   /* ضبط الهيدر بحيث يكون الاسم في المنتصف والأزرار على اليمين */
-header {
-  background: linear-gradient(135deg, #8A1538, #6E0F2C); /* لوّنّاه برغندي إذا حابة */
-  position: relative;
-  justify-content: center; /* نخلي المحتوى في المنتصف */
-}
 
-/* أول div داخل الهيدر (اللي فيه اللوقو + النص) */
-header > div:first-child {
-  flex: 1;
-  display: flex;
-  justify-content: center;  /* نخلي النص في المنتصف أفقياً */
-  align-items: center;
-}
+    /* الرؤية والرسالة – بوكس قابل للفتح والإغلاق */
+    .vision-mission {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      margin-bottom: 3em;
+      justify-content: center;
+      text-align: center;
+    }
 
-/* نخلي نص الراسخون في المنتصف تحت بعض */
-.header-text {
-  text-align: center;
-}
+    .toggle-box {
+      background-color: #ffffff;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      width: 100%;
+      max-width: 500px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.header-text h1 {
-  font-size: 2.5em;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin: 0;
-  color: #ffffff;
-}
+    .toggle-box h2 {
+      color: #8A1538;
+      margin: 0;
+      font-size: 1.6em;
+    }
 
-.header-text p {
-  font-size: 1.05em;
-  margin-top: 0.4em;
-  color: #F8E8EE;
-}
+    .toggle-box:hover {
+      background-color: #F8E8EE;
+    }
 
-/* نحرك أزرار تسجيل الدخول وحساب جديد لزاوية الهيدر */
-header > div:last-child {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
+    .hidden {
+      display: none;
+    }
 
-/* تصغير الأزرار شوي */
-header a {
-  font-size: 0.85em;
-  padding: 0.35em 0.9em;
-  border-radius: 6px;
-}
+    .toggle-content {
+      margin-top: 1em;
+      line-height: 1.8;
+      color: #333;
+    }
 
-</style>
+    /* بطاقات الأقسام */
+    .tabs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+    }
 
+    .tab-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      transition: transform 0.3s;
+      text-align: center;
+      width: 220px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .tab-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 22px rgba(138, 21, 56, 0.25);
+    }
+
+    .tab-card img {
+      width: 60px;
+      margin-bottom: 0.7em;
+    }
+
+    .tab-card h3 {
+      color: #8A1538;
+      margin: 0.5em 0;
+      font-size: 1.05em;
+    }
+
+    .rating, .counter {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+    .star {
+      font-size: 2em;
+      color: lightgray;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star.selected {
+      color: gold;
+    }
+
+    .owner {
+      text-align: center;
+      margin-top: 3em;
+      background-color: #ffffff;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .owner h3 {
+      color: #8A1538;
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #6E0F2C;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
+    }
+  </style>
 </head>
 
 <body>
@@ -314,7 +399,6 @@ header a {
     <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
-
 
 <nav>
   <ul>
@@ -332,70 +416,74 @@ header a {
 
   <!-- الرؤية والرسالة (قابلة للفتح والإغلاق) -->
   <section class="vision-mission">
-
     <div class="toggle-box" onclick="toggleContent('visionBox')">
       <h2>رؤيتنا ▼</h2>
       <div id="visionBox" class="toggle-content hidden">
-        <p>أن تكون «الراسخون» منصة رائدة في تمكين القادة الحاليين والناشئين في قطر من فهم ذواتهم القيادية وبناء أثر مهني مستدام.</p>
+        <p>
+          أن تكون «الراسخون» منصة رائدة في تمكين القادة الحاليين والناشئين في قطر 
+          من فهم ذواتهم القيادية وبناء أثر مهني مستدام.
+        </p>
       </div>
     </div>
 
     <div class="toggle-box" onclick="toggleContent('missionBox')">
       <h2>رسالتنا ▼</h2>
       <div id="missionBox" class="toggle-content hidden">
-        <p>تقديم أدوات رقمية ذكية ومحتوى قيادي أصيل يساعد الأفراد على تشخيص نمط قيادتهم، وقياس جاهزيتهم، وبناء خارطة تطوير شخصية تعزّز مساهمتهم في مجتمعهم ووطنهم.</p>
+        <p>
+          تقديم أدوات رقمية ذكية ومحتوى قيادي أصيل يساعد الأفراد على تشخيص نمط قيادتهم، 
+          وقياس جاهزيتهم، وبناء خارطة تطوير شخصية تعزّز مساهمتهم في مجتمعهم ووطنهم.
+        </p>
       </div>
     </div>
-
   </section>
 
   <!-- بطاقات الأقسام -->
   <section class="tabs-grid">
 
     <a class="tab-card" href="diagnosis.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="">
       <h3>تشخيص القيادة</h3>
       <p style="font-size:0.85em;">اختبار لاكتشاف نمطك القيادي وتحليل نقاط قوتك.</p>
     </a>
 
     <a class="tab-card" href="readiness.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="">
       <h3>مقياس جاهزية القيادة</h3>
       <p style="font-size:0.85em;">قياس رقمي لمدى استعدادك لتحمّل أدوار قيادية.</p>
     </a>
 
     <a class="tab-card" href="leadership-map.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" alt="">
       <h3>خارطة ذاتي القيادية</h3>
       <p style="font-size:0.85em;">صمّم/ي خارطة لرؤيتك وقيمك وأهدافك القيادية.</p>
     </a>
 
     <a class="tab-card" href="communication.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/726/726623.png" alt="">
       <h3>قائـد مُلهِـم</h3>
       <p style="font-size:0.85em;">مفاهيم وأدوات تساعدك على بناء تواصل قيادي مؤثر.</p>
     </a>
 
     <a class="tab-card" href="advice.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/1008/1008755.png" alt="">
       <h3>رُشـــد</h3>
       <p style="font-size:0.85em;">مساعد ذكي لدعم قراراتك في المواقف القيادية اليومية.</p>
     </a>
 
     <a class="tab-card" href="resources.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="">
       <h3>مكتـبـتـي</h3>
       <p style="font-size:0.85em;">مقالات وملخصات وأدوات عملية لتطويرك القيادي.</p>
     </a>
 
     <a class="tab-card" href="community.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png" alt="">
       <h3>مجتمع القادة</h3>
       <p style="font-size:0.85em;">مساحة للتفاعل ومشاركة الخبرات.</p>
     </a>
 
     <a class="tab-card" href="presentation.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png" alt="">
       <h3>من نحن؟</h3>
       <p style="font-size:0.85em;">عرض يشرح قصة المنصة ومراحل بنائها.</p>
     </a>
@@ -416,7 +504,7 @@ header a {
   <!-- عداد الزوار -->
   <section class="counter">
     <h3 style="color:#8A1538;">عدد الزوار</h3>
-    <p> <strong id="visitorCount">0</strong> زائر</p>
+    <p>📊 <strong id="visitorCount">0</strong> زائر</p>
   </section>
 
   <!-- عن المؤسس -->
@@ -431,8 +519,6 @@ header a {
 
 </main>
 
-
-
 <footer>
   جميع الحقوق محفوظة © الراسخون 2025
 </footer>
@@ -446,7 +532,6 @@ header a {
   let visitCount = localStorage.getItem('visitCount');
   if (!visitCount) visitCount = 1;
   else visitCount = parseInt(visitCount) + 1;
-
   localStorage.setItem('visitCount', visitCount);
   document.getElementById('visitorCount').textContent = visitCount;
 

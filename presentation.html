@@ -1,98 +1,163 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>العرض التقديمي - الراسخون</title>
+  <meta charset="UTF-8">
+  <title>الراسخون – من نحن</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f7fcfc;
-      color: #004d40;
-      padding: 2em;
+      font-family: 'Cairo', sans-serif;
+      background-color: #F9FBFC;
+      color: #333;
       margin: 0;
+      direction: rtl;
+    }
+
+    header {
+      background: linear-gradient(135deg, #004d40, #00796b);
+      color: white;
+      padding: 1.5em 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+      margin-left: 20px;
+    }
+
+    .header-text h1 {
+      font-size: 2em;
+      margin: 0 0 0.3em;
+      color: white;
+    }
+
+    .header-text p {
+      font-size: 1em;
+      margin: 0;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: #00695c;
+      padding: 1em;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5em 1em;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2.5em 1.5em;
+      line-height: 1.9;
     }
 
     h1 {
-      text-align: center;
       color: #00695c;
-      margin-bottom: 1.5em;
-    }
-
-    ul {
-      max-width: 700px;
-      margin: auto;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-    }
-
-    ul li a {
-      display: block;
-      padding: 1em;
-      background-color: #e0f2f1;
-      text-decoration: none;
-      color: #00695c;
-      font-weight: bold;
-      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: background 0.3s;
+      font-size: 2em;
+      margin-bottom: 0.8em;
     }
 
-    ul li a:hover {
-      background-color: #b2dfdb;
+    .about-box {
+      background-color: #ffffff;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      font-size: 1.1em;
+      line-height: 2;
     }
 
-    .home-button {
-      text-align: left;
-      margin-bottom: 2em;
+    .about-box strong {
+      color: #004d40;
     }
 
-    .home-button a {
-      background-color: #00796b;
-      color: white;
-      padding: 0.7em 1.4em;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .home-button a:hover {
+    footer {
       background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
     }
   </style>
 </head>
 <body>
-<header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
+
+<header>
+  <div style="display:flex;align-items:center;">
+    <img src="logo1.jpg" alt="شعار الراسخون">
+    <div class="header-text">
+      <h1>الراسخون</h1>
+      <p>منصة رقمية لتمكين القادة واستكشاف الذات القيادية</p>
     </div>
+  </div>
+
+  <div>
+    <a href="login.html" style="background-color: white; color: #00796b; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
+    <a href="signup.html" style="background-color: #004d40; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
   </div>
 </header>
 
-  <div class="home-button">
-    <a href="index.html">⬅ العودة إلى الصفحة الرئيسية</a>
-  </div>
-
-  <h1>العرض التقديمي - منصة الراسخون</h1>
-
+<nav>
   <ul>
-    <li><a href="tab1.html">من نحن</a></li>
-    <li><a href="tab2.html">الأهداف الاتصالية الاستراتيجية</a></li>
-    <li><a href="tab3.html">الجمهور المستهدف</a></li>
-    <li><a href="tab4.html">الرسائل الرئيسة</a></li>
-    <li><a href="tab5.html">قنوات الاتصال</a></li>
-    <li><a href="tab6.html">خطة التنفيذ والجدول الزمني</a></li>
-    <li><a href="tab7.html">آليات التقييم والمتابعة</a></li>
-    <li><a href="tab8.html">الخاتمة والتوصيات</a></li>
-    <li><a href="tab9.html">مناقشة مفتوحة</a></li>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+    <li><a href="communication.html">الاتصال الفعّال</a></li>
+    <li><a href="advice.html">الاستشارات الفورية</a></li>
+    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="community.html">مجتمع القادة</a></li>
+    <li><a href="presentation.html">من نحن</a></li>
   </ul>
+</nav>
+
+<main>
+  <h1>من نحن</h1>
+
+  <div class="about-box">
+    <p>
+      <strong>الراسخون</strong> هي مبادرة رقمية قطرية تسعى إلى تمكين القادة الحاليين والناشئين من 
+      استكشاف ذواتهم القيادية، وتطوير مهاراتهم، وصناعة أثر مهني ومجتمعي مستدام.
+    </p>
+
+    <p>
+      انطلقت المنصة من رؤية تؤمن بأن القيادة ليست منصبًا، بل سلوكًا وقيمة تبدأ من الداخل.  
+      ومن هنا تقدم «الراسخون» أدوات تشخيص، خرائط تطوير قيادي، مواقف تعليمية من القادة القطريين،  
+      وصفحات تفاعلية تساعد المستخدم على فهم ذاته، وتحديد مساره، وتعزيز قدراته الاتصالية والقيادية.
+    </p>
+
+    <p>
+      تقوم فكرة المنصة على الدمج بين <strong>التعلم القيادي</strong> و<strong>التجارب الواقعية</strong>  
+      المستوحاة من خطابات ومواقف القيادة الوطنية في دولة قطر، لتكون مصدر إلهام ودعم لكل من يسعى 
+      إلى قيادة نفسه ثم قيادة الآخرين.
+    </p>
+
+    <p>
+      وتهدف «الراسخون» إلى صناعة مجتمع واعٍ، قادر على اتخاذ القرار، ومؤمن بأن القيادة رحلة نمو 
+      وليست محطة وصول.
+    </p>
+  </div>
+</main>
+
+<footer>
+  جميع الحقوق محفوظة © الراسخون 2025
+</footer>
 
 </body>
 </html>

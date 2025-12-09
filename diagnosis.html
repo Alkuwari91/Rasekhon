@@ -13,76 +13,132 @@
       margin: 0;
       direction: rtl;
     }
+
+    /* الهيدر بنفس هوية الموقع */
     header {
-      background: linear-gradient(135deg, #004d40, #00796b);
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
-      padding: 1.5em 1em;
+      padding: 2.2em 1em;
+      position: relative;
+      text-align: center;
+    }
+
+    .header-center {
+      display: block;
+    }
+
+    .brand-title {
+      font-size: 2.7em;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .brand-slogan {
+      font-size: 1.1em;
+      margin-top: 0.4em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 0.5em;
     }
-    header img {
-      width: 80px;
-      height: auto;
-      margin-left: 20px;
+
+    .small-btn {
+      padding: 0.35em 0.9em;
+      font-size: 0.85em;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
     }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538 !important;
+    }
+
+    .maroon-btn {
+      background-color: #8A1538;
+      color: #ffffff !important;
+    }
+
+    .maroon-btn:hover {
+      background-color: #6E0F2C;
+    }
+
+    /* شريط التنقل */
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: #00695c;
+      background-color: #8A1538;
       padding: 1em;
       margin: 0;
       flex-wrap: wrap;
     }
+
     nav ul li {
       margin: 0.5em 1em;
     }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* المحتوى */
     main {
       max-width: 1100px;
       margin: auto;
       padding: 2em 1em 3em;
     }
+
     h1, h2 {
-      color: #00695c;
+      color: #8A1538;
       text-align: center;
     }
+
     .intro {
       text-align: center;
       margin-bottom: 2em;
       line-height: 1.8;
     }
+
     .question {
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 1em 1.5em;
       margin-bottom: 1em;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
+
     .question p {
       margin-top: 0;
       font-weight: 600;
     }
+
     .options {
       display: flex;
       flex-wrap: wrap;
       gap: 1em;
       margin-top: 0.5em;
     }
+
     label {
       display: flex;
       align-items: center;
       gap: 0.3em;
       font-size: 0.95em;
     }
+
     button {
-      background-color: #00796b;
+      background-color: #8A1538;
       color: white;
       border: none;
       padding: 0.7em 2em;
@@ -92,9 +148,11 @@
       display: block;
       margin: 2em auto 0;
     }
+
     button:hover {
-      background-color: #004d40;
+      background-color: #6E0F2C;
     }
+
     .result-card {
       margin-top: 2.5em;
       background-color: #ffffff;
@@ -103,47 +161,56 @@
       padding: 1.8em;
       line-height: 1.9;
     }
+
     .tag {
       display: inline-block;
       padding: 0.2em 0.7em;
       border-radius: 999px;
       font-size: 0.85em;
       margin-left: 0.4em;
-      background-color: #E0F2F1;
-      color: #004d40;
+      background-color: #F8E8EE;
+      color: #6E0F2C;
     }
+
     .links {
       margin-top: 2em;
       text-align: center;
     }
+
     .links a {
       margin: 0.5em;
       display: inline-block;
       text-decoration: none;
-      background-color: #004d40;
+      background-color: #6E0F2C;
       color: #fff;
       padding: 0.6em 1.2em;
       border-radius: 999px;
       font-size: 0.9em;
     }
+
+    footer {
+      background-color:#6E0F2C;
+      color:white;
+      text-align:center;
+      padding:1.5em;
+      margin-top:3em;
+    }
   </style>
 </head>
 <body>
+
 <header>
-  <div style="display:flex;align-items:center;">
-    <img src="logo1.jpg" alt="شعار الراسخون">
-    <div>
-          <h1>الراسخون</h1>
-      <p style="margin:0;font-size:1em;">منصة رقمية لتمكين القادة واستكشاف الذات القيادية</p>
-    </div>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
   </div>
-  <div>
-    <a href="login.html" style="background-color:white;color:#00796b;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">تسجيل الدخول</a>
-    <a href="signup.html" style="background-color:#004d40;color:white;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">إنشاء حساب</a>
+  <div class="header-buttons">
+    <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
-  <nav>
+<nav>
   <ul>
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="diagnosis.html">تشخيص القيادة</a></li>
@@ -307,7 +374,7 @@
   </div>
 </main>
 
-<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+<footer>
   جميع الحقوق محفوظة &copy; الراسخون 2025
 </footer>
 
@@ -338,7 +405,7 @@ function calculateStyle() {
 
   const entries = Object.entries(styleScores);
   entries.sort((a, b) => b[1] - a[1]);
-  const [topStyle, topScore] = entries[0];
+  const [topStyle] = entries[0];
 
   let styleName = '';
   let description = '';
@@ -370,5 +437,6 @@ function calculateStyle() {
   `;
 }
 </script>
+
 </body>
 </html>

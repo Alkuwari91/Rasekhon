@@ -1,212 +1,470 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>7- مقرر الاتصال القيادي الفعال - الراسخون</title>
+  <meta charset="UTF-8">
+  <title>الراسخون – الاتصال القيادي الفعّال</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to left, #f0fefc, #e0f7fa);
-      color: #004d40;
-      padding: 2em;
-      line-height: 1.9;
+      font-family: 'Cairo', sans-serif;
+      background-color: #F9FBFC;
+      color: #333;
+      margin: 0;
+      direction: rtl;
     }
 
     header {
+      background: linear-gradient(135deg, #004d40, #00796b);
+      color: white;
+      padding: 1.5em 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+      margin-left: 20px;
+    }
+
+    .header-text {
+      text-align: right;
+    }
+
+    .header-text h1 {
+      font-size: 2em;
+      margin: 0 0 0.3em;
+      color: white;
+    }
+
+    .header-text p {
+      font-size: 1em;
+      margin: 0;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: #00695c;
+      padding: 1em;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5em 1em;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em 1em 3em;
+    }
+
+    h1 {
+      color: #00695c;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .intro {
       text-align: center;
       margin-bottom: 2em;
+      line-height: 1.8;
     }
 
-    header h1 {
-      color: #00796b;
-      font-size: 2.2em;
-    }
-
-    .info-box {
-      text-align: center;
-      margin: 1em 0 2em;
-      font-size: 1.1em;
-      background-color: #e0f2f1;
-      padding: 1em;
-      border-radius: 10px;
-    }
-
-    .section {
-      background: white;
+    .highlight-card {
+      background-color: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
       padding: 1.5em;
       margin-bottom: 2em;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .section h2 {
-      color: #00796b;
-      border-bottom: 2px solid #e0f2f1;
-      padding-bottom: 0.4em;
-      margin-bottom: 0.6em;
+    .highlight-card h2 {
+      margin-top: 0;
+      color: #00695c;
+      font-size: 1.3em;
     }
 
-    .skills-grid {
+    .highlight-meta {
+      font-size: 0.9em;
+      color: #607d8b;
+      margin-bottom: 0.5em;
+    }
+
+    .highlight-quote {
+      font-style: italic;
+      line-height: 1.9;
+      margin: 0.5em 0 1em;
+    }
+
+    .highlight-comment {
+      font-size: 0.95em;
+      line-height: 1.8;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 999px;
+      font-size: 0.8em;
+      background-color: #E3F2FD;
+      color: #1565c0;
+      margin-left: 0.3em;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5em;
+      grid-template-columns: 1.15fr 1.05fr;
+      gap: 1.8em;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
-      background-color: #f9fdfc;
-      padding: 1em;
-      border-radius: 10px;
-      border: 1px solid #c8e6c9;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      box-sizing: border-box;
     }
 
-    .card h3 {
+    .card h2 {
+      margin-top: 0;
       color: #00695c;
+      font-size: 1.25em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95em;
+      box-sizing: border-box;
+      margin-bottom: 0.9em;
+      background-color: #FAFDFF;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.6em 1.6em;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .info {
+      font-size: 0.85em;
+      color: #607d8b;
+      margin-top: 0.4em;
+      line-height: 1.7;
+    }
+
+    .timeline {
+      max-height: 450px;
+      overflow-y: auto;
+      padding-right: 0.5em;
+    }
+
+    .moment {
+      border-right: 4px solid #00796b;
+      padding: 0.8em 1em 0.9em;
+      margin-bottom: 0.9em;
+      background-color: #F5FBFA;
+      border-radius: 10px;
+      line-height: 1.7;
+      font-size: 0.95em;
+    }
+
+    .moment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.3em;
+      gap: 0.7em;
+    }
+
+    .moment-leader {
+      font-weight: 700;
+      color: #004d40;
+      font-size: 0.98em;
+    }
+
+    .moment-date {
+      font-size: 0.8em;
+      color: #78909c;
+      white-space: nowrap;
+    }
+
+    .moment-theme {
+      font-size: 0.85em;
+      color: #455a64;
       margin-bottom: 0.3em;
     }
 
-    .button {
-      display: block;
-      text-align: center;
-      background-color: #00796b;
-      color: white;
-      font-weight: bold;
-      padding: 0.8em 1.5em;
-      border-radius: 8px;
-      text-decoration: none;
-      margin: 2em auto;
-      max-width: 300px;
+    .moment-quote {
+      font-size: 0.9em;
+      color: #37474f;
     }
 
-    .button:hover {
-      background-color: #004d40;
+    .moment-link {
+      font-size: 0.8em;
+      margin-top: 0.4em;
+    }
+
+    .moment-link a {
+      color: #00796b;
+      text-decoration: none;
+    }
+
+    .moment-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-<header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
+
+<header>
+  <div style="display:flex;align-items:center;">
+    <img src="logo1.jpg" alt="شعار الراسخون">
+    <div class="header-text">
+      <h1>الراسخون</h1>
+      <p>الاتصال القيادي الفعّال – مواقف من قادة قطر</p>
     </div>
+  </div>
+  <div>
+    <a href="login.html" style="background-color: white; color: #00796b; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
+    <a href="signup.html" style="background-color: #004d40; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
   </div>
 </header>
 
-  <header>
-    <h1>مهارات الاتصال القيادي الفعّال</h1>
-  </header>
+<nav>
+  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+    <li><a href="communication.html">الاتصال الفعّال</a></li>
+    <li><a href="advice.html">الاستشارات الفورية</a></li>
+    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="community.html">مجتمع القادة</a></li>
+    <li><a href="presentation.html">العرض التقديمي</a></li>
+  </ul>
+</nav>
 
+<main>
+  <h1>الاتصال القيادي الفعّال</h1>
+  <p class="intro">
+    في هذه الصفحة نرصد نماذج حقيقية من <strong>خطابات ومواقف قادة قطر</strong>،  
+    ونركّز على المهارات الاتصالية التي ظهرت فيها، مثل: الوضوح، الإلهام، التواضع، إدارة الأزمات،  
+    حتى يتعلّم القائد والطالب كيف يترجم القيم القيادية إلى كلمات وأسلوب تواصل حيّ.
+  </p>
 
-
-  <section class="section">
-    <h2>مقدمة</h2>
-    <p>
-      الاتصال هو جوهر القيادة الفعّالة. من خلاله يتمكن القائد من تحفيز فريقه، توصيل رؤيته، وتجنب الأزمات. في هذا القسم نستعرض أهم المهارات الاتصالية المستخلصة من المنهج الدراسي، مدعومة بأمثلة واقعية.
+  <!-- الموقف القيادي البارز (تقومين بتحديثه يدويًا) -->
+  <section class="highlight-card">
+    <h2>الموقف القيادي البارز (يمكنك تحديثه دوريًا)</h2>
+    <p class="highlight-meta">
+      <span class="tag">نموذج اتصال قيادي</span>
+      <span id="featuredDate">مثال: اليوم الوطني – كلمة لقائد قطري</span>
+    </p>
+    <p class="highlight-quote" id="featuredQuote">
+      «هنا تضعين اقتباسًا مختصرًا من كلمة أو خطاب، مثل جملة مؤثرة تعبّر عن رؤية أو قيمة قيادية.»
+    </p>
+    <p class="highlight-comment" id="featuredComment">
+      <strong>قراءة قيادية للموقف:</strong><br>
+      اشرحي في سطرين أو ثلاثة ما الذي يلفت الانتباه في هذا الخطاب من زاوية الاتصال:
+      هل هو وضوح الرسالة؟ طريقة مخاطبة الشباب؟ استحضار القيم الوطنية؟ إدارة مشاعر الجمهور وقت أزمة؟ …
+    </p>
+    <p class="info">
+      يمكنك تعديل هذا القسم يدويًا من الكود ليعرض آخر خطاب أو كلمة ترغبين في تحليلها مع طلابك أو المتدربين.
     </p>
   </section>
 
-  <section class="section">
-    <h2>المهارات الأساسية في الاتصال القيادي</h2>
-    <div class="skills-grid">
-      <div class="card">
-        <h3> الاستماع النشط</h3>
-        <p>التركيز الكامل على المتحدث وتجنب المقاطعة. مثال: قائد يصغي لمخاوف فريقه قبل التغيير.</p>
-      </div>
-      <div class="card">
-        <h3> لغة الجسد</h3>
-        <p>تعابير الوجه، نبرة الصوت، وحركات اليد تؤثر في الرسالة. مثال: استخدام التواصل البصري لبناء الثقة.</p>
-      </div>
-      <div class="card">
-        <h3> الوضوح والاختصار</h3>
-        <p>إيصال الرسالة بأقل كلمات وأكثر دقة. مثال: إعطاء تعليمات واضحة في أوقات الأزمات.</p>
-      </div>
-      <div class="card">
-        <h3> التعاطف</h3>
-        <p>فهم مشاعر الآخرين ومراعاتها. مثال: قائد يتحدث بلغة الفريق أثناء تحدٍ نفسي.</p>
-      </div>
-      <div class="card">
-        <h3> التغذية الراجعة البنّاءة</h3>
-        <p>تقديم الملاحظات بلغة تطويرية. مثال: "أُقدّر مجهودك، ونقترح تحسين النقطة التالية..."</p>
-      </div>
-    </div>
-  </section>
+  <div class="grid">
+    <!-- سجل المواقف القيادية -->
+    <section class="card">
+      <h2>سجل المواقف القيادية</h2>
+      <p class="info">
+        هنا يمكنك إضافة مواقف متعددة لسمو الأمير، سمو الشيخة، أو أي قائد في دولة قطر،  
+        مع إبراز مهارة الاتصال الأساسية في كل موقف. (يتم الحفظ في المتصفح الحالي فقط لعرض الفكرة.)
+      </p>
 
-  
-  <a href="index.html" class="button"> العودة إلى الصفحة الرئيسية</a>
+      <div id="timeline" class="timeline">
+        <!-- يتم تعبئته من جافاسكربت -->
+      </div>
+    </section>
 
-  <!-- مساعد الذكاء الاصطناعي "رُشد" لصفحة مهارات الاتصال -->
-<style>
-  .chatbot-icon {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #00796b;
-    color: white;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 999;
+    <!-- نموذج إضافة موقف جديد (تعبئته منك) -->
+    <section class="card">
+      <h2>إضافة موقف قيادي جديد</h2>
+
+      <label for="leader">اسم القائد / المتحدث:</label>
+      <input type="text" id="leader" placeholder="مثال: سمو الأمير / سمو الشيخة / أحد الوزراء">
+
+      <label for="theme">موضوع الموقف أو كلمة الخطاب:</label>
+      <input type="text" id="theme" placeholder="مثال: كلمة في اليوم الوطني – خطاب في افتتاح...">
+
+      <label for="date">التاريخ (يمكن كتابته يدويًا):</label>
+      <input type="text" id="date" placeholder="مثال: ديسمبر 2025">
+
+      <label for="skill">مهارة الاتصال البارزة:</label>
+      <select id="skill">
+        <option value="الإلهام">الإلهام وتحفيز الجمهور</option>
+        <option value="الوضوح">الوضوح والبساطة في الرسالة</option>
+        <option value="إدارة الأزمات">إدارة الأزمات وطمأنة المجتمع</option>
+        <option value="التواضع">التواضع والقرب من الناس</option>
+        <option value="رؤية مستقبلية">طرح رؤية مستقبلية</option>
+        <option value="الاعتراف والتقدير">الاعتراف بجهود الآخرين وتقديرهم</option>
+        <option value="أخرى">أخرى</option>
+      </select>
+
+      <label for="quote">اقتباس مختصر من الكلمة (أو ملخص المعنى):</label>
+      <textarea id="quote" placeholder="يمكنك وضع جملة قصيرة جدًا أو إعادة صياغة الفكرة بأسلوبك."></textarea>
+
+      <label for="analysis">ملاحظتك القيادية / قراءة للموقف:</label>
+      <textarea id="analysis" placeholder="مثال: في هذا الموقف ركّز القائد على طمأنة الجمهور من خلال..."></textarea>
+
+      <label for="link">رابط الكلمة (يوتيوب أو خبر – اختياري):</label>
+      <input type="text" id="link" placeholder="مثال: https://...">
+
+      <button type="button" onclick="addMoment()">إضافة إلى سجل المواقف</button>
+
+      <p class="info">
+        ملاحظة: يمكنك استخدام هذه الصفحة في الشرح مع الطلاب أو المتدربين،  
+        كمثال حي على تحليل الاتصال القيادي في السياق القطري.
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+  جميع الحقوق محفوظة &copy; الراسخون 2025
+</footer>
+
+<script>
+  // تحميل المواقف المحفوظة من المتصفح
+  function loadMoments() {
+    const saved = localStorage.getItem('rasekhon_communication_moments');
+    let moments = saved ? JSON.parse(saved) : [];
+
+    // إن لم يوجد شيء، نضع مثال واحد للتوضيح
+    if (moments.length === 0) {
+      moments = [
+        {
+          leader: 'مثال: قائد قطري',
+          theme: 'كلمة في مناسبة وطنية',
+          date: 'مثال: ديسمبر 2025',
+          skill: 'الإلهام',
+          quote: 'يمكنك هنا كتابة اقتباس قصير جدًا من الكلمة أو تلخيص الفكرة.',
+          analysis: 'يمكنك في هذا الجزء أن توضحي كيف استخدم القائد نبرة الصوت، اختيار الكلمات، واستحضار القيم الوطنية لتعزيز الانتماء.',
+          link: ''
+        }
+      ];
+      localStorage.setItem('rasekhon_communication_moments', JSON.stringify(moments));
+    }
+
+    renderTimeline(moments);
   }
 
-  .chatbox {
-    position: fixed;
-    bottom: 90px;
-    left: 20px;
-    width: 300px;
-    max-height: 400px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 1em;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    display: none;
-    flex-direction: column;
-    z-index: 999;
+  function renderTimeline(moments) {
+    const container = document.getElementById('timeline');
+    if (!moments || moments.length === 0) {
+      container.innerHTML = '<p style="font-size:0.9em;color:#78909c;">لا توجد مواقف مسجّلة بعد. ابدئي بإضافة أول موقف قيادي.</p>';
+      return;
+    }
+
+    let html = '';
+    moments.forEach(m => {
+      html += `
+        <div class="moment">
+          <div class="moment-header">
+            <div class="moment-leader">${m.leader || 'قائد'}</div>
+            <div class="moment-date">${m.date || ''}</div>
+          </div>
+          <div class="moment-theme">
+            <span class="tag">${m.skill || ''}</span>
+            ${m.theme || ''}
+          </div>
+          <div class="moment-quote">
+            ${m.quote ? '«' + m.quote + '»' : ''}
+          </div>
+          ${m.analysis ? `<div style="font-size:0.88em;color:#455a64;margin-top:0.3em;">${m.analysis}</div>` : ''}
+          ${m.link ? `<div class="moment-link">رابط الكلمة: <a href="${m.link}" target="_blank" rel="noopener">فتح الرابط</a></div>` : ''}
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
   }
 
-  .chatbox textarea {
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-top: 1em;
-    font-size: 0.95em;
+  function addMoment() {
+    const leader   = document.getElementById('leader').value.trim();
+    const theme    = document.getElementById('theme').value.trim();
+    const date     = document.getElementById('date').value.trim();
+    const skill    = document.getElementById('skill').value;
+    const quote    = document.getElementById('quote').value.trim();
+    const analysis = document.getElementById('analysis').value.trim();
+    const link     = document.getElementById('link').value.trim();
+
+    if (!leader || !theme) {
+      alert('يرجى إدخال اسم القائد وموضوع الموقف على الأقل.');
+      return;
+    }
+
+    const saved = localStorage.getItem('rasekhon_communication_moments');
+    let moments = saved ? JSON.parse(saved) : [];
+
+    const moment = { leader, theme, date, skill, quote, analysis, link };
+    moments.unshift(moment); // الأحدث في الأعلى
+    localStorage.setItem('rasekhon_communication_moments', JSON.stringify(moments));
+
+    document.getElementById('leader').value = '';
+    document.getElementById('theme').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('skill').value = 'الإلهام';
+    document.getElementById('quote').value = '';
+    document.getElementById('analysis').value = '';
+    document.getElementById('link').value = '';
+
+    renderTimeline(moments);
   }
 
-  .chatbox button {
-    margin-top: 0.5em;
-    background-color: #00796b;
-    color: white;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-
-  .chat-response {
-    margin-top: 1em;
-    font-size: 0.95em;
-    color: #004d40;
-  }
-</style>
-
-<div class="chatbot-icon" onclick="toggleChatbox()">💬</div>
-
-<div class="chatbox" id="chatbox">
-  <strong>🤖 "رُشد" - مساعدك في التواصل:</strong>
-  <p>اكتب الموقف الاتصالي الذي تواجهه وسأقترح عليك مهارة مناسبة 👇</p>
-  <textarea id
+  window.addEventListener('DOMContentLoaded', loadMoments);
+</script>
 
 </body>
 </html>

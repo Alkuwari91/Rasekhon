@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
-  <style>
+<style>
     body {
       font-family: 'Cairo', sans-serif;
       background-color: #F9FBFC;
@@ -15,30 +15,30 @@
       direction: rtl;
     }
 
-    /* الهيدر البرغندي الموحد */
-  header {
-  background: linear-gradient(135deg, #8A1538, #6E0F2C);
-  color: white;
-  padding: 2.2em 1em;      /* 🎯 هذا يجعل الارتفاع ثابت */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  min-height: 140px;       /* 🎯 هذا يضمن نفس الطول في كل الصفحات */
-}
+    /* الهيدر – العنوان في المنتصف والأزرار يمين */
+    header {
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
+      color: white;
+      padding: 2.2em 1em;
+      position: relative;
+      text-align: center;
+    }
+
+    .header-center {
+      display: block;
+    }
 
     .brand-title {
-      margin: 0;
-      font-size: 2.4em;
+      font-size: 2.7em;
       font-weight: 800;
       letter-spacing: 3px;
+      margin: 0;
       color: #ffffff;
     }
 
     .brand-slogan {
-      margin: 0.4em 0 0;
-      font-size: 1.05em;
+      font-size: 1.1em;
+      margin-top: 0.4em;
       color: #F8E8EE;
     }
 
@@ -50,22 +50,29 @@
       gap: 0.5em;
     }
 
-    .header-buttons a {
-      font-size: 0.85em;
+    .small-btn {
       padding: 0.35em 0.9em;
+      font-size: 0.85em;
       border-radius: 6px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+    }
+
+    .white-btn {
       background-color: #ffffff;
-      color: #8A1538;
+      color: #8A1538 !important;
     }
 
-    .header-buttons a:last-child {
+    .maroon-btn {
+      background-color: #8A1538;
+      color: #ffffff !important;
+    }
+
+    .maroon-btn:hover {
       background-color: #6E0F2C;
-      color: #ffffff;
     }
 
-    /* شريط التنقل الموحد */
+    /* شريط التنقل */
     nav ul {
       display: flex;
       justify-content: center;
@@ -86,36 +93,291 @@
       font-weight: bold;
     }
 
-    /* المحتوى */
+    /* المحتوى الرئيسي */
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
-      padding: 2.5em 1.5em;
-      line-height: 1.9;
+      padding: 2em 1em 3em;
     }
 
     h1 {
       color: #8A1538;
       text-align: center;
-      font-size: 2em;
-      margin-bottom: 0.8em;
+      margin-top: 0;
     }
 
-    .about-box {
+    .intro {
+      text-align: center;
+      margin-bottom: 2em;
+      line-height: 1.8;
+    }
+
+    /* (موجودة لو احتجتيها في صفحات ثانية) */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+      gap: 1.8em;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
       background-color: #ffffff;
-      padding: 2em;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      font-size: 1.1em;
-      line-height: 2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      box-sizing: border-box;
     }
 
-    .about-box strong {
+    .card h2 {
+      margin-top: 0;
+      color: #8A1538;
+      font-size: 1.3em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95em;
+      box-sizing: border-box;
+      margin-bottom: 0.9em;
+      background-color: #FAFDFF;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .member-row {
+      display: flex;
+      gap: 0.5em;
+      margin-bottom: 0.5em;
+      align-items: center;
+    }
+
+    .member-row input {
+      margin-bottom: 0;
+    }
+
+    .member-row span {
+      font-size: 0.8em;
+      color: #607d8b;
+    }
+
+    button {
+      background-color: #8A1538;
+      color: white;
+      border: none;
+      padding: 0.6em 1.6em;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+
+    button:hover {
+      background-color: #6E0F2C;
+    }
+
+    .btn-secondary {
+      background-color: #B68CA5;
+      margin-right: 0.4em;
+    }
+
+    .info {
+      font-size: 0.85em;
+      color: #607d8b;
+      margin-top: 0.5em;
+      line-height: 1.7;
+    }
+
+    .group-box {
+      background-color: #F8E8EE;
+      border-radius: 10px;
+      padding: 1em 1.2em;
+      margin-top: 1em;
+      line-height: 1.7;
+      font-size: 0.95em;
+      border-right: 4px solid #8A1538;
+    }
+
+    .group-box strong {
       color: #6E0F2C;
     }
 
+    .link-text {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.85em;
+      background-color: #ffffff;
+      padding: 0.4em 0.7em;
+      border-radius: 6px;
+      border: 1px dashed #B68CA5;
+      word-break: break-all;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.15em 0.6em;
+      border-radius: 999px;
+      font-size: 0.8em;
+      background-color: #F5DDE8;
+      color: #8A1538;
+      margin-right: 0.3em;
+    }
+
+    .feed-empty {
+      font-size: 0.9em;
+      color: #78909c;
+    }
+
+    .post {
+      border-bottom: 1px solid #eceff1;
+      padding: 0.8em 0;
+    }
+
+    .post:last-child {
+      border-bottom: none;
+    }
+
+    .post-meta {
+      font-size: 0.8em;
+      color: #78909c;
+      margin-bottom: 0.2em;
+    }
+
+    .post-content {
+      font-size: 0.95em;
+      line-height: 1.8;
+    }
+
+    /* الرؤية والرسالة – بوكس قابل للفتح والإغلاق */
+    .vision-mission {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      margin-bottom: 3em;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .toggle-box {
+      background-color: #ffffff;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      width: 100%;
+      max-width: 500px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .toggle-box h2 {
+      color: #8A1538;
+      margin: 0;
+      font-size: 1.6em;
+    }
+
+    .toggle-box:hover {
+      background-color: #F8E8EE;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .toggle-content {
+      margin-top: 1em;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* بطاقات الأقسام */
+    .tabs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+    }
+
+    .tab-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      transition: transform 0.3s;
+      text-align: center;
+      width: 220px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .tab-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 22px rgba(138, 21, 56, 0.25);
+    }
+
+    .tab-card img {
+      width: 60px;
+      margin-bottom: 0.7em;
+    }
+
+    .tab-card h3 {
+      color: #8A1538;
+      margin: 0.5em 0;
+      font-size: 1.05em;
+    }
+
+    .rating, .counter {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+    .star {
+      font-size: 2em;
+      color: lightgray;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star.selected {
+      color: gold;
+    }
+
+    .owner {
+      text-align: center;
+      margin-top: 3em;
+      background-color: #ffffff;
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .owner h3 {
+      color: #8A1538;
+      margin-top: 0;
+    }
+
     footer {
-      background-color: #8A1538;
+      background-color: #6E0F2C;
       color: white;
       text-align: center;
       padding: 1.5em;

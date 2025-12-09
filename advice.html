@@ -254,7 +254,7 @@ async function getAdvice() {
   respDiv.innerHTML = '<p>⏳ جاري الاتصال بـ رُشد... انتظري لحظات قليلة.</p>';
 
   try {
-    const res = await fetch("https://YOUR-BACKEND-URL/rushd", {
+    const res = await fetch("https://rasekhon-rushd-api.onrender.com/rushd", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

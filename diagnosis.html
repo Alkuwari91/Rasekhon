@@ -2,201 +2,373 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <title>الراسخون – تشخيص قيادتك</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تشخيص النمط القيادي - الراسخون</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to right, #f1fdfc, #e0f7fa);
-      color: #004d40;
+      background-color: #F9FBFC;
+      color: #333;
       margin: 0;
-      padding: 2em;
       direction: rtl;
     }
-
     header {
-      text-align: center;
-      margin-bottom: 2em;
-    }
-
-    h1 {
-      color: #00695c;
-      font-size: 2.5em;
-    }
-
-    .intro {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    .styles-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
-      margin-top: 3em;
-      align-items: center;
-    }
-
-    .card-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2em;
-    }
-
-    .card-row.center {
-      justify-content: center;
-    }
-
-    .style-card {
-      background-color: #fff;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      width: 280px;
-      transition: transform 0.3s ease;
-    }
-
-    .style-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .style-card h3 {
-      color: #00796b;
-      margin-bottom: 0.5em;
-    }
-
-    .style-card p {
-      font-size: 1em;
-      margin-bottom: 1em;
-    }
-
-    .style-card blockquote {
-      font-style: italic;
-      background: #e0f2f1;
-      padding: 1em;
-      border-radius: 10px;
-      color: #333;
-    }
-
-    .style-card small {
-      display: block;
-      margin-top: 0.5em;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    .home-link {
-      display: inline-block;
-      margin-top: 2em;
-      background-color: #00796b;
+      background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
-      padding: 0.7em 1.4em;
-      border-radius: 8px;
+      padding: 1.5em 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header img {
+      width: 80px;
+      height: auto;
+      margin-left: 20px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: #00695c;
+      padding: 1em;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0.5em 1em;
+    }
+    nav ul li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
-
-    .home-link:hover {
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em 1em 3em;
+    }
+    h1, h2 {
+      color: #00695c;
+      text-align: center;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 2em;
+      line-height: 1.8;
+    }
+    .question {
+      background-color: #fff;
+      padding: 1em 1.5em;
+      margin-bottom: 1em;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .question p {
+      margin-top: 0;
+      font-weight: 600;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 0.5em;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      font-size: 0.95em;
+    }
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.7em 2em;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      display: block;
+      margin: 2em auto 0;
+    }
+    button:hover {
       background-color: #004d40;
     }
-
-    .final-quote {
-      margin-top: 4em;
+    .result-card {
+      margin-top: 2.5em;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      padding: 1.8em;
+      line-height: 1.9;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 999px;
+      font-size: 0.85em;
+      margin-left: 0.4em;
+      background-color: #E0F2F1;
+      color: #004d40;
+    }
+    .links {
+      margin-top: 2em;
       text-align: center;
-      font-size: 1.2em;
-      font-style: italic;
-      background-color: #e0f7fa;
-      padding: 1.5em;
-      border-radius: 10px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    }
+    .links a {
+      margin: 0.5em;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #004d40;
+      color: #fff;
+      padding: 0.6em 1.2em;
+      border-radius: 999px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
- <header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
+<header>
+  <div style="display:flex;align-items:center;">
+    <img src="logo1.jpg" alt="شعار الراسخون">
     <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
+      <h1 style="margin:0;font-size:2em;">الراسخون</h1>
+      <p style="margin:0;font-size:1em;">منصة رقمية لتمكين القادة واستكشاف الذات القيادية</p>
     </div>
+  </div>
+  <div>
+    <a href="login.html" style="background-color:white;color:#00796b;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">تسجيل الدخول</a>
+    <a href="signup.html" style="background-color:#004d40;color:white;padding:0.5em 1em;margin:0 5px;border-radius:6px;text-decoration:none;font-weight:bold;">إنشاء حساب</a>
   </div>
 </header>
-  <header>
-    <h1>تشخيص النمط القيادي</h1>
-    <p class="intro">
-      هل تعرف نمطك القيادي؟ التعرف على أسلوب قيادتك خطوة أولى نحو تطوير فعال ومؤثر.
-      إليك الأنماط القيادية الأكثر شيوعًا، مع أمثلة واقعية تلهمك.
-    </p>
-    <a href="index.html" class="home-link"> العودة إلى الرئيسية</a>
-  </header>
 
-  <section class="styles-wrapper">
+<nav>
+  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+    <li><a href="communication.html">الاتصال الفعّال</a></li>
+    <li><a href="advice.html">الاستشارات الفورية</a></li>
+    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="community.html">مجتمع القادة</a></li>
+    <li><a href="presentation.html">العرض التقديمي</a></li>
+  </ul>
+</nav>
 
-    <div class="card-row">
-      <div class="style-card">
-        <h3> القائد التحويلي</h3>
-        <p>يحفّز من حوله من خلال الرؤية الملهمة، يركز على التغيير والنمو الجماعي.</p>
-        <blockquote>
-          "يبدو دائمًا مستحيلاً... حتى يتحقق."
-          <small>– نيلسون مانديلا</small>
-        </blockquote>
-      </div>
+<main>
+  <h1>تشخيص قيادتك – مستكشف النمط القيادي</h1>
+  <p class="intro">
+    أجب عن العبارات التالية بحسب سلوكك الفعلي في العمل أو الدراسة.  
+    لا توجد إجابة صحيحة أو خاطئة – المهم أن تكون صادقًا مع نفسك.
+  </p>
 
-      <div class="style-card">
-        <h3> القائد التشاركي</h3>
-        <p>يشرك الفريق في اتخاذ القرار، ويعزز ثقافة العمل الجماعي والمسؤولية المشتركة.</p>
-        <blockquote>
-          "القائد الجيد يمنحك الإجابة، أما القائد العظيم فيدربك على طرح الأسئلة الصحيحة."
-          <small>– جاك ويلش</small>
-        </blockquote>
-      </div>
-    </div>
-
-    <div class="card-row">
-      <div class="style-card">
-        <h3> القائد التبادلي</h3>
-        <p>يركز على الأداء والمكافأة وفق أهداف واضحة، ويهتم بقياس النتائج بدقة.</p>
-        <blockquote>
-          "ما لا يمكن قياسه، لا يمكن تحسينه."
-          <small>– بيتر دراكر</small>
-        </blockquote>
-      </div>
-
-      <div class="style-card">
-        <h3> القائد السلطوي</h3>
-        <p>يتخذ قرارات حاسمة وفق رؤية طويلة المدى، ويبني مؤسسات قوية تعتمد على الانضباط.</p>
-        <blockquote>
-          "التغيير ليس خيارًا... بل هو استمرارية الحياة."
-          <small>– لي كوان يو</small>
-        </blockquote>
+  <form id="leadershipTest">
+    <!-- 12 سؤال – 3 أنماط: تحويلي، تشاركي، توجيهي -->
+    <div class="question" data-style="transformational">
+      <p>1. أحرص على إلهام الآخرين برؤية واضحة للمستقبل.</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="5">دائمًا</label>
+        <label><input type="radio" name="q1" value="4">غالبًا</label>
+        <label><input type="radio" name="q1" value="3">أحيانًا</label>
+        <label><input type="radio" name="q1" value="2">نادرًا</label>
+        <label><input type="radio" name="q1" value="1">أبدًا</label>
       </div>
     </div>
 
-    <div class="card-row center">
-      <div class="style-card">
-        <h3> القائد الخدمي</h3>
-        <p>يخدم الآخرين من موقع القيادة، ويقود بالمحبة والتواضع والتأثير الصامت.</p>
-        <blockquote>
-          "خدمة الإنسان واجب لا يُنتظر عليه مقابل، بل أجره عند الله."
-          <small>– د. عبد الرحمن السميط</small>
-        </blockquote>
+    <div class="question" data-style="participative">
+      <p>2. أشارك فريقي في اتخاذ القرارات المهمة.</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="5">دائمًا</label>
+        <label><input type="radio" name="q2" value="4">غالبًا</label>
+        <label><input type="radio" name="q2" value="3">أحيانًا</label>
+        <label><input type="radio" name="q2" value="2">نادرًا</label>
+        <label><input type="radio" name="q2" value="1">أبدًا</label>
       </div>
     </div>
 
-  </section>
+    <div class="question" data-style="directive">
+      <p>3. أفضّل إعطاء تعليمات واضحة وتحديد ما يجب فعله خطوة بخطوة.</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="5">دائمًا</label>
+        <label><input type="radio" name="q3" value="4">غالبًا</label>
+        <label><input type="radio" name="q3" value="3">أحيانًا</label>
+        <label><input type="radio" name="q3" value="2">نادرًا</label>
+        <label><input type="radio" name="q3" value="1">أبدًا</label>
+      </div>
+    </div>
 
-  <div style="text-align: center; margin-top: 3em;">
-    <a href="leadership-test.html" class="home-link" style="background-color: #009688;">
-       ابدأ اختبار نمطك القيادي الآن
-    </a>
+    <div class="question" data-style="transformational">
+      <p>4. أحرص على ربط المهام اليومية برؤية أوسع أو هدف أعمق.</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="5">دائمًا</label>
+        <label><input type="radio" name="q4" value="4">غالبًا</label>
+        <label><input type="radio" name="q4" value="3">أحيانًا</label>
+        <label><input type="radio" name="q4" value="2">نادرًا</label>
+        <label><input type="radio" name="q4" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="participative">
+      <p>5. أطرح أسئلة لأسمع آراء الآخرين قبل أن أعبّر عن رأيي.</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="5">دائمًا</label>
+        <label><input type="radio" name="q5" value="4">غالبًا</label>
+        <label><input type="radio" name="q5" value="3">أحيانًا</label>
+        <label><input type="radio" name="q5" value="2">نادرًا</label>
+        <label><input type="radio" name="q5" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="directive">
+      <p>6. أركّز على الالتزام بالقواعد والإجراءات أكثر من التجريب.</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="5">دائمًا</label>
+        <label><input type="radio" name="q6" value="4">غالبًا</label>
+        <label><input type="radio" name="q6" value="3">أحيانًا</label>
+        <label><input type="radio" name="q6" value="2">نادرًا</label>
+        <label><input type="radio" name="q6" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="transformational">
+      <p>7. أشجّع الآخرين على التفكير بشكل إبداعي وتحدّي الوضع القائم.</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="5">دائمًا</label>
+        <label><input type="radio" name="q7" value="4">غالبًا</label>
+        <label><input type="radio" name="q7" value="3">أحيانًا</label>
+        <label><input type="radio" name="q7" value="2">نادرًا</label>
+        <label><input type="radio" name="q7" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="participative">
+      <p>8. أرى أن قوة القرار تكون أكبر عندما يشارك فيه أكثر من شخص.</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="5">دائمًا</label>
+        <label><input type="radio" name="q8" value="4">غالبًا</label>
+        <label><input type="radio" name="q8" value="3">أحيانًا</label>
+        <label><input type="radio" name="q8" value="2">نادرًا</label>
+        <label><input type="radio" name="q8" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="directive">
+      <p>9. أشعر بالراحة عندما أكون المتحكم الرئيسي في سير العمل.</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="5">دائمًا</label>
+        <label><input type="radio" name="q9" value="4">غالبًا</label>
+        <label><input type="radio" name="q9" value="3">أحيانًا</label>
+        <label><input type="radio" name="q9" value="2">نادرًا</label>
+        <label><input type="radio" name="q9" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="transformational">
+      <p>10. أقدّم للآخرين تغذية راجعة تربط الأداء برسالتهم الشخصية أو قيمهم.</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="5">دائمًا</label>
+        <label><input type="radio" name="q10" value="4">غالبًا</label>
+        <label><input type="radio" name="q10" value="3">أحيانًا</label>
+        <label><input type="radio" name="q10" value="2">نادرًا</label>
+        <label><input type="radio" name="q10" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="participative">
+      <p>11. أحرص على خلق مساحة آمنة للحوار وتقبّل الآراء المختلفة.</p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="5">دائمًا</label>
+        <label><input type="radio" name="q11" value="4">غالبًا</label>
+        <label><input type="radio" name="q11" value="3">أحيانًا</label>
+        <label><input type="radio" name="q11" value="2">نادرًا</label>
+        <label><input type="radio" name="q11" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <div class="question" data-style="directive">
+      <p>12. عندما يكون الوقت ضيقًا، أفضّل أن أقرر وحدي دون نقاش طويل.</p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="5">دائمًا</label>
+        <label><input type="radio" name="q12" value="4">غالبًا</label>
+        <label><input type="radio" name="q12" value="3">أحيانًا</label>
+        <label><input type="radio" name="q12" value="2">نادرًا</label>
+        <label><input type="radio" name="q12" value="1">أبدًا</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="calculateStyle()">إظهار نتيجة النمط القيادي</button>
+  </form>
+
+  <div id="result" class="result-card" style="display:none;"></div>
+
+  <div class="links">
+    <a href="readiness.html">الانتقال إلى مقياس جاهزية القيادة</a>
+    <a href="leadership-map.html">إنشاء خارطة ذاتي القيادية</a>
   </div>
+</main>
 
+<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+  جميع الحقوق محفوظة &copy; الراسخون 2025
+</footer>
+
+<script>
+function calculateStyle() {
+  const form = document.getElementById('leadershipTest');
+  const data = new FormData(form);
+  for (let i = 1; i <= 12; i++) {
+    if (!data.get('q' + i)) {
+      alert('يرجى الإجابة على جميع الأسئلة قبل عرض النتيجة.');
+      return;
+    }
+  }
+
+  const styleScores = {
+    transformational: 0,
+    participative: 0,
+    directive: 0
+  };
+
+  const questions = document.querySelectorAll('.question');
+  questions.forEach((q, index) => {
+    const style = q.getAttribute('data-style');
+    const name = 'q' + (index + 1);
+    const value = parseInt(data.get(name), 10);
+    styleScores[style] += value;
+  });
+
+  const entries = Object.entries(styleScores);
+  entries.sort((a, b) => b[1] - a[1]);
+  const [topStyle, topScore] = entries[0];
+
+  let styleName = '';
+  let description = '';
+  let tips = '';
+
+  if (topStyle === 'transformational') {
+    styleName = 'قيادة تحويلية';
+    description = 'تركّز على الإلهام، الرؤية، وتحفيز الآخرين على تجاوز توقعاتهم.';
+    tips = 'حافظ على توازنك بين الإلهام والمتابعة التنفيذية، وتأكّد من توفير الدعم الكافي لفريقك أثناء التغيير.';
+  } else if (topStyle === 'participative') {
+    styleName = 'قيادة تشاركية';
+    description = 'تركّز على الحوار، المشاركة في القرار، وبناء الثقة داخل الفريق.';
+    tips = 'احرص على الحسم في المواقف العاجلة، ولا تسمح للإطالة في النقاش أن تؤخر القرارات المهمة.';
+  } else {
+    styleName = 'قيادة توجيهية';
+    description = 'تركّز على الوضوح، التنظيم، وتحديد الأدوار والمسؤوليات.';
+    tips = 'حاول منح الفريق مساحة أكبر للمبادرة، خاصة عندما يكونون مؤهلين وقادرين على تحمل المسؤولية.';
+  }
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `
+    <h2>نتيجتك في تشخيص القيادة</h2>
+    <p><strong>نمطك الغالب:</strong> <span class="tag">${styleName}</span></p>
+    <p>${description}</p>
+    <p><strong>نصيحة للتطوير:</strong> ${tips}</p>
+    <hr>
+    <p><strong>تذكّر:</strong> القائد الفعّال لا يقتصر على نمط واحد، بل يطوّر مرونته لاستخدام الأسلوب الأنسب حسب الموقف.</p>
+  `;
+}
+</script>
 </body>
 </html>

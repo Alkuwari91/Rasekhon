@@ -2,9 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>الراسخون – من نحن</title>
+  <title>الراسخون – من نحن؟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Cairo', sans-serif;
@@ -14,39 +15,61 @@
       direction: rtl;
     }
 
+    /* الهيدر البرغندي الموحد */
     header {
-      background: linear-gradient(135deg, #004d40, #00796b);
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
       padding: 1.5em 1em;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      text-align: center;
     }
 
-    header img {
-      width: 80px;
-      height: auto;
-      margin-left: 20px;
-    }
-
-    .header-text h1 {
-      font-size: 2em;
-      margin: 0 0 0.3em;
-      color: white;
-    }
-
-    .header-text p {
-      font-size: 1em;
+    .brand-title {
       margin: 0;
-      color: white;
+      font-size: 2.4em;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #ffffff;
     }
 
+    .brand-slogan {
+      margin: 0.4em 0 0;
+      font-size: 1.05em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .header-buttons a {
+      font-size: 0.85em;
+      padding: 0.35em 0.9em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #ffffff;
+      color: #8A1538;
+    }
+
+    .header-buttons a:last-child {
+      background-color: #6E0F2C;
+      color: #ffffff;
+    }
+
+    /* شريط التنقل الموحد */
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: #00695c;
+      background-color: #8A1538;
       padding: 1em;
       margin: 0;
       flex-wrap: wrap;
@@ -62,6 +85,7 @@
       font-weight: bold;
     }
 
+    /* المحتوى */
     main {
       max-width: 900px;
       margin: auto;
@@ -70,7 +94,7 @@
     }
 
     h1 {
-      color: #00695c;
+      color: #8A1538;
       text-align: center;
       font-size: 2em;
       margin-bottom: 0.8em;
@@ -86,11 +110,11 @@
     }
 
     .about-box strong {
-      color: #004d40;
+      color: #6E0F2C;
     }
 
     footer {
-      background-color: #004d40;
+      background-color: #8A1538;
       color: white;
       text-align: center;
       padding: 1.5em;
@@ -101,17 +125,14 @@
 <body>
 
 <header>
-  <div style="display:flex;align-items:center;">
-    <img src="logo1.jpg" alt="شعار الراسخون">
-    <div class="header-text">
-      <h1>الراسخون</h1>
-      <p>منصة رقمية لتمكين القادة واستكشاف الذات القيادية</p>
-    </div>
+  <div>
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
   </div>
 
-  <div>
-    <a href="login.html" style="background-color: white; color: #00796b; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
-    <a href="signup.html" style="background-color: #004d40; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
+  <div class="header-buttons">
+    <a href="login.html">تسجيل الدخول</a>
+    <a href="signup.html">إنشاء حساب</a>
   </div>
 </header>
 
@@ -119,11 +140,11 @@
   <ul>
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="diagnosis.html">تشخيص القيادة</a></li>
-    <li><a href="communication.html">الاتصال الفعّال</a></li>
-    <li><a href="advice.html">الاستشارات الفورية</a></li>
-    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="communication.html">قائـد مُلهِـم</a></li>
+    <li><a href="advice.html">رُشـــد</a></li>
+    <li><a href="resources.html">مكتـبـتـي</a></li>
     <li><a href="community.html">مجتمع القادة</a></li>
-    <li><a href="presentation.html">من نحن</a></li>
+    <li><a href="presentation.html">من نحن؟</a></li>
   </ul>
 </nav>
 

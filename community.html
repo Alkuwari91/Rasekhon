@@ -2,141 +2,507 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>مجتمع القادة - الراسخون</title>
+  <title>الراسخون – مجتمع القادة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #f9fbfc;
+      font-family: 'Cairo', sans-serif;
+      background-color: #F9FBFC;
       color: #333;
       margin: 0;
-      padding: 0;
+      direction: rtl;
     }
-
-   .header-image {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
 
     header {
-      text-align: center;
-      padding: 20px;
-      background-color: #00695C;
+      background: linear-gradient(135deg, #004d40, #00796b);
       color: white;
-    }
-
-    header h1 {
-      margin-top: 15px;
-      font-size: 2.5em;
-    }
-
-    .content {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .team-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 30px;
+      padding: 1.5em 1em;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
 
-    .team-list li {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      padding: 12px 20px;
-      margin: 10px;
-      font-size: 1.1em;
-      transition: transform 0.3s ease;
+    header img {
+      width: 80px;
+      height: auto;
+      margin-left: 20px;
     }
 
-    .team-list li:hover {
-      transform: translateY(-5px);
-      background-color: #e0f2f1;
+    .header-text {
+      text-align: right;
     }
 
-    .home-link {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #00796b;
+    .header-text h1 {
+      font-size: 2em;
+      margin: 0 0 0.3em;
       color: white;
-      padding: 8px 15px;
-      border-radius: 8px;
+    }
+
+    .header-text p {
+      font-size: 1em;
+      margin: 0;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: #00695c;
+      padding: 1em;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5em 1em;
+    }
+
+    nav ul li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .home-link:hover {
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em 1em 3em;
+    }
+
+    h1 {
+      color: #00695c;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2em;
+      line-height: 1.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+      gap: 1.8em;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      box-sizing: border-box;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #00695c;
+      font-size: 1.3em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95em;
+      box-sizing: border-box;
+      margin-bottom: 0.9em;
+      background-color: #FAFDFF;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .member-row {
+      display: flex;
+      gap: 0.5em;
+      margin-bottom: 0.5em;
+      align-items: center;
+    }
+
+    .member-row input {
+      margin-bottom: 0;
+    }
+
+    .member-row span {
+      font-size: 0.8em;
+      color: #607d8b;
+    }
+
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.6em 1.6em;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+
+    button:hover {
       background-color: #004d40;
+    }
+
+    .btn-secondary {
+      background-color: #546e7a;
+      margin-right: 0.4em;
+    }
+
+    .info {
+      font-size: 0.85em;
+      color: #607d8b;
+      margin-top: 0.5em;
+      line-height: 1.7;
+    }
+
+    .group-box {
+      background-color: #E0F2F1;
+      border-radius: 10px;
+      padding: 1em 1.2em;
+      margin-top: 1em;
+      line-height: 1.7;
+      font-size: 0.95em;
+      border-right: 4px solid #00796b;
+    }
+
+    .group-box strong {
+      color: #004d40;
+    }
+
+    .link-text {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.85em;
+      background-color: #ffffff;
+      padding: 0.4em 0.7em;
+      border-radius: 6px;
+      border: 1px dashed #80cbc4;
+      word-break: break-all;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.15em 0.6em;
+      border-radius: 999px;
+      font-size: 0.8em;
+      background-color: #E3F2FD;
+      color: #1565c0;
+      margin-right: 0.3em;
+    }
+
+    .feed-empty {
+      font-size: 0.9em;
+      color: #78909c;
+    }
+
+    .post {
+      border-bottom: 1px solid #eceff1;
+      padding: 0.8em 0;
+    }
+
+    .post:last-child {
+      border-bottom: none;
+    }
+
+    .post-meta {
+      font-size: 0.8em;
+      color: #78909c;
+      margin-bottom: 0.2em;
+    }
+
+    .post-content {
+      font-size: 0.95em;
+      line-height: 1.8;
     }
   </style>
 </head>
 <body>
-<header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
+
+<header>
+  <div style="display:flex;align-items:center;">
+    <img src="logo1.jpg" alt="شعار الراسخون">
+    <div class="header-text">
+      <h1>الراسخون</h1>
+      <p>مجتمع القادة – دوائرك القيادية الخاصة</p>
     </div>
+  </div>
+  <div>
+    <a href="login.html" style="background-color: white; color: #00796b; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
+    <a href="signup.html" style="background-color: #004d40; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
   </div>
 </header>
 
-  <img src="leaderscomunity.jpg" alt="مجتمع القادة" class="header-image">
+<nav>
+  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+    <li><a href="communication.html">الاتصال الفعّال</a></li>
+    <li><a href="advice.html">الاستشارات الفورية</a></li>
+    <li><a href="resources.html">مكتبة القائد</a></li>
+    <li><a href="community.html">مجتمع القادة</a></li>
+    <li><a href="presentation.html">العرض التقديمي</a></li>
+  </ul>
+</nav>
 
-  <header>
-    <h1>مجتمع القادة</h1>
-  </header>
+<main>
+  <h1>مجتمع القادة – دائرتي القيادية</h1>
+  <p class="intro">
+    في هذه المساحة يمكن لكل قائد/ة أن ينشئ <strong>دائرة قيادية</strong> خاصة به،  
+    يدعو فيها حتى 10 من أعضاء فريقه، ليشاركهم نصائح قيادية، رسائل تحفيز،  
+    واقتراحات كتب ونقاشات هادئة حول القيادة.
+  </p>
 
-  <div class="content">
-    <h2>فريق الراسخون</h2>
-    <ul class="team-list">
-      <li>مروة الكواري</li>
-      <li>لمياء النعيمي</li>
-      <li>دلال المالكي</li>
-      <li>الريم المري</li>
-      <li>شيخة الكلا</li>
-    </ul>
+  <div class="grid">
+    <!-- إنشاء الدائرة القيادية -->
+    <section class="card">
+      <h2>إنشاء دائرتك القيادية</h2>
+      <p class="info">
+        املأ البيانات التالية لإنشاء دائرتك، وأضف أسماء أعضاء فريقك (أو رموز مستعارة لو رغبت بالخصوصية).  
+        يمكن إضافة حتى <strong>10 أعضاء</strong> في كل دائرة.
+      </p>
 
-    <h2>أعضاء الفريق الموسع</h2>
-    <ul class="team-list">
-      <li>إبراهيم العلي</li>
-      <li>إبراهيم القعود</li>
-      <li>البندري الفهيدة</li>
-      <li>العنود آل ثاني</li>
-      <li>خليفة المنصوري</li>
-      <li>عائشة الهاجري</li>
-      <li>عائشة المري</li>
-      <li>عبدالله الموسى</li>
-      <li>عجلان المري</li>
-      <li>علي المري</li>
-      <li>غانم الكواري</li>
-      <li>فاطمة الكواري</li>
-      <li>فاطمة المريخي</li>
-      <li>فاطمة النعيمي</li>
-      <li>فيصل المنصوري</li>
-      <li>محمد النعيمي</li>
-      <li>موزة النعيمي</li>
-      <li>وضحى القحطاني</li>
-      <li>حسن المفتاح</li>
-      <li>حسين المقيف</li>
-      <li>حمد الحبابي</li>
-      <li>حمد الكواري</li>
-      <li>سعيد الأحمري</li>
-      <li>سلطان العسيري</li>
-    </ul>
+      <label for="leaderName">اسم القائد / صاحبة الدائرة:</label>
+      <input type="text" id="leaderName" placeholder="مثال: مروة سعد الكواري">
 
-    <a href="index.html" class="home-link">العودة إلى الرئيسية</a>
+      <label for="groupName">اسم الدائرة القيادية:</label>
+      <input type="text" id="groupName" placeholder="مثال: فريق التميز – مدرسة ...">
+
+      <div id="membersContainer">
+        <label>أسماء الأعضاء (اختياري – حقيقي أو مستعار):</label>
+        <!-- سيتم ملؤها ديناميكيًا -->
+      </div>
+      <button type="button" class="btn-secondary" onclick="addMemberRow()">+ إضافة عضو</button>
+
+      <button type="button" style="margin-top:1em;" onclick="saveGroup()">حفظ دائرتي القيادية</button>
+
+      <div id="groupSummary" class="group-box" style="display:none;"></div>
+    </section>
+
+    <!-- مساحة التفاعل مع الفريق -->
+    <section class="card">
+      <h2>رسائلي إلى فريقي</h2>
+      <p class="info">
+        بعد إنشاء دائرتك، يمكنك كتابة رسائل قصيرة لفريقك:  
+        نصيحة قيادية، تحفيز اليوم، اقتراح كتاب، أو سؤال للنقاش.  
+        (يتم حفظ الرسائل في هذا المتصفح لأغراض العرض والتجربة.)
+      </p>
+
+      <label for="messageType">نوع الرسالة:</label>
+      <select id="messageType">
+        <option value="motivation">رسالة تحفيز</option>
+        <option value="advice">نصيحة قيادية</option>
+        <option value="book">اقتراح كتاب</option>
+        <option value="question">سؤال للنقاش</option>
+      </select>
+
+      <label for="messageText">نص الرسالة:</label>
+      <textarea id="messageText" placeholder="مثال: اليوم أريدكم أن تفكروا في موقف تصرفتم فيه كقادة دون أن تنتبهوا..."></textarea>
+
+      <button type="button" onclick="addPost()">نشر الرسالة للفريق</button>
+
+      <div id="feed" style="margin-top:1.5em;">
+        <p class="feed-empty">لم تتم إضافة أي رسائل بعد. ابدأ بكتابة أول رسالة لفريقك.</p>
+      </div>
+    </section>
   </div>
+</main>
+
+<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+  جميع الحقوق محفوظة &copy; الراسخون 2025
+</footer>
+
+<script>
+  const MAX_MEMBERS = 10;
+
+  function initMembers() {
+    const container = document.getElementById('membersContainer');
+    container.innerHTML = '<label>أسماء الأعضاء (اختياري – حقيقي أو مستعار):</label>';
+    for (let i = 0; i < 3; i++) { // نبدأ بثلاث خانات افتراضيًا
+      addMemberRow(false);
+    }
+  }
+
+  function addMemberRow(checkLimit = true) {
+    const container = document.getElementById('membersContainer');
+    const rows = container.querySelectorAll('.member-row').length;
+    if (checkLimit && rows >= MAX_MEMBERS) {
+      alert('يمكن إضافة حتى 10 أعضاء فقط في كل دائرة.');
+      return;
+    }
+
+    const row = document.createElement('div');
+    row.className = 'member-row';
+    row.innerHTML = `
+      <input type="text" placeholder="اسم عضو / رمز مستعار">
+      <span>${rows + 1}</span>
+    `;
+    container.appendChild(row);
+  }
+
+  function saveGroup() {
+    const leaderName = document.getElementById('leaderName').value.trim();
+    const groupName = document.getElementById('groupName').value.trim();
+    const memberInputs = document.querySelectorAll('#membersContainer .member-row input');
+
+    if (!leaderName || !groupName) {
+      alert('يرجى إدخال اسم القائد واسم الدائرة القيادية.');
+      return;
+    }
+
+    const members = [];
+    memberInputs.forEach(input => {
+      const v = input.value.trim();
+      if (v) members.push(v);
+    });
+
+    const group = {
+      leaderName,
+      groupName,
+      members,
+      createdAt: new Date().toISOString()
+    };
+
+    localStorage.setItem('rasekhon_group', JSON.stringify(group));
+    renderGroupSummary(group);
+  }
+
+  function renderGroupSummary(group) {
+    const box = document.getElementById('groupSummary');
+    const baseLink = window.location.href.split('#')[0].split('?')[0];
+    const inviteLink = baseLink + '?group=' + encodeURIComponent(group.groupName);
+
+    let membersText = 'لم تتم إضافة أعضاء بالاسم – يمكنك إرسال الرابط لمن تشائين من فريقك.';
+    if (group.members && group.members.length > 0) {
+      membersText = group.members.map((m, i) => (i + 1) + '. ' + m).join('<br>');
+    }
+
+    box.innerHTML = `
+      <p><strong>القائد/ة:</strong> ${group.leaderName}</p>
+      <p><strong>اسم الدائرة:</strong> ${group.groupName}</p>
+      <p><strong>الأعضاء (اختياري):</strong><br>${membersText}</p>
+      <p><strong>رابط المشاركة مع الفريق:</strong></p>
+      <p class="link-text">${inviteLink}</p>
+      <p class="info">يمكنك نسخ هذا الرابط وإرساله إلى فريقك عبر البريد أو الواتساب ليكون هذا الفضاء مساحة مشتركة للنقاش والتحفيز.</p>
+    `;
+    box.style.display = 'block';
+  }
+
+  function loadGroup() {
+    const saved = localStorage.getItem('rasekhon_group');
+    if (!saved) {
+      initMembers();
+      return;
+    }
+    const group = JSON.parse(saved);
+    document.getElementById('leaderName').value = group.leaderName || '';
+    document.getElementById('groupName').value = group.groupName || '';
+
+    const container = document.getElementById('membersContainer');
+    container.innerHTML = '<label>أسماء الأعضاء (اختياري – حقيقي أو مستعار):</label>';
+    if (group.members && group.members.length > 0) {
+      group.members.forEach((m, index) => {
+        const row = document.createElement('div');
+        row.className = 'member-row';
+        row.innerHTML = `
+          <input type="text" value="${m}">
+          <span>${index + 1}</span>
+        `;
+        container.appendChild(row);
+      });
+      if (group.members.length < 3) {
+        for (let i = group.members.length; i < 3; i++) addMemberRow(false);
+      }
+    } else {
+      initMembers();
+    }
+    renderGroupSummary(group);
+  }
+
+  function addPost() {
+    const type = document.getElementById('messageType').value;
+    const text = document.getElementById('messageText').value.trim();
+    if (!text) {
+      alert('يرجى كتابة نص الرسالة قبل النشر.');
+      return;
+    }
+
+    const post = {
+      type,
+      text,
+      createdAt: new Date().toISOString()
+    };
+
+    const saved = localStorage.getItem('rasekhon_posts');
+    let posts = saved ? JSON.parse(saved) : [];
+    posts.unshift(post); // الأحدث أولًا
+    localStorage.setItem('rasekhon_posts', JSON.stringify(posts));
+    document.getElementById('messageText').value = '';
+    renderFeed(posts);
+  }
+
+  function renderFeed(posts) {
+    const feed = document.getElementById('feed');
+    if (!posts || posts.length === 0) {
+      feed.innerHTML = '<p class="feed-empty">لم تتم إضافة أي رسائل بعد. ابدأ بكتابة أول رسالة لفريقك.</p>';
+      return;
+    }
+    let html = '';
+    posts.forEach(p => {
+      const date = new Date(p.createdAt);
+      let label = '';
+      switch (p.type) {
+        case 'motivation': label = 'تحفيز'; break;
+        case 'advice': label = 'نصيحة قيادية'; break;
+        case 'book': label = 'اقتراح كتاب'; break;
+        case 'question': label = 'سؤال للنقاش'; break;
+      }
+      html += `
+        <div class="post">
+          <div class="post-meta">
+            <span class="tag">${label}</span>
+            <span>${date.toLocaleDateString('ar-QA')} – ${date.toLocaleTimeString('ar-QA',{hour:'2-digit',minute:'2-digit'})}</span>
+          </div>
+          <div class="post-content">${p.text.replace(/\n/g, '<br>')}</div>
+        </div>
+      `;
+    });
+    feed.innerHTML = html;
+  }
+
+  function loadPosts() {
+    const saved = localStorage.getItem('rasekhon_posts');
+    let posts = saved ? JSON.parse(saved) : [];
+    renderFeed(posts);
+  }
+
+  // تشغيل عند تحميل الصفحة
+  window.addEventListener('DOMContentLoaded', () => {
+    loadGroup();
+    loadPosts();
+  });
+</script>
 
 </body>
 </html>

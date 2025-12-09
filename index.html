@@ -249,6 +249,54 @@
       font-size: 0.95em;
       line-height: 1.8;
     }
+   /* ضبط الهيدر بحيث يكون الاسم في المنتصف والأزرار على اليمين */
+header {
+  background: linear-gradient(135deg, #8A1538, #6E0F2C); /* لوّنّاه برغندي إذا حابة */
+  position: relative;
+  justify-content: center; /* نخلي المحتوى في المنتصف */
+}
+
+/* أول div داخل الهيدر (اللي فيه اللوقو + النص) */
+header > div:first-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;  /* نخلي النص في المنتصف أفقياً */
+  align-items: center;
+}
+
+/* نخلي نص الراسخون في المنتصف تحت بعض */
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 2.5em;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.header-text p {
+  font-size: 1.05em;
+  margin-top: 0.4em;
+  color: #F8E8EE;
+}
+
+/* نحرك أزرار تسجيل الدخول وحساب جديد لزاوية الهيدر */
+header > div:last-child {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* تصغير الأزرار شوي */
+header a {
+  font-size: 0.85em;
+  padding: 0.35em 0.9em;
+  border-radius: 6px;
+}
+
 </style>
 
 </head>
@@ -256,14 +304,12 @@
 <body>
 
 <header>
-  <div style="flex:1; display:flex; justify-content:center; align-items:center; text-align:center;">
-    <div class="header-text">
-      <h1 class="brand-title">الــراســخــون</h1>
-      <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
-    </div>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
   </div>
 
-  <div style="position:absolute; right:20px; top:25px;">
+  <div class="header-buttons">
     <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
     <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>

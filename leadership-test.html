@@ -2,206 +2,325 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>اختبار النمط القيادي - الراسخون</title>
+  <title>الراسخون – اختبار النمط القيادي</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to left, #e0f7fa, #f1fdfc);
-      padding: 2em;
-      color: #004d40;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
-    h1, h2 {
-      text-align: center;
-      color: #00695c;
-    }
+<style>
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #F9FBFC;
+    margin: 0;
+    color: #333;
+    direction: rtl;
+  }
 
-    form {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 2em;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
+  /* هيدر الراسخون الرسمي */
+  header {
+    background: linear-gradient(135deg, #8A1538, #6E0F2C);
+    color: white;
+    padding: 1.5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
 
-    label {
-      display: block;
-      margin: 1.5em 0 0.5em;
-      font-weight: bold;
-    }
+  header img {
+    width: 75px;
+    height: auto;
+    margin-left: 20px;
+  }
 
-    select {
-      width: 100%;
-      padding: 0.6em;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
+  .header-text {
+    text-align: center;
+  }
 
-    button {
-      margin-top: 2em;
-      background-color: #00796b;
-      color: white;
-      padding: 0.8em 1.5em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-      display: block;
-      width: 100%;
-    }
+  .header-text h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+  }
 
-    button:hover {
-      background-color: #004d40;
-    }
+  .header-text p {
+    margin: 0;
+    color: #F8E8EE;
+    font-size: 1em;
+  }
 
-    .result {
-      margin-top: 2em;
-      background: #e0f2f1;
-      padding: 1.5em;
-      border-radius: 10px;
-      font-size: 1.1em;
-      display: none;
-    }
+  /* أزرار تسجيل الدخول */
+  .header-buttons {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    gap: 0.5em;
+  }
 
-    .home-link {
-      display: block;
-      text-align: center;
-      margin-top: 2em;
-      text-decoration: none;
-      font-weight: bold;
-      color: #00796b;
-    }
-  </style>
+  .header-buttons a {
+    background-color: white;
+    color: #8A1538;
+    padding: 0.4em 0.9em;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85em;
+  }
+
+  .header-buttons a:last-child {
+    background-color: #6E0F2C;
+    color: white;
+  }
+
+  /* شريط التنقل */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #8A1538;
+    padding: 1em;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0.5em 1em;
+  }
+
+  nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  /* الصفحة */
+  main {
+    max-width: 800px;
+    margin: auto;
+    padding: 2em 1em 3em;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: #8A1538;
+  }
+
+  form {
+    background: white;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  }
+
+  label {
+    display: block;
+    margin: 1.2em 0 0.5em;
+    font-weight: 700;
+  }
+
+  select {
+    width: 100%;
+    padding: 0.7em;
+    border-radius: 8px;
+    border: 1px solid #d3c4c9;
+  }
+
+  button {
+    background-color: #8A1538;
+    color: white;
+    width: 100%;
+    padding: 0.8em 1em;
+    border: none;
+    border-radius: 8px;
+    margin-top: 2em;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  button:hover {
+    background-color: #6E0F2C;
+  }
+
+  .result {
+    background: #F8E0EA;
+    margin-top: 2em;
+    padding: 1.5em;
+    border-radius: 10px;
+    font-size: 1.15em;
+    color: #6E0F2C;
+    display: none;
+    line-height: 1.8;
+  }
+
+  .home-link {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #8A1538;
+  }
+
+</style>
 </head>
+
 <body>
- <header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
-    </div>
+
+<header>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
+  </div>
+
+  <div class="header-buttons">
+    <a href="login.html">تسجيل الدخول</a>
+    <a href="signup.html">إنشاء حساب</a>
   </div>
 </header>
-  <h1> اختبار تحديد نمطك القيادي</h1>
+
+<nav>
+  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="diagnosis.html">تشخيص القيادة</a></li>
+    <li><a href="communication.html">قائـد مُلهِـم</a></li>
+    <li><a href="advice.html">رُشــد</a></li>
+    <li><a href="resources.html">مكتـبـتـي</a></li>
+    <li><a href="community.html">مجتمع القادة</a></li>
+    <li><a href="presentation.html">من نحن؟</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>اختبار تحديد نمطك القيادي</h1>
   <h2>اختر الإجابة الأقرب لطريقتك في القيادة</h2>
 
   <form id="leadershipTest">
+
+    <!-- الأسئلة -->
     <label>1. كيف تتعامل مع اتخاذ القرار؟</label>
     <select name="q1">
       <option value="تحويلي">أحلل الرؤية المستقبلية وأتخذ القرار بثقة</option>
       <option value="تشاركي">أناقش الفريق ونقرر معًا</option>
-      <option value="تبادلي">أوازن بين الفائدة والخسارة وأقرر بناءً على ذلك</option>
-      <option value="سلطوي">أقرر بنفسي بسرعة وحسم</option>
+      <option value="تبادلي">أوازن بين الفائدة والخسارة</option>
+      <option value="سلطوي">أقرر بسرعة وحسم</option>
     </select>
 
     <label>2. كيف تحفّز فريقك؟</label>
     <select name="q2">
-      <option value="تحويلي">ألهمهم برؤية ورسالة مشتركة</option>
-      <option value="تشاركي">أشركهم في صناعة الإنجاز</option>
-      <option value="تبادلي">أقدم مكافآت مقابل الأداء</option>
-      <option value="خدمي">أدعمهم على المستوى الإنساني أولًا</option>
+      <option value="تحويلي">ألهمهم برسالة مشتركة</option>
+      <option value="تشاركي">أشركهم في الإنجاز</option>
+      <option value="تبادلي">أقدّم مكافآت مقابل الأداء</option>
+      <option value="خدمي">أدعمهم إنسانيًا</option>
     </select>
 
-    <label>3. ما هو أسلوبك في التعامل مع المشكلات؟</label>
+    <label>3. كيف تتعامل مع المشكلات؟</label>
     <select name="q3">
-      <option value="تحويلي">أبحث عن فرصة في كل تحدٍ</option>
-      <option value="تشاركي">أعقد اجتماعًا جماعيًا لمناقشة الحلول</option>
-      <option value="تبادلي">أحلها حسب قواعد العمل واللوائح</option>
-      <option value="سلطوي">أتصرف فورًا لحسم الموقف</option>
+      <option value="تحويلي">أبحث عن فرصة في كل تحد</option>
+      <option value="تشاركي">أجمع الفريق لمناقشة الحلول</option>
+      <option value="تبادلي">أرجع للسياسات والإجراءات</option>
+      <option value="سلطوي">أتصرف فورًا</option>
     </select>
 
     <label>4. كيف تدير الاجتماعات؟</label>
     <select name="q4">
-      <option value="تشاركي">أشجع الجميع على المشاركة بالرأي</option>
-      <option value="سلطوي">أحدد الأجندة والقرارات مسبقًا</option>
-      <option value="تحويلي">أربطها بالرؤية والطموح</option>
-      <option value="تبادلي">أناقش فقط الأداء والنتائج</option>
+      <option value="تشاركي">أشجع الحوار</option>
+      <option value="سلطوي">أحدد الأجندة والقرارات</option>
+      <option value="تحويلي">أربط الاجتماع بالرؤية</option>
+      <option value="تبادلي">أركز على الأداء</option>
     </select>
 
     <label>5. ما الذي يهمك أكثر كقائد؟</label>
     <select name="q5">
-      <option value="تحويلي">ترك أثر إيجابي على الناس</option>
-      <option value="تبادلي">تحقيق أهداف ملموسة</option>
-      <option value="تشاركي">بناء فريق يشعر بالانتماء</option>
-      <option value="خدمي">خدمة الناس وتسهيل حياتهم</option>
+      <option value="تحويلي">الأثر الإيجابي</option>
+      <option value="تبادلي">تحقيق الأهداف</option>
+      <option value="تشاركي">روح الفريق</option>
+      <option value="خدمي">خدمة الناس</option>
     </select>
 
     <label>6. كيف تتعامل مع التفويض؟</label>
     <select name="q6">
-      <option value="تحويلي">أفوض المهام مع توجيه بالرؤية</option>
-      <option value="تبادلي">أفوض بناء على الكفاءة والنتائج السابقة</option>
-      <option value="تشاركي">أفوض بعد استشارة الفريق</option>
-      <option value="سلطوي">نادراً ما أفوض المهام المهمة</option>
+      <option value="تحويلي">أفوض مع توجيه بالرؤية</option>
+      <option value="تبادلي">حسب الكفاءة</option>
+      <option value="تشاركي">بعد استشارة الفريق</option>
+      <option value="سلطوي">نادراً</option>
     </select>
 
-    <label>7. ما مصدر قوتك كقائد؟</label>
+    <label>7. ما مصدر قوتك؟</label>
     <select name="q7">
-      <option value="تحويلي">الرؤية والإلهام</option>
-      <option value="سلطوي">الهيبة والسرعة في القرار</option>
-      <option value="تشاركي">ثقة الفريق بي</option>
-      <option value="تبادلي">النتائج المحققة</option>
+      <option value="تحويلي">الرؤية</option>
+      <option value="سلطوي">الحزم</option>
+      <option value="تشاركي">ثقة الفريق</option>
+      <option value="تبادلي">النتائج</option>
     </select>
 
-    <label>8. في حال أزمة مفاجئة، كيف تتصرف؟</label>
+    <label>8. في الأزمات؟</label>
     <select name="q8">
-      <option value="سلطوي">أتخذ القرار بسرعة دون تردد</option>
-      <option value="تبادلي">أفكر في تبعات القرار بدقة</option>
-      <option value="تشاركي">أشاور أعضاء الفريق</option>
-      <option value="تحويلي">أبحث عن فرص للتطوير وسط الأزمة</option>
+      <option value="سلطوي">أتخذ القرار فورًا</option>
+      <option value="تبادلي">أفحص العواقب</option>
+      <option value="تشاركي">أشاور الفريق</option>
+      <option value="تحويلي">أبحث عن فرص</option>
     </select>
 
-    <label>9. كيف تتابع أداء الفريق؟</label>
+    <label>9. متابعة أداء الفريق:</label>
     <select name="q9">
-      <option value="تبادلي">حسب مؤشرات الأداء</option>
-      <option value="خدمي">حسب الاحتياج والتوازن النفسي</option>
-      <option value="تشاركي">من خلال الحوار الدائم</option>
-      <option value="تحويلي">بمتابعة النمو والتقدم الفردي</option>
+      <option value="تبادلي">المؤشرات</option>
+      <option value="خدمي">الاحتياج</option>
+      <option value="تشاركي">الحوار</option>
+      <option value="تحويلي">النمو</option>
     </select>
 
-    <label>10. ما أكثر ما يشغلك أثناء القيادة؟</label>
+    <label>10. ما أكثر ما يشغلك؟</label>
     <select name="q10">
-      <option value="تحويلي">تحقيق أثر مستدام</option>
-      <option value="تشاركي">رضا الفريق وتعاونهم</option>
-      <option value="تبادلي">النتائج وتحقيق الأهداف</option>
-      <option value="خدمي">راحة واحتياجات الآخرين</option>
+      <option value="تحويلي">الأثر المستدام</option>
+      <option value="تشاركي">رضا الفريق</option>
+      <option value="تبادلي">الأهداف</option>
+      <option value="خدمي">راحة الآخرين</option>
     </select>
 
     <button type="button" onclick="calculateResult()">عرض نتيجتي</button>
+
     <div class="result" id="resultBox"></div>
-    <a href="index.html" class="home-link"> العودة إلى الصفحة الرئيسية</a>
+
+    <a href="index.html" class="home-link">العودة إلى الرئيسية</a>
+
   </form>
+</main>
 
-  <script>
-    function calculateResult() {
-      const form = document.getElementById("leadershipTest");
-      const answers = Array.from(form.elements).filter(el => el.tagName === "SELECT").map(select => select.value);
-      const count = {};
-      answers.forEach(ans => count[ans] = (count[ans] || 0) + 1);
+<footer style="background-color:#8A1538;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+  جميع الحقوق محفوظة © الراسخون 2025
+</footer>
 
-      let maxType = '';
-      let maxValue = 0;
-      for (let key in count) {
-        if (count[key] > maxValue) {
-          maxValue = count[key];
-          maxType = key;
-        }
-      }
+<script>
+function calculateResult() {
+  const form = document.getElementById("leadershipTest");
+  const answers = Array.from(form.elements).filter(el => el.tagName === "SELECT").map(select => select.value);
 
-      const descriptions = {
-        "تحويلي": " نمطك القيادي هو: <strong>التحويلي</strong><br>أنت قائد ملهم تنقل رؤيتك للآخرين وتدفعهم نحو التغيير.",
-        "تشاركي": " نمطك القيادي هو: <strong>التشاركي</strong><br>أنت تؤمن بقوة الفريق وتقدّر الاستشارة والعمل الجماعي.",
-        "تبادلي": " نمطك القيادي هو: <strong>التبادلي</strong><br>أنت قائد يركز على النتائج، وتنظم الفريق بكفاءة ومكافآت عادلة.",
-        "سلطوي": " نمطك القيادي هو: <strong>السلطوي</strong><br>أنت حازم، سريع في اتخاذ القرار، وتقود بالمبادرة والحزم.",
-        "خدمي": " نمطك القيادي هو: <strong>الخدمي</strong><br>أنت قائد إنساني، تسعى لخدمة الآخرين وتمكينهم."
-      };
+  const count = {};
+  answers.forEach(ans => count[ans] = (count[ans] || 0) + 1);
 
-      document.getElementById("resultBox").innerHTML = descriptions[maxType] || "يرجى إكمال جميع الأسئلة.";
-      document.getElementById("resultBox").style.display = "block";
+  let maxType = '';
+  let maxValue = 0;
+  for (let key in count) {
+    if (count[key] > maxValue) {
+      maxValue = count[key];
+      maxType = key;
     }
-  </script>
+  }
+
+  const descriptions = {
+    "تحويلي": " 🌟 <strong>قيادة تحويليّة</strong> – قائد مُلهِم ينقل رؤية ويحفز للتغيير.",
+    "تشاركي": " 🤝 <strong>قيادة تشاركية</strong> – تؤمن بقوة الفريق والعمل الجماعي.",
+    "تبادلي": " ⚖️ <strong>قيادة تبادلية</strong> – تركز على النتائج والعدالة.",
+    "سلطوي": " 🔥 <strong>قيادة سلطوية</strong> – حاسمة وسريعة في القرار.",
+    "خدمي": " 💛 <strong>قيادة خدمية</strong> – تعطي أولوية لراحة وتمكين الآخرين."
+  };
+
+  document.getElementById("resultBox").innerHTML = descriptions[maxType];
+  document.getElementById("resultBox").style.display = "block";
+}
+</script>
 
 </body>
 </html>

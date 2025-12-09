@@ -14,43 +14,69 @@
       direction: rtl;
     }
 
+    /* الهيدر بنفس الرئيسية */
     header {
-      background: linear-gradient(135deg, #004d40, #00796b);
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
-      padding: 1.5em 1em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 2.2em 1em;
+      position: relative;
+      text-align: center;
     }
 
-    header img {
-      width: 80px;
-      height: auto;
-      margin-left: 20px;
+    .header-center {
+      display: block;
     }
 
-    .header-text {
-      text-align: right;
-    }
-
-    .header-text h1 {
-      font-size: 2em;
-      margin: 0 0 0.3em;
-      color: white;
-    }
-
-    .header-text p {
-      font-size: 1em;
+    .brand-title {
+      font-size: 2.7em;
+      font-weight: 800;
+      letter-spacing: 3px;
       margin: 0;
-      color: white;
+      color: #ffffff;
     }
 
+    .brand-slogan {
+      font-size: 1.1em;
+      margin-top: 0.4em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .small-btn {
+      padding: 0.35em 0.9em;
+      font-size: 0.85em;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538 !important;
+    }
+
+    .maroon-btn {
+      background-color: #8A1538;
+      color: #ffffff !important;
+    }
+
+    .maroon-btn:hover {
+      background-color: #6E0F2C;
+    }
+
+    /* شريط التنقل */
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: #00695c;
+      background-color: #8A1538;
       padding: 1em;
       margin: 0;
       flex-wrap: wrap;
@@ -66,6 +92,7 @@
       font-weight: bold;
     }
 
+    /* المحتوى */
     main {
       max-width: 1100px;
       margin: auto;
@@ -73,7 +100,7 @@
     }
 
     h1 {
-      color: #00695c;
+      color: #8A1538;
       text-align: center;
       margin-top: 0;
     }
@@ -94,7 +121,7 @@
 
     .highlight-card h2 {
       margin-top: 0;
-      color: #00695c;
+      color: #8A1538;
       font-size: 1.3em;
     }
 
@@ -120,8 +147,8 @@
       padding: 0.2em 0.7em;
       border-radius: 999px;
       font-size: 0.8em;
-      background-color: #E3F2FD;
-      color: #1565c0;
+      background-color: #F5DDE8;
+      color: #8A1538;
       margin-left: 0.3em;
     }
 
@@ -147,7 +174,7 @@
 
     .card h2 {
       margin-top: 0;
-      color: #00695c;
+      color: #8A1538;
       font-size: 1.25em;
     }
 
@@ -176,7 +203,7 @@
     }
 
     button {
-      background-color: #00796b;
+      background-color: #8A1538;
       color: white;
       border: none;
       padding: 0.6em 1.6em;
@@ -186,7 +213,7 @@
     }
 
     button:hover {
-      background-color: #004d40;
+      background-color: #6E0F2C;
     }
 
     .info {
@@ -203,10 +230,10 @@
     }
 
     .moment {
-      border-right: 4px solid #00796b;
+      border-right: 4px solid #8A1538;
       padding: 0.8em 1em 0.9em;
       margin-bottom: 0.9em;
-      background-color: #F5FBFA;
+      background-color: #F8E8EE;
       border-radius: 10px;
       line-height: 1.7;
       font-size: 0.95em;
@@ -222,7 +249,7 @@
 
     .moment-leader {
       font-weight: 700;
-      color: #004d40;
+      color: #6E0F2C;
       font-size: 0.98em;
     }
 
@@ -249,33 +276,37 @@
     }
 
     .moment-link a {
-      color: #00796b;
+      color: #8A1538;
       text-decoration: none;
     }
 
     .moment-link a:hover {
       text-decoration: underline;
     }
+
+    footer {
+      background-color:#6E0F2C;
+      color:white;
+      text-align:center;
+      padding:1.5em;
+      margin-top:3em;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div style="display:flex;align-items:center;">
-    <img src="logo1.jpg" alt="شعار الراسخون">
-    <div class="header-text">
-      <h1>الراسخون</h1>
-      <p>قـائـد مُلهِم</p>
-    </div>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">قـائـد مُلهم – مواقف واتصال قيادي</p>
   </div>
-  <div>
-    <a href="login.html" style="background-color: white; color: #00796b; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">تسجيل الدخول</a>
-    <a href="signup.html" style="background-color: #004d40; color: white; padding: 0.5em 1em; margin: 0 5px; border-radius: 6px; text-decoration: none; font-weight: bold;">إنشاء حساب</a>
+  <div class="header-buttons">
+    <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
 <nav>
-  <nav>
   <ul>
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="diagnosis.html">تشخيص القيادة</a></li>
@@ -295,7 +326,7 @@
     حتى يتعلّم القائد والطالب كيف يترجم القيم القيادية إلى كلمات وأسلوب تواصل حيّ.
   </p>
 
-  <!-- الموقف القيادي البارز (تقومين بتحديثه يدويًا) -->
+  <!-- الموقف القيادي البارز -->
   <section class="highlight-card">
     <h2>الموقف القيادي البارز (يمكنك تحديثه دوريًا)</h2>
     <p class="highlight-meta">
@@ -316,7 +347,7 @@
   </section>
 
   <div class="grid">
-    <!-- سجل المواقف القيادية -->
+    <!-- سجل المواقف -->
     <section class="card">
       <h2>سجل المواقف القيادية</h2>
       <p class="info">
@@ -329,7 +360,7 @@
       </div>
     </section>
 
-    <!-- نموذج إضافة موقف جديد (تعبئته منك) -->
+    <!-- نموذج إضافة موقف -->
     <section class="card">
       <h2>إضافة موقف قيادي جديد</h2>
 
@@ -372,7 +403,7 @@
   </div>
 </main>
 
-<footer style="background-color:#004d40;color:white;text-align:center;padding:1.5em;margin-top:3em;">
+<footer>
   جميع الحقوق محفوظة &copy; الراسخون 2025
 </footer>
 
@@ -382,7 +413,6 @@
     const saved = localStorage.getItem('rasekhon_communication_moments');
     let moments = saved ? JSON.parse(saved) : [];
 
-    // إن لم يوجد شيء، نضع مثال واحد للتوضيح
     if (moments.length === 0) {
       moments = [
         {
@@ -450,7 +480,7 @@
     let moments = saved ? JSON.parse(saved) : [];
 
     const moment = { leader, theme, date, skill, quote, analysis, link };
-    moments.unshift(moment); // الأحدث في الأعلى
+    moments.unshift(moment);
     localStorage.setItem('rasekhon_communication_moments', JSON.stringify(moments));
 
     document.getElementById('leader').value = '';

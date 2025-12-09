@@ -14,33 +14,30 @@
       direction: rtl;
     }
 
-    /* هيدر موحّد */
+    /* الهيدر بنفس الرئيسية */
     header {
       background: linear-gradient(135deg, #8A1538, #6E0F2C);
       color: white;
       padding: 2.2em 1em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       text-align: center;
-      min-height: 140px;
     }
 
     .header-center {
-      text-align: center;
+      display: block;
     }
 
     .brand-title {
-      margin: 0;
-      font-size: 2.6em;
+      font-size: 2.7em;
       font-weight: 800;
       letter-spacing: 3px;
+      margin: 0;
+      color: #ffffff;
     }
 
     .brand-slogan {
-      margin: 0.3em 0 0;
-      font-size: 1.15em;
+      font-size: 1.1em;
+      margin-top: 0.4em;
       color: #F8E8EE;
     }
 
@@ -52,25 +49,29 @@
       gap: 0.5em;
     }
 
-    .header-buttons a {
-      font-size: 0.85em;
+    .small-btn {
       padding: 0.35em 0.9em;
+      font-size: 0.85em;
       border-radius: 6px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
     }
 
     .white-btn {
       background-color: #ffffff;
-      color: #8A1538;
+      color: #8A1538 !important;
     }
 
     .maroon-btn {
-      background-color: #6E0F2C;
-      color: #ffffff;
+      background-color: #8A1538;
+      color: #ffffff !important;
     }
 
-    /* الناف بار */
+    .maroon-btn:hover {
+      background-color: #6E0F2C;
+    }
+
+    /* شريط التنقل */
     nav ul {
       display: flex;
       justify-content: center;
@@ -91,8 +92,9 @@
       font-weight: bold;
     }
 
+    /* المحتوى */
     main {
-      max-width: 1150px;
+      max-width: 1100px;
       margin: auto;
       padding: 2em 1em 3em;
     }
@@ -101,14 +103,43 @@
       color: #8A1538;
       text-align: center;
       margin-top: 0;
-      margin-bottom: 0.5em;
     }
 
     .intro {
       text-align: center;
-      margin-bottom: 2.2em;
+      margin-bottom: 2em;
+      line-height: 1.8;
+    }
+
+    .highlight-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      margin-bottom: 2em;
+    }
+
+    .highlight-card h2 {
+      margin-top: 0;
+      color: #8A1538;
+      font-size: 1.3em;
+    }
+
+    .highlight-meta {
+      font-size: 0.9em;
+      color: #607d8b;
+      margin-bottom: 0.5em;
+    }
+
+    .highlight-quote {
+      font-style: italic;
       line-height: 1.9;
-      font-size: 1.02em;
+      margin: 0.5em 0 1em;
+    }
+
+    .highlight-comment {
+      font-size: 0.95em;
+      line-height: 1.8;
     }
 
     .tag {
@@ -118,16 +149,16 @@
       font-size: 0.8em;
       background-color: #F5DDE8;
       color: #8A1538;
-      margin-right: 0.3em;
+      margin-left: 0.3em;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.95fr;
+      grid-template-columns: 1.15fr 1.05fr;
       gap: 1.8em;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 900px) {
       .grid {
         grid-template-columns: 1fr;
       }
@@ -137,136 +168,132 @@
       background-color: #ffffff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      padding: 1.5em 1.5em 1.7em;
+      padding: 1.5em;
       box-sizing: border-box;
     }
 
     .card h2 {
       margin-top: 0;
       color: #8A1538;
-      font-size: 1.3em;
-      margin-bottom: 0.8em;
+      font-size: 1.25em;
     }
 
-    .sub-title {
-      font-size: 0.92em;
-      color: #607d8b;
-      margin-top: -0.2em;
-      margin-bottom: 1em;
-      line-height: 1.7;
-    }
-
-    .item {
-      border-bottom: 1px solid #eceff1;
-      padding: 0.7em 0;
-    }
-
-    .item:last-child {
-      border-bottom: none;
-    }
-
-    .item-title {
+    label {
+      display: block;
+      margin-bottom: 0.3em;
       font-weight: 600;
-      font-size: 0.98em;
-      color: #6E0F2C;
-      margin-bottom: 0.2em;
+      font-size: 0.95em;
     }
 
-    .item-meta {
-      font-size: 0.8em;
-      color: #78909c;
-      margin-bottom: 0.2em;
-    }
-
-    .item-desc {
-      font-size: 0.9em;
-      color: #455a64;
-      line-height: 1.7;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 0.15em 0.6em;
-      border-radius: 999px;
-      font-size: 0.8em;
-      background-color: #F8E8EE;
-      color: #8A1538;
-      margin-left: 0.3em;
-    }
-
-    .template-box {
-      background-color: #F8E8EE;
-      border-radius: 10px;
-      padding: 0.9em 1em;
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95em;
+      box-sizing: border-box;
       margin-bottom: 0.9em;
-      border-right: 4px solid #8A1538;
-      font-size: 0.93em;
-      line-height: 1.8;
+      background-color: #FAFDFF;
     }
 
-    .template-title {
-      font-weight: 600;
-      color: #6E0F2C;
-      margin-bottom: 0.2em;
-    }
-
-    .template-note {
-      font-size: 0.8em;
-      color: #78909c;
-      margin-top: 0.3em;
-    }
-
-    .template-list {
-      margin: 0.4em 0 0.4em 0;
-      padding-right: 1em;
-      font-size: 0.9em;
-    }
-
-    .template-list li {
-      margin-bottom: 0.2em;
+    textarea {
+      min-height: 80px;
+      resize: vertical;
     }
 
     button {
       background-color: #8A1538;
       color: white;
       border: none;
-      padding: 0.5em 1.1em;
+      padding: 0.6em 1.6em;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.85em;
-      margin-top: 0.3em;
+      font-size: 0.95em;
     }
 
     button:hover {
       background-color: #6E0F2C;
     }
 
-    .small {
-      font-size: 0.8em;
+    .info {
+      font-size: 0.85em;
+      color: #607d8b;
+      margin-top: 0.4em;
+      line-height: 1.7;
     }
 
-    .textarea-template {
-      width: 100%;
-      min-height: 80px;
-      border-radius: 8px;
-      border: 1px solid #cfd8dc;
-      padding: 0.6em 0.8em;
-      font-family: 'Cairo', sans-serif;
+    .timeline {
+      max-height: 450px;
+      overflow-y: auto;
+      padding-right: 0.5em;
+    }
+
+    .moment {
+      border-right: 4px solid #8A1538;
+      padding: 0.8em 1em 0.9em;
+      margin-bottom: 0.9em;
+      background-color: #F8E8EE;
+      border-radius: 10px;
+      line-height: 1.7;
+      font-size: 0.95em;
+    }
+
+    .moment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.3em;
+      gap: 0.7em;
+    }
+
+    .moment-leader {
+      font-weight: 700;
+      color: #6E0F2C;
+      font-size: 0.98em;
+    }
+
+    .moment-date {
+      font-size: 0.8em;
+      color: #78909c;
+      white-space: nowrap;
+    }
+
+    .moment-theme {
+      font-size: 0.85em;
+      color: #455a64;
+      margin-bottom: 0.3em;
+    }
+
+    .moment-quote {
       font-size: 0.9em;
-      box-sizing: border-box;
-      background-color: #ffffff;
-      resize: vertical;
+      color: #37474f;
+    }
+
+    .moment-link {
+      font-size: 0.8em;
       margin-top: 0.4em;
     }
 
+    .moment-link a {
+      color: #8A1538;
+      text-decoration: none;
+    }
+
+    .moment-link a:hover {
+      text-decoration: underline;
+    }
+
     footer {
-      background-color: #6E0F2C;
-      color: white;
-      text-align: center;
-      padding: 1.5em;
-      margin-top: 3em;
+      background-color:#6E0F2C;
+      color:white;
+      text-align:center;
+      padding:1.5em;
+      margin-top:3em;
     }
   </style>
+</head>
+<body>
 </head>
 <body>
 

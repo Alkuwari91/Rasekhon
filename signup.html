@@ -4,57 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>إنشاء حساب جديد - الراسخون</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(to right, #e3f2fd, #e0f7fa);
-      color: #004d40;
-      padding: 2em;
+      font-family: 'Cairo', sans-serif;
+      background-color: #F9FBFC;
+      color: #333;
+      margin: 0;
+      direction: rtl;
+    }
+
+    /* هيدر موحّد لكل الصفحات */
+    header {
+      background: linear-gradient(135deg, #8A1538, #6E0F2C);
+      color: white;
+      padding: 2.2em 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      min-height: 140px;
+    }
+
+    .header-center {
+      text-align: center;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 2.6em;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .brand-slogan {
+      margin: 0.3em 0 0;
+      font-size: 1.15em;
+      color: #F8E8EE;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .header-buttons a {
+      font-size: 0.85em;
+      padding: 0.35em 0.9em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .white-btn {
+      background-color: #ffffff;
+      color: #8A1538;
+    }
+
+    .maroon-btn {
+      background-color: #6E0F2C;
+      color: #ffffff;
+    }
+
+    /* محتوى الصفحة */
+    .page-wrap {
+      max-width: 600px;
+      margin: 2.5em auto 3em;
+      padding: 0 1em;
     }
 
     .container {
-      max-width: 500px;
-      margin: auto;
       background-color: #ffffff;
-      padding: 2em;
+      padding: 2em 1.8em;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     h2 {
       text-align: center;
-      color: #00796b;
+      color: #8A1538;
       margin-bottom: 1em;
+      margin-top: 0;
     }
 
     label {
       display: block;
       margin-top: 1em;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.95em;
     }
 
     input {
       width: 100%;
       padding: 0.8em;
       margin-top: 0.3em;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95em;
+      background-color: #FAFDFF;
+      box-sizing: border-box;
     }
 
     button {
       width: 100%;
       padding: 0.8em;
-      background-color: #00796b;
+      background-color: #8A1538;
       color: white;
       border: none;
-      border-radius: 6px;
-      margin-top: 1.5em;
+      border-radius: 8px;
+      margin-top: 1.8em;
       font-size: 1em;
       cursor: pointer;
+      font-family: 'Cairo', sans-serif;
     }
 
     button:hover {
-      background-color: #004d40;
+      background-color: #6E0F2C;
     }
 
     .success {
@@ -62,31 +133,51 @@
       color: #2e7d32;
       margin-top: 1em;
       font-weight: bold;
+      font-size: 1em;
     }
 
     .link {
       text-align: center;
       margin-top: 1.5em;
-      font-size: 0.95em;
+      font-size: 0.9em;
     }
 
     .link a {
-      color: #00796b;
+      color: #8A1538;
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #6E0F2C;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      margin-top: 3em;
+      font-size: 0.9em;
     }
   </style>
 </head>
+
 <body>
-<header style="background: linear-gradient(135deg, #004d40, #00796b); color: white; padding: 1.5em 1em; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo1.jpg" alt="شعار الراسخون" style="width: 80px; height: auto; margin-left: 20px;">
-    <div>
-      <h1 style="margin: 0; font-size: 2em; color: white;">الراسخون</h1>
-      <p style="margin: 0; font-size: 1em;">منصة القيادة الحكيمة وتمكين الشباب القطري</p>
-    </div>
+
+<header>
+  <div class="header-center">
+    <h1 class="brand-title">الــراســخــون</h1>
+    <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
+  </div>
+
+  <div class="header-buttons">
+    <a href="login.html" class="white-btn">تسجيل الدخول</a>
+    <a href="signup.html" class="maroon-btn">إنشاء حساب</a>
   </div>
 </header>
 
+<div class="page-wrap">
   <div class="container">
     <h2>إنشاء حساب جديد</h2>
 
@@ -101,39 +192,38 @@
       <input type="password" id="password" required>
 
       <button type="submit">تسجيل الحساب</button>
-      <div class="success" id="successMessage" style="display:none;">🎉 تم إنشاء الحساب بنجاح!</div>
+
+      <div id="successMessage" class="success" style="display:none;"> تم إنشاء الحساب بنجاح!</div>
     </form>
 
     <div class="link">
       لديك حساب؟ <a href="login.html">تسجيل الدخول</a>
     </div>
   </div>
+</div>
 
-  <script>
-    document.getElementById('signupForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+<footer>
+  جميع الحقوق محفوظة © الراسخون 2025
+</footer>
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
+<script>
+  document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      // تخزين البيانات محلياً
-      const user = {
-        name: name,
-        email: email,
-        password: password
-      };
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
 
-      localStorage.setItem('user', JSON.stringify(user));
+    const user = { name, email, password };
+    localStorage.setItem('user', JSON.stringify(user));
 
-      document.getElementById('successMessage').style.display = 'block';
+    document.getElementById('successMessage').style.display = 'block';
 
-      // إعادة التوجيه بعد قليل
-      setTimeout(() => {
-        window.location.href = 'login.html';
-      }, 1500);
-    });
-  </script>
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 1500);
+  });
+</script>
 
 </body>
 </html>

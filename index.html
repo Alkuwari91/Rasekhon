@@ -6,7 +6,7 @@
   <title>الراسخون – نرسّخ القيم… ونُمكّن القادة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   
-  <style>
+ <style>
     body {
       font-family: 'Cairo', sans-serif;
       background-color: #F9FBFC;
@@ -15,17 +15,9 @@
       direction: rtl;
     }
 
-    /* نص الهيدر */
-    .header-text h1 {
-      color: white !important;
-    }
-    .header-text p {
-      color: white !important;
-    }
-
     /* الهيدر */
     header {
-      background: linear-gradient(135deg, #8A1538, #6E0F2C);
+      background: linear-gradient(135deg, #8A1538, #6E0F2C); /* برغندي */
       color: white;
       padding: 1.5em 1em;
       display: flex;
@@ -46,35 +38,14 @@
 
     .header-text h1 {
       font-size: 2em;
-      margin: 0 0 0.2em;
+      margin: 0 0 0.3em;
+      color: white;
     }
 
     .header-text p {
       font-size: 1em;
       margin: 0;
-    }
-
-    /* أزرار الهيدر */
-    .small-btn {
-      padding: 0.35em 0.9em;
-      font-size: 0.85em !important;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .white-btn {
-      background-color: #ffffff;
-      color: #8A1538 !important;
-    }
-
-    .maroon-btn {
-      background-color: #8A1538;
-      color: white !important;
-    }
-
-    .maroon-btn:hover {
-      background-color: #6E0F2C;
+      color: white;
     }
 
     /* شريط التنقل */
@@ -82,7 +53,7 @@
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: #8A1538;
+      background-color: #8A1538; /* برغندي */
       padding: 1em;
       margin: 0;
       flex-wrap: wrap;
@@ -98,149 +69,206 @@
       font-weight: bold;
     }
 
-    /* المحتوى */
+    /* المحتوى الرئيسي */
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 2em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 2em 1em 3em;
     }
 
-    /* صندوقي الرؤية والرسالة */
-    .vision-mission {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      margin-bottom: 3em;
-      justify-content: center;
+    h1 {
+      color: #8A1538; /* برغندي */
       text-align: center;
-    }
-
-    .toggle-box {
-      background-color: #fff;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      width: 100%;
-      max-width: 500px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .toggle-box h2 {
-      color: #8A1538;
-      margin: 0;
-      font-size: 1.6em;
-    }
-
-    .toggle-box:hover {
-      background-color: #F8E8EE;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .toggle-content {
-      margin-top: 1em;
-      line-height: 1.8;
-      color: #333;
-    }
-
-    /* البطاقات */
-    .tabs-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5em;
-    }
-
-    .tab-card {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      padding: 1.5em;
-      transition: transform 0.3s;
-      text-align: center;
-      width: 220px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .tab-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 22px rgba(138, 21, 56, 0.25);
-    }
-
-    .tab-card img {
-      width: 60px;
-      margin-bottom: 0.7em;
-    }
-
-    .tab-card h3 {
-      color: #8A1538;
-      margin: 0.5em 0;
-      font-size: 1.05em;
-    }
-
-    .rating, .counter {
-      margin-top: 3em;
-      text-align: center;
-    }
-
-    .star {
-      font-size: 2em;
-      color: lightgray;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-    .star.selected {
-      color: gold;
-    }
-
-    .owner {
-      text-align: center;
-      margin-top: 3em;
-      background-color: #ffffff;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      max-width: 700px;
-    }
-
-    .owner h3 {
-      color: #8A1538;
       margin-top: 0;
     }
 
-    footer {
-      background-color: #6E0F2C;
-      color: white;
+    .intro {
       text-align: center;
-      padding: 1.5em;
-      margin-top: 3em;
+      margin-bottom: 2em;
+      line-height: 1.8;
     }
-  </style>
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+      gap: 1.8em;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* الكروت */
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 1.5em;
+      box-sizing: border-box;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #8A1538; /* برغندي */
+      font-size: 1.3em;
+    }
+
+    /* الحقول */
+    label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95em;
+      box-sizing: border-box;
+      margin-bottom: 0.9em;
+      background-color: #FAFDFF;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    /* صفوف الأعضاء */
+    .member-row {
+      display: flex;
+      gap: 0.5em;
+      margin-bottom: 0.5em;
+      align-items: center;
+    }
+
+    .member-row input {
+      margin-bottom: 0;
+    }
+
+    .member-row span {
+      font-size: 0.8em;
+      color: #607d8b;
+    }
+
+    /* الأزرار */
+    button {
+      background-color: #8A1538; /* برغندي */
+      color: white;
+      border: none;
+      padding: 0.6em 1.6em;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+
+    button:hover {
+      background-color: #6E0F2C; /* برغندي أغمق */
+    }
+
+    .btn-secondary {
+      background-color: #B68CA5; /* برغندي فاتح */
+      margin-right: 0.4em;
+    }
+
+    /* المعلومات */
+    .info {
+      font-size: 0.85em;
+      color: #607d8b;
+      margin-top: 0.5em;
+      line-height: 1.7;
+    }
+
+    /* صناديق المجموعات */
+    .group-box {
+      background-color: #F8E8EE; /* وردي قطري فاتح */
+      border-radius: 10px;
+      padding: 1em 1.2em;
+      margin-top: 1em;
+      line-height: 1.7;
+      font-size: 0.95em;
+      border-right: 4px solid #8A1538;
+    }
+
+    .group-box strong {
+      color: #6E0F2C;
+    }
+
+    /* النصوص */
+    .link-text {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.85em;
+      background-color: #ffffff;
+      padding: 0.4em 0.7em;
+      border-radius: 6px;
+      border: 1px dashed #B68CA5;
+      word-break: break-all;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* التاق */
+    .tag {
+      display: inline-block;
+      padding: 0.15em 0.6em;
+      border-radius: 999px;
+      font-size: 0.8em;
+      background-color: #F5DDE8;
+      color: #8A1538;
+      margin-right: 0.3em;
+    }
+
+    /* التغذية */
+    .feed-empty {
+      font-size: 0.9em;
+      color: #78909c;
+    }
+
+    .post {
+      border-bottom: 1px solid #eceff1;
+      padding: 0.8em 0;
+    }
+
+    .post:last-child {
+      border-bottom: none;
+    }
+
+    .post-meta {
+      font-size: 0.8em;
+      color: #78909c;
+      margin-bottom: 0.2em;
+    }
+
+    .post-content {
+      font-size: 0.95em;
+      line-height: 1.8;
+    }
+</style>
+
 </head>
 
 <body>
 
 <header>
-  <div style="display: flex; align-items: center;">
-     <img src="logo1.jpg" alt="شعار الراسخون">
+  <div style="flex:1; display:flex; justify-content:center; align-items:center; text-align:center;">
     <div class="header-text">
-      <h1>الراسخون</h1>
-      <p>نرسّخ القيم… ونُمكّن القادة</p>
+      <h1 class="brand-title">الــراســخــون</h1>
+      <p class="brand-slogan">نرسّخ القيم… ونُمكّن القادة</p>
     </div>
   </div>
 
-  <div style="margin-top: 10px;">
+  <div style="position:absolute; right:20px; top:25px;">
     <a href="login.html" class="small-btn white-btn">تسجيل الدخول</a>
     <a href="signup.html" class="small-btn maroon-btn">إنشاء حساب</a>
   </div>
 </header>
+
 
 <nav>
   <ul>
